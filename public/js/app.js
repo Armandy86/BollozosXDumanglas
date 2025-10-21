@@ -58272,7 +58272,7 @@ function Courses() {
                 flexShrink: 0,
                 color: '#FFF',
                 fontFamily: 'Poppins, sans-serif',
-                fontSize: '60px',
+                fontSize: '30px',
                 fontStyle: 'italic',
                 fontWeight: 800,
                 lineHeight: '24px',
