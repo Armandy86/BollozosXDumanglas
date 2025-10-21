@@ -58105,6 +58105,232 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Courses.js":
+/*!********************************************!*\
+  !*** ./resources/js/components/Courses.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Courses)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function Courses() {
+  var _programs$find;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    expandedProgram = _useState2[0],
+    setExpandedProgram = _useState2[1];
+  var programs = [{
+    id: 1,
+    name: 'NURSING PROGRAM',
+    color: 'linear-gradient(180deg, rgba(0, 0, 209, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/nursing-logo.png'
+  }, {
+    id: 2,
+    name: 'TEACHER EDUCATION PROGRAM',
+    color: 'linear-gradient(180deg, rgba(0, 0, 209, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/teacher-education-logo.png'
+  }, {
+    id: 3,
+    name: 'ENGINEERING TECHNOLOGY PROGRAM',
+    color: 'linear-gradient(180deg, rgba(217, 115, 71, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/engineering-logo.png'
+  }, {
+    id: 4,
+    name: 'CRIMINAL JUSTICE EDUCATION PROGRAM',
+    color: 'linear-gradient(180deg, rgba(200, 78, 60, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/criminal-justice-logo.png'
+  }, {
+    id: 5,
+    name: 'COMPUTER STUDIES PROGRAM',
+    color: 'linear-gradient(180deg, rgba(139, 93, 199, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/computer-studies-logo.png'
+  }, {
+    id: 6,
+    name: 'ARTS AND SCIENCES PROGRAM',
+    color: 'linear-gradient(180deg, rgba(76, 175, 80, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/arts-sciences-logo.png'
+  }, {
+    id: 7,
+    name: 'BUSINESS ADMINISTRATION PROGRAM',
+    color: 'linear-gradient(180deg, rgba(224, 160, 78, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/business-admin-logo.png'
+  }, {
+    id: 8,
+    name: 'ACCOUNTANCY PROGRAM',
+    color: 'linear-gradient(180deg, rgba(127, 196, 216, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
+    logo: '/images/accountancy-logo.png'
+  }];
+  var toggleProgram = function toggleProgram(id) {
+    setExpandedProgram(expandedProgram === id ? null : id);
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      padding: '48px 80px',
+      background: '#f5f7fa',
+      minHeight: '100vh'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      style: {
+        fontSize: 50,
+        fontWeight: 900,
+        color: '#1a1a1a',
+        marginBottom: 40,
+        letterSpacing: '1px',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
+      },
+      children: "PROGRAMS"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 24,
+        maxWidth: 900,
+        paddingLeft: 70
+      },
+      children: programs.map(function (program) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            position: 'relative',
+            marginLeft: 0
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              position: 'absolute',
+              left: -70,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: 130,
+              height: 130,
+              borderRadius: '50%',
+              background: 'white',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+              padding: 10,
+              border: '6px solid rgba(255, 255, 255, 0.3)',
+              zIndex: 10
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+              src: program.logo,
+              alt: program.name,
+              style: {
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain'
+              },
+              onError: function onError(e) {
+                // Fallback if image doesn't exist
+                e.target.style.display = 'none';
+                e.target.parentElement.innerHTML = "\n                                        <div style=\"\n                                            width: 100%;\n                                            height: 100%;\n                                            display: flex;\n                                            align-items: center;\n                                            justify-content: center;\n                                            font-size: 42px;\n                                            font-weight: bold;\n                                            color: #5a67d8;\n                                        \">\n                                            ".concat(program.name.charAt(0), "\n                                        </div>\n                                    ");
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            onClick: function onClick() {
+              return toggleProgram(program.id);
+            },
+            style: {
+              width: '643px',
+              height: '76px',
+              flexShrink: 0,
+              background: program.color,
+              borderRadius: '10px',
+              boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingLeft: '90px',
+              paddingRight: '30px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              e.currentTarget.style.transform = 'translateY(-4px)';
+              e.currentTarget.style.boxShadow = '0 8px 8px 0 rgba(0, 0, 0, 0.35)';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 4px 4px 0 rgba(0, 0, 0, 0.25)';
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                width: '451px',
+                height: '41px',
+                flexShrink: 0,
+                color: '#FFF',
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '30px',
+                fontStyle: 'italic',
+                fontWeight: 800,
+                lineHeight: '24px',
+                display: 'flex',
+                alignItems: 'center'
+              },
+              children: program.name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+              width: "28",
+              height: "28",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              style: {
+                transform: expandedProgram === program.id ? 'rotate(180deg)' : 'rotate(0deg)',
+                transition: 'transform 0.3s ease',
+                flexShrink: 0
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                d: "M6 9L12 15L18 9",
+                stroke: "white",
+                strokeWidth: "3",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              })
+            })]
+          })]
+        }, program.id);
+      })
+    }), expandedProgram && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        marginTop: 20,
+        padding: 24,
+        background: 'white',
+        borderRadius: 12,
+        maxWidth: 900,
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+        style: {
+          margin: '0 0 16px 0',
+          color: '#1a1a1a'
+        },
+        children: "Program Details"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+        style: {
+          color: '#6b7280',
+          margin: 0
+        },
+        children: ["Details for ", (_programs$find = programs.find(function (p) {
+          return p.id === expandedProgram;
+        })) === null || _programs$find === void 0 ? void 0 : _programs$find.name, " will be displayed here."]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/Dashboard.js":
 /*!**********************************************!*\
   !*** ./resources/js/components/Dashboard.js ***!
@@ -58119,7 +58345,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
 /* harmony import */ var _Faculty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Faculty */ "./resources/js/components/Faculty.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Students__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Students */ "./resources/js/components/Students.js");
+/* harmony import */ var _FacultyList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./FacultyList */ "./resources/js/components/FacultyList.js");
+/* harmony import */ var _Courses__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Courses */ "./resources/js/components/Courses.js");
+/* harmony import */ var _Schedule__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Schedule */ "./resources/js/components/Schedule.js");
+/* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Settings */ "./resources/js/components/Settings.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
@@ -58138,6 +58369,11 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
+
+
+
+
 function Dashboard() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -58151,6 +58387,10 @@ function Dashboard() {
     _useState6 = _slicedToArray(_useState5, 2),
     loading = _useState6[0],
     setLoading = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('dashboard'),
+    _useState8 = _slicedToArray(_useState7, 2),
+    currentView = _useState8[0],
+    setCurrentView = _useState8[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
@@ -58198,34 +58438,34 @@ function Dashboard() {
     }();
     fetchData();
   }, []);
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState8 = _slicedToArray(_useState7, 2),
-    showAdd = _useState8[0],
-    setShowAdd = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState0 = _slicedToArray(_useState9, 2),
+    showAdd = _useState0[0],
+    setShowAdd = _useState0[1];
   var openAddStudent = function openAddStudent() {
     return setShowAdd(true);
   };
   var closeAddStudent = function closeAddStudent() {
     return setShowAdd(false);
   };
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState0 = _slicedToArray(_useState9, 2),
-    showList = _useState0[0],
-    setShowList = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState1, 2),
+    showList = _useState10[0],
+    setShowList = _useState10[1];
   var openList = function openList() {
     return setShowList(true);
   };
   var closeList = function closeList() {
     return setShowList(false);
   };
-  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState10 = _slicedToArray(_useState1, 2),
-    showStudentDetails = _useState10[0],
-    setShowStudentDetails = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState12 = _slicedToArray(_useState11, 2),
-    selectedStudent = _useState12[0],
-    setSelectedStudent = _useState12[1];
+    showStudentDetails = _useState12[0],
+    setShowStudentDetails = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState14 = _slicedToArray(_useState13, 2),
+    selectedStudent = _useState14[0],
+    setSelectedStudent = _useState14[1];
   var openStudentDetails = function openStudentDetails(student) {
     setSelectedStudent(student);
     setShowStudentDetails(true);
@@ -58234,14 +58474,14 @@ function Dashboard() {
     setShowStudentDetails(false);
     setSelectedStudent(null);
   };
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState14 = _slicedToArray(_useState13, 2),
-    showEditStudent = _useState14[0],
-    setShowEditStudent = _useState14[1];
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState16 = _slicedToArray(_useState15, 2),
-    studentToEdit = _useState16[0],
-    setStudentToEdit = _useState16[1];
+    showEditStudent = _useState16[0],
+    setShowEditStudent = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState18 = _slicedToArray(_useState17, 2),
+    studentToEdit = _useState18[0],
+    setStudentToEdit = _useState18[1];
   var openEditStudent = function openEditStudent(student) {
     setStudentToEdit(student);
     setShowEditStudent(true);
@@ -58250,34 +58490,34 @@ function Dashboard() {
     setShowEditStudent(false);
     setStudentToEdit(null);
   };
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState18 = _slicedToArray(_useState17, 2),
-    showAddFaculty = _useState18[0],
-    setShowAddFaculty = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState20 = _slicedToArray(_useState19, 2),
+    showAddFaculty = _useState20[0],
+    setShowAddFaculty = _useState20[1];
   var openAddFaculty = function openAddFaculty() {
     return setShowAddFaculty(true);
   };
   var closeAddFaculty = function closeAddFaculty() {
     return setShowAddFaculty(false);
   };
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState20 = _slicedToArray(_useState19, 2),
-    showFacultyList = _useState20[0],
-    setShowFacultyList = _useState20[1];
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState22 = _slicedToArray(_useState21, 2),
+    showFacultyList = _useState22[0],
+    setShowFacultyList = _useState22[1];
   var openFacultyList = function openFacultyList() {
     return setShowFacultyList(true);
   };
   var closeFacultyList = function closeFacultyList() {
     return setShowFacultyList(false);
   };
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState22 = _slicedToArray(_useState21, 2),
-    showFacultyDetails = _useState22[0],
-    setShowFacultyDetails = _useState22[1];
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState24 = _slicedToArray(_useState23, 2),
-    selectedFaculty = _useState24[0],
-    setSelectedFaculty = _useState24[1];
+    showFacultyDetails = _useState24[0],
+    setShowFacultyDetails = _useState24[1];
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState26 = _slicedToArray(_useState25, 2),
+    selectedFaculty = _useState26[0],
+    setSelectedFaculty = _useState26[1];
   var openFacultyDetails = function openFacultyDetails(facultyMember) {
     setSelectedFaculty(facultyMember);
     setShowFacultyDetails(true);
@@ -58286,14 +58526,14 @@ function Dashboard() {
     setShowFacultyDetails(false);
     setSelectedFaculty(null);
   };
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState26 = _slicedToArray(_useState25, 2),
-    showEditFaculty = _useState26[0],
-    setShowEditFaculty = _useState26[1];
-  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
     _useState28 = _slicedToArray(_useState27, 2),
-    facultyToEdit = _useState28[0],
-    setFacultyToEdit = _useState28[1];
+    showEditFaculty = _useState28[0],
+    setShowEditFaculty = _useState28[1];
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState30 = _slicedToArray(_useState29, 2),
+    facultyToEdit = _useState30[0],
+    setFacultyToEdit = _useState30[1];
   var openEditFaculty = function openEditFaculty(facultyMember) {
     setFacultyToEdit(facultyMember);
     setShowEditFaculty(true);
@@ -58308,1024 +58548,1309 @@ function Dashboard() {
   var goToFaculty = function goToFaculty() {
     openFacultyList();
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     style: {
-      maxWidth: '1200px',
-      margin: '24px auto',
-      padding: '24px'
+      display: 'flex',
+      minHeight: '100vh',
+      background: '#f5f7fa'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("aside", {
       style: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: 12,
-        marginBottom: 8
+        width: '210px',
+        background: 'white',
+        padding: '24px 16px',
+        position: 'fixed',
+        height: '100vh',
+        overflowY: 'auto',
+        borderRight: '1px solid #e5e7eb'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-        src: "/images/fsuu-logo.png",
-        alt: "FSUU Logo",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("nav", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("ul", {
+          style: {
+            listStyle: 'none',
+            margin: 0,
+            padding: 0
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('dashboard');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'dashboard' ? '#5a67d8' : 'transparent',
+                color: currentView === 'dashboard' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'dashboard' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'dashboard') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'dashboard') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(DashboardIcon, {
+                color: currentView === 'dashboard' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Dashboard"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('students');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'students' ? '#5a67d8' : 'transparent',
+                color: currentView === 'students' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'students' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'students') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'students') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StudentsIcon, {
+                color: currentView === 'students' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Students"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('faculty');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'faculty' ? '#5a67d8' : 'transparent',
+                color: currentView === 'faculty' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'faculty' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'faculty') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'faculty') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(FacultyIcon, {
+                color: currentView === 'faculty' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Faculty"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('courses');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'courses' ? '#5a67d8' : 'transparent',
+                color: currentView === 'courses' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'courses' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'courses') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'courses') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(CoursesIcon, {
+                color: currentView === 'courses' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Courses"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('schedule');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'schedule' ? '#5a67d8' : 'transparent',
+                color: currentView === 'schedule' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'schedule' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'schedule') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'schedule') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(ScheduleIcon, {
+                color: currentView === 'schedule' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Schedule"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("li", {
+            style: {
+              marginBottom: 4
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              onClick: function onClick() {
+                return setCurrentView('settings');
+              },
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '12px 16px',
+                borderRadius: 8,
+                background: currentView === 'settings' ? '#5a67d8' : 'transparent',
+                color: currentView === 'settings' ? 'white' : '#4a5568',
+                fontSize: 15,
+                fontWeight: currentView === 'settings' ? 600 : 500,
+                cursor: 'pointer',
+                transition: 'all 0.15s'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                if (currentView !== 'settings') e.currentTarget.style.background = '#f7fafc';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                if (currentView !== 'settings') e.currentTarget.style.background = 'transparent';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(SettingsIcon, {
+                color: currentView === 'settings' ? 'white' : '#4a5568'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                children: "Settings"
+              })]
+            })
+          })]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      style: {
+        marginLeft: '210px',
+        flex: 1,
+        background: '#f5f7fa'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         style: {
-          width: 36,
-          height: 36,
-          objectFit: 'contain'
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        style: {
-          fontWeight: 700
+          background: 'white',
+          padding: '16px 32px',
+          borderBottom: '1px solid #e5e7eb',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center'
         },
-        children: "Father Saturnino Urios University"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-      style: {
-        margin: 0
-      },
-      children: "Profile Management Dashboard"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      style: {
-        color: '#6b7280',
-        marginTop: 6
-      },
-      children: "Manage student and faculty profiles efficiently"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      style: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr 1fr',
-        gap: 16,
-        marginTop: 16
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(StatCard, {
-        title: "Total Students",
-        value: students.length,
-        delta: "+12% from last semester",
-        iconBg: "#e0f2fe",
-        iconDot: "#38bdf8"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(StatCard, {
-        title: "Faculty Members",
-        value: 184,
-        delta: "+5% from last month",
-        iconBg: "#ecfccb",
-        iconDot: "#84cc16"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(StatCard, {
-        title: "Active Courses",
-        value: 46,
-        delta: "+8% from last month",
-        iconBg: "#ede9fe",
-        iconDot: "#8b5cf6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(StatCard, {
-        title: "Departments",
-        value: 8,
-        delta: "No change from last month",
-        iconBg: "#ffedd5",
-        iconDot: "#f97316"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      style: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: 16,
-        marginTop: 16
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: {
-          background: '#fff',
-          borderRadius: 12,
-          border: '1px solid #e5e7eb'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           style: {
             display: 'flex',
-            justifyContent: 'space-between',
             alignItems: 'center',
-            padding: '16px 20px',
-            borderBottom: '1px solid #e5e7eb'
+            gap: 12
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+            src: "/images/fsuu-logo.png",
+            alt: "FSUU Logo",
             style: {
-              fontWeight: 600
-            },
-            children: "Student Profiles"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: openAddStudent,
-            style: buttonStylePrimary,
-            children: "+ Add Student"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            padding: 16
-          },
-          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              color: '#6b7280'
-            },
-            children: "Loading\u2026"
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12
-            },
-            children: [students.slice(0, 3).map(function (s) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ListItem, {
-                title: "".concat(s.first_name, " ").concat(s.last_name),
-                subtitle: "".concat(s.program || 'Program', " \xB7 ").concat(s.year_level || '', " Year"),
-                meta: "ID: ".concat(s.student_id || '—'),
-                student: s,
-                onViewDetails: openStudentDetails,
-                onEdit: openEditStudent
-              }, s.id);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              width: 36,
+              height: 36,
+              objectFit: 'contain'
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               style: {
-                textAlign: 'center',
-                marginTop: 8
+                fontWeight: 700,
+                fontSize: 14,
+                color: '#1a1a1a'
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                onClick: goToStudents,
+              children: "Father Saturnino Urios University"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                fontSize: 12,
+                color: '#6b7280'
+              },
+              children: "Student and Faculty Profile Management System"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            gap: 16,
+            alignItems: 'center'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            style: {
+              width: 36,
+              height: 36,
+              borderRadius: '50%',
+              background: '#f3f4f6',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(BellIcon, {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+            style: {
+              width: 36,
+              height: 36,
+              borderRadius: '50%',
+              background: '#5a67d8',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(UserIcon, {})
+          })]
+        })]
+      }), currentView === 'students' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Students__WEBPACK_IMPORTED_MODULE_3__["default"], {}) : currentView === 'faculty' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_FacultyList__WEBPACK_IMPORTED_MODULE_4__["default"], {}) : currentView === 'courses' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Courses__WEBPACK_IMPORTED_MODULE_5__["default"], {}) : currentView === 'schedule' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Schedule__WEBPACK_IMPORTED_MODULE_6__["default"], {}) : currentView === 'settings' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Settings__WEBPACK_IMPORTED_MODULE_7__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        style: {
+          padding: '32px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h1", {
+          style: {
+            margin: '0 0 8px 0',
+            fontSize: 28,
+            fontWeight: 700,
+            color: '#1a1a1a'
+          },
+          children: "Profile Management Dashboard"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+          style: {
+            color: '#6b7280',
+            marginTop: 0,
+            marginBottom: 24,
+            fontSize: 14
+          },
+          children: "Manage student and faculty profiles efficiently"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          style: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+            gap: 16,
+            marginTop: 16
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StatCard, {
+            title: "Total Students",
+            value: students.length,
+            delta: "+12% from last semester",
+            iconBg: "#e0f2fe",
+            iconDot: "#38bdf8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StatCard, {
+            title: "Faculty Members",
+            value: 184,
+            delta: "+5% from last month",
+            iconBg: "#ecfccb",
+            iconDot: "#84cc16"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StatCard, {
+            title: "Active Courses",
+            value: 46,
+            delta: "+8% from last month",
+            iconBg: "#ede9fe",
+            iconDot: "#8b5cf6"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StatCard, {
+            title: "Departments",
+            value: 8,
+            delta: "No change from last month",
+            iconBg: "#ffedd5",
+            iconDot: "#f97316"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+          style: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 16,
+            marginTop: 16
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              background: '#fff',
+              borderRadius: 12,
+              border: '1px solid #e5e7eb'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '16px 20px',
+                borderBottom: '1px solid #e5e7eb'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                 style: {
-                  color: '#16a34a',
-                  cursor: 'pointer',
-                  textDecoration: 'none'
+                  fontWeight: 600
                 },
-                children: "View All Students"
+                children: "Student Profiles"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: openAddStudent,
+                style: buttonStylePrimary,
+                children: "+ Add Student"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                padding: 16
+              },
+              children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  color: '#6b7280'
+                },
+                children: "Loading\u2026"
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                style: {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12
+                },
+                children: [students.slice(0, 3).map(function (s) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(ListItem, {
+                    title: "".concat(s.first_name, " ").concat(s.last_name),
+                    subtitle: "".concat(s.program || 'Program', " \xB7 ").concat(s.year_level || '', " Year"),
+                    meta: "ID: ".concat(s.student_id || '—'),
+                    student: s,
+                    onViewDetails: openStudentDetails,
+                    onEdit: openEditStudent
+                  }, s.id);
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  style: {
+                    textAlign: 'center',
+                    marginTop: 8
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                    onClick: goToStudents,
+                    style: {
+                      color: '#16a34a',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    },
+                    children: "View All Students"
+                  })
+                })]
+              })
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              background: '#fff',
+              borderRadius: 12,
+              border: '1px solid #e5e7eb'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '16px 20px',
+                borderBottom: '1px solid #e5e7eb'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 600
+                },
+                children: "Faculty Profiles"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                style: {
+                  display: 'flex',
+                  gap: '8px'
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  style: buttonStyleSecondary,
+                  onClick: goToFaculty,
+                  children: "View All"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  style: buttonStylePrimary,
+                  onClick: openAddFaculty,
+                  children: "+ Add Faculty"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                padding: 16
+              },
+              children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  color: '#6b7280'
+                },
+                children: "Loading faculty..."
+              }) : faculty.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                style: {
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12
+                },
+                children: [faculty.slice(0, 3).map(function (f) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(ListItem, {
+                    title: "".concat(f.first_name, " ").concat(f.last_name),
+                    subtitle: "".concat(f.department || 'Department', " \xB7 ").concat(f.position || 'Position'),
+                    meta: "ID: ".concat(f.faculty_id || '—'),
+                    student: f,
+                    onViewDetails: openFacultyDetails,
+                    onEdit: openEditFaculty
+                  }, f.id);
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                  style: {
+                    textAlign: 'center',
+                    marginTop: 8
+                  },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
+                    onClick: goToFaculty,
+                    style: {
+                      color: '#16a34a',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    },
+                    children: "View All Faculty"
+                  })
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  color: '#6b7280'
+                },
+                children: "No faculty members yet. Add your first faculty member!"
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: {
+            background: '#fff',
+            border: '1px solid #e5e7eb',
+            borderRadius: 12,
+            height: 220,
+            marginTop: 16
+          }
+        }), showAdd && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Add Student"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeAddStudent,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                onSuccess: function onSuccess() {
+                  closeAddStudent(); /* refresh preview */
+                  fetch('/api/students').then(function (r) {
+                    return r.json();
+                  }).then(function (d) {
+                    return setStudents(Array.isArray(d) ? d : []);
+                  });
+                },
+                showForm: true,
+                showList: false
+              })
+            })]
+          })
+        }), showList && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "All Students"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeList,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                showForm: false,
+                showList: true
+              })
+            })]
+          })
+        }), showStudentDetails && selectedStudent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Student Details"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeStudentDetails,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  background: '#fff',
+                  padding: '24px',
+                  borderRadius: '12px'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '24px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Personal Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Student ID:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.student_id || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Full Name:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: [selectedStudent.first_name, " ", selectedStudent.middle_name, " ", selectedStudent.last_name]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Date of Birth:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.date_of_birth || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Gender:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.gender || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Personal Information:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.personal_information || '—'
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '24px 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Contact Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Email:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.email || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Phone:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.phone || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Address:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.address || '—'
+                        })]
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Academic Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Program/Course:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.program || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Year Level:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.year_level || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Section:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedStudent.section || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Status:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
+                            color: '#374151',
+                            marginTop: '4px',
+                            padding: '4px 8px',
+                            borderRadius: '6px',
+                            backgroundColor: selectedStudent.status === 'Active' ? '#dcfce7' : '#fef3c7'
+                          }, "color", selectedStudent.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'),
+                          children: selectedStudent.status || '—'
+                        })]
+                      })]
+                    })]
+                  })]
+                })
+              })
+            })]
+          })
+        }), showEditStudent && studentToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Edit Student"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeEditStudent,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                onSuccess: function onSuccess() {
+                  closeEditStudent();
+                  /* refresh preview */
+                  fetch('/api/students').then(function (r) {
+                    return r.json();
+                  }).then(function (d) {
+                    return setStudents(Array.isArray(d) ? d : []);
+                  });
+                },
+                showForm: true,
+                showList: false,
+                editStudent: studentToEdit
+              })
+            })]
+          })
+        }), showAddFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Add Faculty"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeAddFaculty,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                onSuccess: function onSuccess() {
+                  closeAddFaculty();
+                  /* refresh preview */
+                  fetch('/api/faculty').then(function (r) {
+                    return r.json();
+                  }).then(function (d) {
+                    return setFaculty(Array.isArray(d) ? d : []);
+                  });
+                },
+                showForm: true,
+                showList: false
+              })
+            })]
+          })
+        }), showFacultyList && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "All Faculty"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeFacultyList,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                showForm: false,
+                showList: true
+              })
+            })]
+          })
+        }), showFacultyDetails && selectedFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Faculty Details"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeFacultyDetails,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  background: '#fff',
+                  padding: '24px',
+                  borderRadius: '12px'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '24px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Personal Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Faculty ID:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.faculty_id || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Full Name:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: [selectedFaculty.first_name, " ", selectedFaculty.middle_name, " ", selectedFaculty.last_name]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Date of Birth:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.date_of_birth || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Gender:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.gender || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Personal Information:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.personal_information || '—'
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '24px 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Contact Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Email:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.email || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Phone:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.phone || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Address:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.address || '—'
+                        })]
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Academic Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Department:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.department || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Position:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.position || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Attainment:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: selectedFaculty.attainment || '—'
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Status:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
+                            color: '#374151',
+                            marginTop: '4px',
+                            padding: '4px 8px',
+                            borderRadius: '6px',
+                            backgroundColor: selectedFaculty.status === 'Active' ? '#dcfce7' : '#fef3c7'
+                          }, "color", selectedFaculty.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'),
+                          children: selectedFaculty.status || '—'
+                        })]
+                      })]
+                    })]
+                  })]
+                })
+              })
+            })]
+          })
+        }), showEditFaculty && facultyToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+          style: modalOverlay,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: modalContent,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: 12
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  fontWeight: 700,
+                  fontSize: 18
+                },
+                children: "Edit Faculty"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                onClick: closeEditFaculty,
+                style: buttonStyleGhost,
+                children: "\u2715"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+              style: {
+                maxHeight: '75vh',
+                overflow: 'auto'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                onSuccess: function onSuccess() {
+                  closeEditFaculty();
+                  /* refresh preview */
+                  fetch('/api/faculty').then(function (r) {
+                    return r.json();
+                  }).then(function (d) {
+                    return setFaculty(Array.isArray(d) ? d : []);
+                  });
+                },
+                showForm: true,
+                showList: false,
+                editFaculty: facultyToEdit
               })
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: {
-          background: '#fff',
-          borderRadius: 12,
-          border: '1px solid #e5e7eb'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '16px 20px',
-            borderBottom: '1px solid #e5e7eb'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 600
-            },
-            children: "Faculty Profiles"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              gap: '8px'
-            },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              style: buttonStyleSecondary,
-              onClick: goToFaculty,
-              children: "View All"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-              style: buttonStylePrimary,
-              onClick: openAddFaculty,
-              children: "+ Add Faculty"
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            padding: 16
-          },
-          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              color: '#6b7280'
-            },
-            children: "Loading faculty..."
-          }) : faculty.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            style: {
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12
-            },
-            children: [faculty.slice(0, 3).map(function (f) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ListItem, {
-                title: "".concat(f.first_name, " ").concat(f.last_name),
-                subtitle: "".concat(f.department || 'Department', " \xB7 ").concat(f.position || 'Position'),
-                meta: "ID: ".concat(f.faculty_id || '—'),
-                student: f,
-                onViewDetails: openFacultyDetails,
-                onEdit: openEditFaculty
-              }, f.id);
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              style: {
-                textAlign: 'center',
-                marginTop: 8
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                onClick: goToFaculty,
-                style: {
-                  color: '#16a34a',
-                  cursor: 'pointer',
-                  textDecoration: 'none'
-                },
-                children: "View All Faculty"
-              })
-            })]
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              color: '#6b7280'
-            },
-            children: "No faculty members yet. Add your first faculty member!"
-          })
-        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: {
-        background: '#fff',
-        border: '1px solid #e5e7eb',
-        borderRadius: 12,
-        height: 220,
-        marginTop: 16
-      }
-    }), showAdd && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Add Student"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeAddStudent,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            onSuccess: function onSuccess() {
-              closeAddStudent(); /* refresh preview */
-              fetch('/api/students').then(function (r) {
-                return r.json();
-              }).then(function (d) {
-                return setStudents(Array.isArray(d) ? d : []);
-              });
-            },
-            showForm: true,
-            showList: false
-          })
-        })]
-      })
-    }), showList && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "All Students"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeList,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            showForm: false,
-            showList: true
-          })
-        })]
-      })
-    }), showStudentDetails && selectedStudent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Student Details"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeStudentDetails,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              background: '#fff',
-              padding: '24px',
-              borderRadius: '12px'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              style: {
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '24px'
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '0 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Personal Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Student ID:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.student_id || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Full Name:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: [selectedStudent.first_name, " ", selectedStudent.middle_name, " ", selectedStudent.last_name]
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Date of Birth:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.date_of_birth || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Gender:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.gender || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Personal Information:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.personal_information || '—'
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '24px 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Contact Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Email:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.email || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Phone:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.phone || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Address:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.address || '—'
-                    })]
-                  })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '0 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Academic Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Program/Course:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.program || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Year Level:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.year_level || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Section:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedStudent.section || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Status:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
-                        color: '#374151',
-                        marginTop: '4px',
-                        padding: '4px 8px',
-                        borderRadius: '6px',
-                        backgroundColor: selectedStudent.status === 'Active' ? '#dcfce7' : '#fef3c7'
-                      }, "color", selectedStudent.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'),
-                      children: selectedStudent.status || '—'
-                    })]
-                  })]
-                })]
-              })]
-            })
-          })
-        })]
-      })
-    }), showEditStudent && studentToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Edit Student"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeEditStudent,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            onSuccess: function onSuccess() {
-              closeEditStudent();
-              /* refresh preview */
-              fetch('/api/students').then(function (r) {
-                return r.json();
-              }).then(function (d) {
-                return setStudents(Array.isArray(d) ? d : []);
-              });
-            },
-            showForm: true,
-            showList: false,
-            editStudent: studentToEdit
-          })
-        })]
-      })
-    }), showAddFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Add Faculty"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeAddFaculty,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            onSuccess: function onSuccess() {
-              closeAddFaculty();
-              /* refresh preview */
-              fetch('/api/faculty').then(function (r) {
-                return r.json();
-              }).then(function (d) {
-                return setFaculty(Array.isArray(d) ? d : []);
-              });
-            },
-            showForm: true,
-            showList: false
-          })
-        })]
-      })
-    }), showFacultyList && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "All Faculty"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeFacultyList,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            showForm: false,
-            showList: true
-          })
-        })]
-      })
-    }), showFacultyDetails && selectedFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Faculty Details"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeFacultyDetails,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              background: '#fff',
-              padding: '24px',
-              borderRadius: '12px'
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              style: {
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '24px'
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '0 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Personal Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Faculty ID:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.faculty_id || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Full Name:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: [selectedFaculty.first_name, " ", selectedFaculty.middle_name, " ", selectedFaculty.last_name]
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Date of Birth:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.date_of_birth || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Gender:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.gender || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Personal Information:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.personal_information || '—'
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '24px 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Contact Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Email:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.email || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Phone:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.phone || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Address:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.address || '—'
-                    })]
-                  })]
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-                  style: {
-                    margin: '0 0 16px 0',
-                    color: '#374151',
-                    borderBottom: '2px solid #e5e7eb',
-                    paddingBottom: '8px'
-                  },
-                  children: "Academic Information"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px'
-                  },
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Department:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.department || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Position:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.position || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Attainment:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: {
-                        color: '#374151',
-                        marginTop: '4px'
-                      },
-                      children: selectedFaculty.attainment || '—'
-                    })]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-                      style: {
-                        fontWeight: '600',
-                        color: '#6b7280',
-                        fontSize: '14px'
-                      },
-                      children: "Status:"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                      style: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
-                        color: '#374151',
-                        marginTop: '4px',
-                        padding: '4px 8px',
-                        borderRadius: '6px',
-                        backgroundColor: selectedFaculty.status === 'Active' ? '#dcfce7' : '#fef3c7'
-                      }, "color", selectedFaculty.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'),
-                      children: selectedFaculty.status || '—'
-                    })]
-                  })]
-                })]
-              })]
-            })
-          })
-        })]
-      })
-    }), showEditFaculty && facultyToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: modalOverlay,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        style: modalContent,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 12
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            style: {
-              fontWeight: 700,
-              fontSize: 18
-            },
-            children: "Edit Faculty"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            onClick: closeEditFaculty,
-            style: buttonStyleGhost,
-            children: "\u2715"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          style: {
-            maxHeight: '75vh',
-            overflow: 'auto'
-          },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            onSuccess: function onSuccess() {
-              closeEditFaculty();
-              /* refresh preview */
-              fetch('/api/faculty').then(function (r) {
-                return r.json();
-              }).then(function (d) {
-                return setFaculty(Array.isArray(d) ? d : []);
-              });
-            },
-            showForm: true,
-            showList: false,
-            editFaculty: facultyToEdit
-          })
-        })]
-      })
     })]
   });
 }
@@ -59353,54 +59878,59 @@ function StatCard(_ref4) {
     delta = _ref4.delta,
     iconBg = _ref4.iconBg,
     iconDot = _ref4.iconDot;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     style: {
       background: '#fff',
       borderRadius: 12,
-      padding: 16,
+      padding: '20px',
       border: '1px solid #e5e7eb',
       display: 'flex',
-      gap: 12
+      justifyContent: 'space-between',
+      alignItems: 'flex-start'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      style: {
-        width: 36,
-        height: 36,
-        background: iconBg,
-        borderRadius: 8,
-        position: 'relative'
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        style: {
-          width: 10,
-          height: 10,
-          background: iconDot,
-          borderRadius: 9999,
-          position: 'absolute',
-          right: 6,
-          bottom: 6
-        }
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         style: {
           color: '#6b7280',
-          fontSize: 12
+          fontSize: 13,
+          marginBottom: 8
         },
         children: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         style: {
           fontWeight: 700,
-          fontSize: 24
+          fontSize: 32,
+          marginBottom: 8,
+          color: '#1a1a1a'
         },
         children: value
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         style: {
           color: '#16a34a',
-          fontSize: 12
+          fontSize: 12,
+          fontWeight: 500
         },
         children: delta
       })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      style: {
+        width: 48,
+        height: 48,
+        background: iconBg,
+        borderRadius: 10,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        style: {
+          width: 24,
+          height: 24,
+          background: iconDot,
+          borderRadius: 6
+        }
+      })
     })]
   });
 }
@@ -59411,67 +59941,138 @@ function ListItem(_ref5) {
     student = _ref5.student,
     onViewDetails = _ref5.onViewDetails,
     onEdit = _ref5.onEdit;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     style: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: 12,
-      border: '1px solid #e5e7eb',
-      borderRadius: 10
+      padding: '16px 20px',
+      borderBottom: '1px solid #f3f4f6'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       style: {
         display: 'flex',
-        gap: 12,
-        alignItems: 'center'
+        gap: 16,
+        alignItems: 'center',
+        flex: 1
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
         style: {
-          width: 44,
-          height: 44,
-          borderRadius: 9999,
-          background: '#e5e7eb'
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          width: 48,
+          height: 48,
+          borderRadius: '50%',
+          background: '#e0f2fe',
+          border: '2px solid #bfdbfe',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+          width: "24",
+          height: "24",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+            d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
+            fill: "#3b82f6"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
-            fontWeight: 600
+            fontWeight: 600,
+            fontSize: 15,
+            color: '#1a1a1a',
+            marginBottom: 4
           },
           children: title
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
             color: '#6b7280',
-            fontSize: 12
+            fontSize: 13,
+            marginBottom: 2
           },
           children: subtitle
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
-            color: '#6b7280',
+            color: '#9ca3af',
             fontSize: 12
           },
           children: meta
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       style: {
         display: 'flex',
         gap: 8
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        style: iconAction,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+        style: {
+          width: 32,
+          height: 32,
+          borderRadius: 6,
+          border: 'none',
+          background: '#eff6ff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.2s'
+        },
         onClick: function onClick() {
           return onViewDetails(student);
         },
         title: "View Details",
-        children: "\uD83D\uDC41\uFE0F"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-        style: iconAction,
+        onMouseEnter: function onMouseEnter(e) {
+          return e.currentTarget.style.background = '#dbeafe';
+        },
+        onMouseLeave: function onMouseLeave(e) {
+          return e.currentTarget.style.background = '#eff6ff';
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+            d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z",
+            fill: "#3b82f6"
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+        style: {
+          width: 32,
+          height: 32,
+          borderRadius: 6,
+          border: 'none',
+          background: '#f0fdf4',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          transition: 'all 0.2s'
+        },
         onClick: function onClick() {
           return onEdit(student);
         },
-        title: "Edit Student",
-        children: "\u270E"
+        title: "Edit",
+        onMouseEnter: function onMouseEnter(e) {
+          return e.currentTarget.style.background = '#dcfce7';
+        },
+        onMouseLeave: function onMouseLeave(e) {
+          return e.currentTarget.style.background = '#f0fdf4';
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+            d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+            fill: "#16a34a"
+          })
+        })
       })]
     })]
   });
@@ -59510,6 +60111,124 @@ var buttonStyleGhost = {
   padding: '6px 10px',
   cursor: 'pointer'
 };
+
+// Icon Components
+function DashboardIcon(_ref6) {
+  var _ref6$color = _ref6.color,
+    color = _ref6$color === void 0 ? '#4a5568' : _ref6$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z",
+      fill: color
+    })
+  });
+}
+function StudentsIcon(_ref7) {
+  var _ref7$color = _ref7.color,
+    color = _ref7$color === void 0 ? '#4a5568' : _ref7$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z",
+      fill: color
+    })
+  });
+}
+function FacultyIcon(_ref8) {
+  var _ref8$color = _ref8.color,
+    color = _ref8$color === void 0 ? '#4a5568' : _ref8$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM9 10c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3zm0-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 8.59c0-2.5-3.97-3.58-6-3.58s-6 1.08-6 3.58V17h12v-2.41zM5.48 15c.88-.55 2.58-1.08 3.52-1.08s2.64.53 3.52 1.08H5.48zM19 12h-6v-2h6v2zm0-4h-6V6h6v2z",
+      fill: color
+    })
+  });
+}
+function CoursesIcon(_ref9) {
+  var _ref9$color = _ref9.color,
+    color = _ref9$color === void 0 ? '#4a5568' : _ref9$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z",
+      fill: color
+    })
+  });
+}
+function ScheduleIcon(_ref0) {
+  var _ref0$color = _ref0.color,
+    color = _ref0$color === void 0 ? '#4a5568' : _ref0$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z",
+      fill: color
+    })
+  });
+}
+function SettingsIcon(_ref1) {
+  var _ref1$color = _ref1.color,
+    color = _ref1$color === void 0 ? '#4a5568' : _ref1$color;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z",
+      fill: color
+    })
+  });
+}
+function BellIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z",
+      fill: "#6b7280"
+    })
+  });
+}
+function UserIcon() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("path", {
+      d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z",
+      fill: "white"
+    })
+  });
+}
 
 /***/ }),
 
@@ -60278,6 +60997,301 @@ function Faculty(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/components/FacultyList.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/FacultyList.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FacultyList)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function FacultyList() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    faculty = _useState2[0],
+    setFaculty = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    searchTerm = _useState6[0],
+    setSearchTerm = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState8 = _slicedToArray(_useState7, 2),
+    selectedRow = _useState8[0],
+    setSelectedRow = _useState8[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var fetchFaculty = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var response, data, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              _context.p = 0;
+              _context.n = 1;
+              return fetch('/api/faculty');
+            case 1:
+              response = _context.v;
+              _context.n = 2;
+              return response.json();
+            case 2:
+              data = _context.v;
+              setFaculty(Array.isArray(data) ? data : []);
+              _context.n = 4;
+              break;
+            case 3:
+              _context.p = 3;
+              _t = _context.v;
+              setFaculty([]);
+            case 4:
+              _context.p = 4;
+              setLoading(false);
+              return _context.f(4);
+            case 5:
+              return _context.a(2);
+          }
+        }, _callee, null, [[0, 3, 4, 5]]);
+      }));
+      return function fetchFaculty() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    fetchFaculty();
+  }, []);
+  var filteredFaculty = faculty.filter(function (member) {
+    var searchLower = searchTerm.toLowerCase();
+    return (member.first_name + ' ' + member.last_name).toLowerCase().includes(searchLower) || (member.email || '').toLowerCase().includes(searchLower) || (member.faculty_id || '').toLowerCase().includes(searchLower) || (member.department || '').toLowerCase().includes(searchLower);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      padding: '32px',
+      background: '#f5f7fa',
+      minHeight: '100vh'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        background: 'white',
+        padding: '20px 24px',
+        borderRadius: '12px 12px 0 0',
+        border: '1px solid #e5e7eb',
+        borderBottom: 'none',
+        display: 'flex',
+        gap: 16,
+        alignItems: 'center'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          position: 'relative'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+          style: {
+            padding: '10px 36px 10px 14px',
+            borderRadius: 8,
+            border: '1px solid #d1d5db',
+            fontSize: 14,
+            color: '#6b7280',
+            background: 'white',
+            cursor: 'pointer',
+            appearance: 'none'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Add filter"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Department"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Position"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Status"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+          style: {
+            position: 'absolute',
+            right: 12,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            pointerEvents: 'none'
+          },
+          width: "12",
+          height: "12",
+          viewBox: "0 0 12 12",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M2.5 4.5L6 8L9.5 4.5",
+            stroke: "#6b7280",
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          flex: 1,
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+          style: {
+            position: 'absolute',
+            left: 14,
+            pointerEvents: 'none'
+          },
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z",
+            stroke: "#9ca3af",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          placeholder: "Search for a faculty member by name or email",
+          value: searchTerm,
+          onChange: function onChange(e) {
+            return setSearchTerm(e.target.value);
+          },
+          style: {
+            width: '100%',
+            padding: '10px 14px 10px 44px',
+            borderRadius: 8,
+            border: '1px solid #d1d5db',
+            fontSize: 14,
+            outline: 'none'
+          }
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        background: 'white',
+        borderRadius: '0 0 12px 12px',
+        border: '1px solid #e5e7eb',
+        overflow: 'hidden'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+        style: {
+          width: '100%',
+          borderCollapse: 'collapse'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+            style: {
+              background: '#f9fafb',
+              borderBottom: '1px solid #e5e7eb'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Name"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Faculty ID"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Email address"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Department"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Position"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              colSpan: "5",
+              style: {
+                padding: 40,
+                textAlign: 'center',
+                color: '#6b7280'
+              },
+              children: "Loading faculty members..."
+            })
+          }) : filteredFaculty.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              colSpan: "5",
+              style: {
+                padding: 40,
+                textAlign: 'center',
+                color: '#6b7280'
+              },
+              children: searchTerm ? 'No faculty members found matching your search.' : 'No faculty members found.'
+            })
+          }) : filteredFaculty.map(function (member, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+              onMouseEnter: function onMouseEnter() {
+                return setSelectedRow(index);
+              },
+              onMouseLeave: function onMouseLeave() {
+                return setSelectedRow(null);
+              },
+              style: {
+                background: selectedRow === index ? '#dbeafe' : 'white',
+                borderBottom: '1px solid #f3f4f6',
+                cursor: 'pointer',
+                transition: 'background 0.15s'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+                style: tableCellStyle,
+                children: [member.first_name, " ", member.last_name]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: member.faculty_id || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: member.email || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: member.department || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: member.position || '—'
+              })]
+            }, member.id);
+          })
+        })]
+      })
+    })]
+  });
+}
+var tableHeaderStyle = {
+  padding: '14px 20px',
+  textAlign: 'left',
+  fontSize: 13,
+  fontWeight: 600,
+  color: '#4b5563',
+  textTransform: 'none'
+};
+var tableCellStyle = {
+  padding: '16px 20px',
+  fontSize: 14,
+  color: '#1f2937'
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/Home.js":
 /*!*****************************************!*\
   !*** ./resources/js/components/Home.js ***!
@@ -61008,6 +62022,804 @@ function Home(_ref) {
     })]
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Schedule.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Schedule.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Schedule)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function Schedule() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState2 = _slicedToArray(_useState, 2),
+    searchQuery = _useState2[0],
+    setSearchQuery = _useState2[1];
+
+  // Time slots from 6 AM to 9 PM
+  var timeSlots = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM'];
+
+  // Schedule items with their properties
+  var scheduleItems = [{
+    id: 1,
+    title: 'IPT2',
+    time: '8:00 - 8:30 AM',
+    startHour: 8,
+    duration: 0.5,
+    // hours
+    color: '#DBEAFE',
+    textColor: '#1E40AF',
+    borderColor: '#3B82F6'
+  }, {
+    id: 2,
+    title: 'GE-119',
+    time: '9:00 - 10:00 AM',
+    startHour: 9,
+    duration: 1,
+    color: '#D1FAE5',
+    textColor: '#065F46',
+    borderColor: '#10B981'
+  }, {
+    id: 3,
+    title: 'CISDP 2',
+    time: '10:30 AM',
+    startHour: 10.5,
+    duration: 1,
+    color: '#FEF3C7',
+    textColor: '#92400E',
+    borderColor: '#F59E0B'
+  }, {
+    id: 4,
+    title: 'PE-4',
+    time: '12:00 - 1:15 PM',
+    startHour: 12,
+    duration: 1.25,
+    color: '#EDE9FE',
+    textColor: '#5B21B6',
+    borderColor: '#8B5CF6'
+  }, {
+    id: 5,
+    title: 'PLATFORM TECHNOLOGIES',
+    time: '2:00 - 2:30 PM',
+    startHour: 14,
+    duration: 0.5,
+    color: '#FFEDD5',
+    textColor: '#9A3412',
+    borderColor: '#F97316'
+  }, {
+    id: 6,
+    title: 'SIA 1',
+    time: '4:00 - 5:00 PM',
+    startHour: 16,
+    duration: 1,
+    color: '#FECACA',
+    textColor: '#991B1B',
+    borderColor: '#EF4444'
+  }, {
+    id: 7,
+    title: 'SIA 2',
+    time: '6:00 - 6:30 PM',
+    startHour: 18,
+    duration: 0.5,
+    color: '#DBEAFE',
+    textColor: '#1E40AF',
+    borderColor: '#3B82F6'
+  }, {
+    id: 8,
+    title: 'IT ERA',
+    time: '7:00 - 7:30 PM',
+    startHour: 19,
+    duration: 0.5,
+    color: '#FCE7F3',
+    textColor: '#9F1239',
+    borderColor: '#EC4899'
+  }];
+
+  // Calculate position for schedule items
+  var getItemPosition = function getItemPosition(startHour, duration) {
+    var startIndex = startHour - 6; // 6 AM is index 0
+    var top = startIndex * 55; // 55px per hour slot
+    var height = duration * 55; // height based on duration
+    return {
+      top: top,
+      height: height
+    };
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      padding: '32px 48px',
+      background: '#ffffff',
+      minHeight: '100vh',
+      width: '100%'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        marginBottom: 32,
+        position: 'relative'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          background: '#f9fafb',
+          border: '1px solid #e5e7eb',
+          borderRadius: 8,
+          padding: '12px 16px',
+          gap: 12
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+          width: "20",
+          height: "20",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "#9ca3af",
+          strokeWidth: "2",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+            cx: "11",
+            cy: "11",
+            r: "8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "m21 21-4.35-4.35"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          placeholder: "Search for a student by name or email",
+          value: searchQuery,
+          onChange: function onChange(e) {
+            return setSearchQuery(e.target.value);
+          },
+          style: {
+            border: 'none',
+            outline: 'none',
+            background: 'transparent',
+            fontSize: 14,
+            color: '#374151',
+            width: '100%',
+            fontFamily: 'system-ui, -apple-system, sans-serif'
+          }
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        display: 'flex',
+        gap: 0,
+        position: 'relative',
+        maxWidth: 1200
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          width: 80,
+          flexShrink: 0
+        },
+        children: timeSlots.map(function (time, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              height: 55,
+              display: 'flex',
+              alignItems: 'flex-start',
+              paddingTop: 4,
+              fontSize: 12,
+              color: '#6b7280',
+              fontWeight: 500,
+              borderTop: index === 0 ? 'none' : '1px solid #f3f4f6'
+            },
+            children: time
+          }, index);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          flex: 1,
+          position: 'relative',
+          borderLeft: '1px solid #e5e7eb',
+          minHeight: timeSlots.length * 55
+        },
+        children: [timeSlots.map(function (_, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              position: 'absolute',
+              top: index * 55,
+              left: 0,
+              right: 0,
+              height: 55,
+              borderTop: index === 0 ? 'none' : '1px solid #f3f4f6'
+            }
+          }, index);
+        }), scheduleItems.map(function (item) {
+          var _getItemPosition = getItemPosition(item.startHour, item.duration),
+            top = _getItemPosition.top,
+            height = _getItemPosition.height;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              position: 'absolute',
+              top: top + 2,
+              left: 12,
+              right: 12,
+              height: height - 4,
+              background: item.color,
+              borderRadius: 8,
+              padding: '12px 16px',
+              borderLeft: "4px solid ".concat(item.borderColor),
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              e.currentTarget.style.transform = 'translateX(4px)';
+              e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.15)';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              e.currentTarget.style.transform = 'translateX(0)';
+              e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                color: item.textColor,
+                fontWeight: 700,
+                fontSize: 14,
+                marginBottom: 2
+              },
+              children: item.title
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                color: item.textColor,
+                fontSize: 11,
+                fontWeight: 500,
+                opacity: 0.8
+              },
+              children: item.time
+            })]
+          }, item.id);
+        })]
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Settings.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Settings.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Settings)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function Settings() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('light'),
+    _useState2 = _slicedToArray(_useState, 2),
+    theme = _useState2[0],
+    setTheme = _useState2[1];
+  var settingsOptions = [{
+    id: 'edit-profile',
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#5a67d8",
+      strokeWidth: "2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+        cx: "12",
+        cy: "7",
+        r: "4"
+      })]
+    }),
+    iconBg: '#EEF2FF',
+    title: 'Edit Profile',
+    description: 'Update your personal information like name, contact details, and profile picture.',
+    action: function action() {
+      return console.log('Edit Profile clicked');
+    }
+  }, {
+    id: 'change-password',
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#10b981",
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+        cx: "9",
+        cy: "9",
+        r: "6"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+        cx: "9",
+        cy: "9",
+        r: "2"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M14 9h6"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M17 7v4"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M20 9v.01"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M16 13l-1.5 1.5"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M14.5 14.5l-1 1"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M13.5 15.5l-1 1"
+      })]
+    }),
+    iconBg: '#D1FAE5',
+    title: 'Change Password',
+    description: '',
+    action: function action() {
+      return console.log('Change Password clicked');
+    }
+  }, {
+    id: 'change-theme',
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#8b5cf6",
+      strokeWidth: "2",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+      })
+    }),
+    iconBg: '#EDE9FE',
+    title: 'Change Theme',
+    description: 'Switch between light and dark mode.',
+    action: function action() {
+      var newTheme = theme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+      console.log('Theme changed to:', newTheme);
+    }
+  }, {
+    id: 'logout',
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+      width: "24",
+      height: "24",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#f59e0b",
+      strokeWidth: "2",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+        d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+        points: "16 17 21 12 16 7"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        x1: "21",
+        y1: "12",
+        x2: "9",
+        y2: "12"
+      })]
+    }),
+    iconBg: '#FEF3C7',
+    title: 'Logout',
+    description: '',
+    action: function action() {
+      if (confirm('Are you sure you want to logout?')) {
+        console.log('Logging out...');
+        // Add logout logic here
+      }
+    }
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      padding: '48px 64px',
+      background: '#f9fafb',
+      minHeight: '100vh',
+      width: '100%'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        marginBottom: 48
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        style: {
+          fontSize: 36,
+          fontWeight: 700,
+          color: '#1a1a1a',
+          marginBottom: 12,
+          margin: 0
+        },
+        children: "Settings"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        style: {
+          fontSize: 15,
+          color: '#6b7280',
+          lineHeight: '24px',
+          maxWidth: 700,
+          margin: '12px 0 0 0'
+        },
+        children: "Allows the user to update profile information, change their account password, switch between light and dark themes, and securely log out of the system."
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+        gap: 24,
+        maxWidth: 1000
+      },
+      children: settingsOptions.map(function (option) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          onClick: option.action,
+          style: {
+            background: 'white',
+            border: '1px solid #e5e7eb',
+            borderRadius: 12,
+            padding: 28,
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+          },
+          onMouseEnter: function onMouseEnter(e) {
+            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.1)';
+            e.currentTarget.style.borderColor = '#d1d5db';
+          },
+          onMouseLeave: function onMouseLeave(e) {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            e.currentTarget.style.borderColor = '#e5e7eb';
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              width: 56,
+              height: 56,
+              borderRadius: 12,
+              background: option.iconBg,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: 20
+            },
+            children: option.icon
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            style: {
+              fontSize: 20,
+              fontWeight: 700,
+              color: '#1a1a1a',
+              margin: '0 0 8px 0'
+            },
+            children: option.title
+          }), option.description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            style: {
+              fontSize: 13,
+              color: '#6b7280',
+              lineHeight: '20px',
+              margin: 0
+            },
+            children: option.description
+          })]
+        }, option.id);
+      })
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Students.js":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Students.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Students)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function Students() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    students = _useState2[0],
+    setStudents = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState6 = _slicedToArray(_useState5, 2),
+    searchTerm = _useState6[0],
+    setSearchTerm = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState8 = _slicedToArray(_useState7, 2),
+    selectedRow = _useState8[0],
+    setSelectedRow = _useState8[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var fetchStudents = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var response, data, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              _context.p = 0;
+              _context.n = 1;
+              return fetch('/api/students');
+            case 1:
+              response = _context.v;
+              _context.n = 2;
+              return response.json();
+            case 2:
+              data = _context.v;
+              setStudents(Array.isArray(data) ? data : []);
+              _context.n = 4;
+              break;
+            case 3:
+              _context.p = 3;
+              _t = _context.v;
+              setStudents([]);
+            case 4:
+              _context.p = 4;
+              setLoading(false);
+              return _context.f(4);
+            case 5:
+              return _context.a(2);
+          }
+        }, _callee, null, [[0, 3, 4, 5]]);
+      }));
+      return function fetchStudents() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+    fetchStudents();
+  }, []);
+  var filteredStudents = students.filter(function (student) {
+    var searchLower = searchTerm.toLowerCase();
+    return (student.first_name + ' ' + student.last_name).toLowerCase().includes(searchLower) || (student.email || '').toLowerCase().includes(searchLower) || (student.student_id || '').toLowerCase().includes(searchLower);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      padding: '32px',
+      background: '#f5f7fa',
+      minHeight: '100vh'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        background: 'white',
+        padding: '20px 24px',
+        borderRadius: '12px 12px 0 0',
+        border: '1px solid #e5e7eb',
+        borderBottom: 'none',
+        display: 'flex',
+        gap: 16,
+        alignItems: 'center'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          position: 'relative'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+          style: {
+            padding: '10px 36px 10px 14px',
+            borderRadius: 8,
+            border: '1px solid #d1d5db',
+            fontSize: 14,
+            color: '#6b7280',
+            background: 'white',
+            cursor: 'pointer',
+            appearance: 'none'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Add filter"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Department"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Gender"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            children: "Year Level"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+          style: {
+            position: 'absolute',
+            right: 12,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            pointerEvents: 'none'
+          },
+          width: "12",
+          height: "12",
+          viewBox: "0 0 12 12",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M2.5 4.5L6 8L9.5 4.5",
+            stroke: "#6b7280",
+            strokeWidth: "1.5",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          flex: 1,
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+          style: {
+            position: 'absolute',
+            left: 14,
+            pointerEvents: 'none'
+          },
+          width: "18",
+          height: "18",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+            d: "M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z",
+            stroke: "#9ca3af",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "text",
+          placeholder: "Search for a student by name or email",
+          value: searchTerm,
+          onChange: function onChange(e) {
+            return setSearchTerm(e.target.value);
+          },
+          style: {
+            width: '100%',
+            padding: '10px 14px 10px 44px',
+            borderRadius: 8,
+            border: '1px solid #d1d5db',
+            fontSize: 14,
+            outline: 'none'
+          }
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      style: {
+        background: 'white',
+        borderRadius: '0 0 12px 12px',
+        border: '1px solid #e5e7eb',
+        overflow: 'hidden'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+        style: {
+          width: '100%',
+          borderCollapse: 'collapse'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+            style: {
+              background: '#f9fafb',
+              borderBottom: '1px solid #e5e7eb'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Name"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Student ID"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Email address"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Department"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Gender"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              colSpan: "5",
+              style: {
+                padding: 40,
+                textAlign: 'center',
+                color: '#6b7280'
+              },
+              children: "Loading students..."
+            })
+          }) : filteredStudents.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              colSpan: "5",
+              style: {
+                padding: 40,
+                textAlign: 'center',
+                color: '#6b7280'
+              },
+              children: searchTerm ? 'No students found matching your search.' : 'No students found.'
+            })
+          }) : filteredStudents.map(function (student, index) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+              onMouseEnter: function onMouseEnter() {
+                return setSelectedRow(index);
+              },
+              onMouseLeave: function onMouseLeave() {
+                return setSelectedRow(null);
+              },
+              style: {
+                background: selectedRow === index ? '#dbeafe' : 'white',
+                borderBottom: '1px solid #f3f4f6',
+                cursor: 'pointer',
+                transition: 'background 0.15s'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+                style: tableCellStyle,
+                children: [student.first_name, " ", student.last_name]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: student.student_id || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: student.email || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: student.program || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                style: tableCellStyle,
+                children: student.gender || '—'
+              })]
+            }, student.id);
+          })
+        })]
+      })
+    })]
+  });
+}
+var tableHeaderStyle = {
+  padding: '14px 20px',
+  textAlign: 'left',
+  fontSize: 13,
+  fontWeight: 600,
+  color: '#4b5563',
+  textTransform: 'none'
+};
+var tableCellStyle = {
+  padding: '16px 20px',
+  fontSize: 14,
+  color: '#1f2937'
+};
 
 /***/ }),
 

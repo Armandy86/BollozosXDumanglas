@@ -214,4 +214,3 @@ const tableCellStyle = {
     color: '#1f2937'
 };
 
-
