@@ -58118,6 +58118,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -58127,204 +58141,565 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 function Courses() {
-  var _programs$find;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState2 = _slicedToArray(_useState, 2),
     expandedProgram = _useState2[0],
     setExpandedProgram = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    students = _useState4[0],
+    setStudents = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState6 = _slicedToArray(_useState5, 2),
+    faculty = _useState6[0],
+    setFaculty = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    loading = _useState8[0],
+    setLoading = _useState8[1];
   var programs = [{
     id: 1,
     name: 'NURSING PROGRAM',
+    dbName: 'Nursing Program',
     color: 'linear-gradient(180deg, rgba(0, 0, 209, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/nursing-logo.png'
   }, {
     id: 2,
     name: 'TEACHER EDUCATION PROGRAM',
+    dbName: 'Teachers Education Program',
     color: 'linear-gradient(180deg, rgba(0, 0, 209, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/teacher-education-logo.png'
   }, {
     id: 3,
     name: 'ENGINEERING TECHNOLOGY PROGRAM',
+    dbName: 'Engineering Program',
     color: 'linear-gradient(180deg, rgba(217, 115, 71, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/engineering-logo.png'
   }, {
     id: 4,
     name: 'CRIMINAL JUSTICE EDUCATION PROGRAM',
+    dbName: 'Criminal Justice Program',
     color: 'linear-gradient(180deg, rgba(200, 78, 60, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/criminal-justice-logo.png'
   }, {
     id: 5,
     name: 'COMPUTER STUDIES PROGRAM',
+    dbName: 'Computer Science Program',
     color: 'linear-gradient(180deg, rgba(139, 93, 199, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/computer-studies-logo.png'
   }, {
     id: 6,
     name: 'ARTS AND SCIENCES PROGRAM',
+    dbName: 'Arts and Sciences Program',
     color: 'linear-gradient(180deg, rgba(76, 175, 80, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/arts-sciences-logo.png'
   }, {
     id: 7,
     name: 'BUSINESS ADMINISTRATION PROGRAM',
+    dbName: 'Business Administration Program',
     color: 'linear-gradient(180deg, rgba(224, 160, 78, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/business-admin-logo.png'
   }, {
     id: 8,
     name: 'ACCOUNTANCY PROGRAM',
+    dbName: 'Accountancy Program',
     color: 'linear-gradient(180deg, rgba(127, 196, 216, 0.80) 0%, rgba(17, 24, 39, 0.80) 100%)',
     logo: '/images/accountancy-logo.png'
   }];
+  var fetchStudents = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            setLoading(true);
+            _context.p = 1;
+            _context.n = 2;
+            return fetch('/api/students');
+          case 2:
+            response = _context.v;
+            _context.n = 3;
+            return response.json();
+          case 3:
+            data = _context.v;
+            console.log('Fetched students:', data);
+            setStudents(Array.isArray(data) ? data : []);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error('Error fetching students:', _t);
+            setStudents([]);
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[1, 4, 5, 6]]);
+    }));
+    return function fetchStudents() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var fetchFaculty = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, data, activeFaculty, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            setLoading(true);
+            _context2.p = 1;
+            _context2.n = 2;
+            return fetch('/api/faculty');
+          case 2:
+            response = _context2.v;
+            _context2.n = 3;
+            return response.json();
+          case 3:
+            data = _context2.v;
+            console.log('Fetched faculty:', data);
+            activeFaculty = Array.isArray(data) ? data.filter(function (faculty) {
+              return faculty.status !== 'archived';
+            }) : [];
+            setFaculty(activeFaculty);
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+            console.error('Error fetching faculty:', _t2);
+            setFaculty([]);
+          case 5:
+            _context2.p = 5;
+            setLoading(false);
+            return _context2.f(5);
+          case 6:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 4, 5, 6]]);
+    }));
+    return function fetchFaculty() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchStudents();
+    fetchFaculty();
+  }, []);
   var toggleProgram = function toggleProgram(id) {
+    console.log('Toggling program:', id);
     setExpandedProgram(expandedProgram === id ? null : id);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    style: {
-      padding: '48px 80px',
-      background: '#f5f7fa',
-      minHeight: '100vh'
-    },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+  var getProgramMembers = function getProgramMembers(programId) {
+    var program = programs.find(function (p) {
+      return p.id === programId;
+    });
+    if (!program) return {
+      students: [],
+      faculty: []
+    };
+    console.log('Program:', program);
+    console.log('All students:', students);
+    console.log('All faculty:', faculty);
+    var programStudents = students.filter(function (student) {
+      return student.program === program.dbName;
+    });
+    var programFaculty = faculty.filter(function (member) {
+      return member.department === program.dbName;
+    });
+    console.log('Filtered students:', programStudents);
+    console.log('Filtered faculty:', programFaculty);
+    return {
+      students: programStudents,
+      faculty: programFaculty
+    };
+  };
+  var getTotalMembers = function getTotalMembers(programId) {
+    var _getProgramMembers = getProgramMembers(programId),
+      students = _getProgramMembers.students,
+      faculty = _getProgramMembers.faculty;
+    return students.length + faculty.length;
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
+      children: "\n                    @keyframes fadeInUp {\n                        from {\n                            opacity: 0;\n                            transform: translateY(20px);\n                        }\n                        to {\n                            opacity: 1;\n                            transform: translateY(0);\n                        }\n                    }\n                "
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       style: {
-        fontSize: 50,
-        fontWeight: 900,
-        color: '#1a1a1a',
-        marginBottom: 40,
-        letterSpacing: '1px',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
+        padding: '48px 80px',
+        background: '#f5f7fa',
+        minHeight: '100vh'
       },
-      children: "PROGRAMS"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 24,
-        maxWidth: 900,
-        paddingLeft: 70
-      },
-      children: programs.map(function (program) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: 40
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
           style: {
-            position: 'relative',
-            marginLeft: 0
+            fontSize: 50,
+            fontWeight: 900,
+            color: '#1a1a1a',
+            margin: 0,
+            letterSpacing: '1px',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: "PROGRAMS"
+        }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            background: '#f3f4f6',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            fontSize: '14px',
+            color: '#6b7280'
+          },
+          children: "Loading..."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 24,
+          maxWidth: 900,
+          paddingLeft: 70
+        },
+        children: programs.map(function (program) {
+          // Hide other programs when one is expanded
+          if (expandedProgram && expandedProgram !== program.id) {
+            return null;
+          }
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             style: {
-              position: 'absolute',
-              left: -70,
-              top: '50%',
-              transform: 'translateY(-50%)',
-              width: 130,
-              height: 130,
-              borderRadius: '50%',
-              background: 'white',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-              padding: 10,
-              border: '6px solid rgba(255, 255, 255, 0.3)',
-              zIndex: 10
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-              src: program.logo,
-              alt: program.name,
-              style: {
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain'
-              },
-              onError: function onError(e) {
-                // Fallback if image doesn't exist
-                e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = "\n                                        <div style=\"\n                                            width: 100%;\n                                            height: 100%;\n                                            display: flex;\n                                            align-items: center;\n                                            justify-content: center;\n                                            font-size: 42px;\n                                            font-weight: bold;\n                                            color: #5a67d8;\n                                        \">\n                                            ".concat(program.name.charAt(0), "\n                                        </div>\n                                    ");
-              }
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            onClick: function onClick() {
-              return toggleProgram(program.id);
-            },
-            style: {
-              width: '643px',
-              height: '76px',
-              flexShrink: 0,
-              background: program.color,
-              borderRadius: '10px',
-              boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingLeft: '90px',
-              paddingRight: '30px',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            },
-            onMouseEnter: function onMouseEnter(e) {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 8px 8px 0 rgba(0, 0, 0, 0.35)';
-            },
-            onMouseLeave: function onMouseLeave(e) {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 4px 4px 0 rgba(0, 0, 0, 0.25)';
+              position: 'relative',
+              marginLeft: 0,
+              opacity: expandedProgram && expandedProgram !== program.id ? 0 : 1,
+              transform: expandedProgram && expandedProgram !== program.id ? 'translateX(-100px)' : 'translateX(0)',
+              transition: 'all 0.5s ease-in-out'
             },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               style: {
-                width: '451px',
-                height: '41px',
-                flexShrink: 0,
-                color: '#FFF',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '30px',
-                fontStyle: 'italic',
-                fontWeight: 800,
-                lineHeight: '24px',
+                position: 'absolute',
+                left: -70,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: 130,
+                height: 130,
+                borderRadius: '50%',
+                background: 'white',
                 display: 'flex',
-                alignItems: 'center'
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+                padding: 10,
+                border: '6px solid rgba(255, 255, 255, 0.3)',
+                zIndex: 10
               },
-              children: program.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
-              width: "28",
-              height: "28",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              style: {
-                transform: expandedProgram === program.id ? 'rotate(180deg)' : 'rotate(0deg)',
-                transition: 'transform 0.3s ease',
-                flexShrink: 0
-              },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-                d: "M6 9L12 15L18 9",
-                stroke: "white",
-                strokeWidth: "3",
-                strokeLinecap: "round",
-                strokeLinejoin: "round"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                src: program.logo,
+                alt: program.name,
+                style: {
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain'
+                },
+                onError: function onError(e) {
+                  // Fallback if image doesn't exist
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = "\n                                        <div style=\"\n                                            width: 100%;\n                                            height: 100%;\n                                            display: flex;\n                                            align-items: center;\n                                            justify-content: center;\n                                            font-size: 42px;\n                                            font-weight: bold;\n                                            color: #5a67d8;\n                                        \">\n                                            ".concat(program.name.charAt(0), "\n                                        </div>\n                                    ");
+                }
               })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              onClick: function onClick() {
+                return toggleProgram(program.id);
+              },
+              style: {
+                width: '643px',
+                height: '76px',
+                flexShrink: 0,
+                background: program.color,
+                borderRadius: '10px',
+                boxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.25)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingLeft: '90px',
+                paddingRight: '30px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              },
+              onMouseEnter: function onMouseEnter(e) {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 8px 0 rgba(0, 0, 0, 0.35)';
+              },
+              onMouseLeave: function onMouseLeave(e) {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 4px 0 rgba(0, 0, 0, 0.25)';
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                style: {
+                  width: '451px',
+                  height: '41px',
+                  flexShrink: 0,
+                  color: '#FFF',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '40px',
+                  fontStyle: 'italic',
+                  fontWeight: 800,
+                  lineHeight: '24px',
+                  display: 'flex',
+                  alignItems: 'center'
+                },
+                children: program.name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "28",
+                height: "28",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                style: {
+                  transform: expandedProgram === program.id ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.3s ease',
+                  flexShrink: 0
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M6 9L12 15L18 9",
+                  stroke: "white",
+                  strokeWidth: "3",
+                  strokeLinecap: "round",
+                  strokeLinejoin: "round"
+                })
+              })]
             })]
-          })]
-        }, program.id);
-      })
-    }), expandedProgram && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      style: {
-        marginTop: 20,
-        padding: 24,
-        background: 'white',
-        borderRadius: 12,
-        maxWidth: 900,
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)'
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-        style: {
-          margin: '0 0 16px 0',
-          color: '#1a1a1a'
-        },
-        children: "Program Details"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-        style: {
-          color: '#6b7280',
-          margin: 0
-        },
-        children: ["Details for ", (_programs$find = programs.find(function (p) {
+          }, program.id);
+        })
+      }), expandedProgram && function () {
+        var program = programs.find(function (p) {
           return p.id === expandedProgram;
-        })) === null || _programs$find === void 0 ? void 0 : _programs$find.name, " will be displayed here."]
-      })]
+        });
+        var _getProgramMembers2 = getProgramMembers(expandedProgram),
+          programStudents = _getProgramMembers2.students,
+          programFaculty = _getProgramMembers2.faculty;
+        var allMembers = [].concat(_toConsumableArray(programStudents.map(function (student) {
+          return _objectSpread(_objectSpread({}, student), {}, {
+            type: 'student'
+          });
+        })), _toConsumableArray(programFaculty.map(function (member) {
+          return _objectSpread(_objectSpread({}, member), {}, {
+            type: 'faculty'
+          });
+        }))).sort(function (a, b) {
+          // Sort by type (students first, then faculty), then by name
+          if (a.type !== b.type) {
+            return a.type === 'student' ? -1 : 1;
+          }
+          var nameA = "".concat(a.first_name || '', " ").concat(a.last_name || '').trim();
+          var nameB = "".concat(b.first_name || '', " ").concat(b.last_name || '').trim();
+          return nameA.localeCompare(nameB);
+        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            marginTop: 20,
+            padding: 24,
+            background: 'white',
+            borderRadius: 12,
+            maxWidth: 1200,
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+            opacity: 0,
+            transform: 'translateY(20px)',
+            animation: 'fadeInUp 0.6s ease-out forwards'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: 20
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                onClick: function onClick() {
+                  return setExpandedProgram(null);
+                },
+                style: {
+                  background: '#f3f4f6',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '8px',
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px',
+                  color: '#374151',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  transition: 'all 0.3s ease',
+                  transform: 'translateX(0)'
+                },
+                onMouseEnter: function onMouseEnter(e) {
+                  e.currentTarget.style.background = '#e5e7eb';
+                  e.currentTarget.style.transform = 'translateX(-4px)';
+                  e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                },
+                onMouseLeave: function onMouseLeave(e) {
+                  e.currentTarget.style.background = '#f3f4f6';
+                  e.currentTarget.style.transform = 'translateX(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                },
+                children: "\u2190 Back to Programs"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
+                style: {
+                  margin: 0,
+                  color: '#1a1a1a',
+                  fontSize: '24px',
+                  fontWeight: '600'
+                },
+                children: [program === null || program === void 0 ? void 0 : program.name, " Members"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              style: {
+                background: '#f3f4f6',
+                padding: '8px 16px',
+                borderRadius: '20px',
+                fontSize: '14px',
+                fontWeight: '600',
+                color: '#374151'
+              },
+              children: [programStudents.length, " Students \u2022 ", programFaculty.length, " Faculty \u2022 ", allMembers.length, " Total"]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              background: '#f9fafb',
+              border: '1px solid #e5e7eb',
+              borderRadius: '8px',
+              padding: '12px',
+              marginBottom: '16px',
+              fontSize: '12px',
+              color: '#6b7280'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+              children: "Debug Info:"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Program DB Name: ", program === null || program === void 0 ? void 0 : program.dbName, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Total Students: ", students.length, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Total Faculty: ", faculty.length, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Program Students: ", programStudents.length, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "Program Faculty: ", programFaculty.length]
+          }), allMembers.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              textAlign: 'center',
+              padding: '40px 20px',
+              color: '#6b7280'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              style: {
+                fontSize: '48px',
+                marginBottom: '16px'
+              },
+              children: "\uD83D\uDC65"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              style: {
+                margin: 0,
+                fontSize: '16px'
+              },
+              children: "No students or faculty members found for this program."
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            style: {
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: '16px',
+              maxHeight: '500px',
+              overflowY: 'auto'
+            },
+            children: allMembers.map(function (member, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                style: {
+                  background: member.type === 'student' ? '#f0f9ff' : '#fef3c7',
+                  border: member.type === 'student' ? '1px solid #0ea5e9' : '1px solid #f59e0b',
+                  borderRadius: '8px',
+                  padding: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  opacity: 0,
+                  transform: 'translateY(20px)',
+                  animation: "fadeInUp 0.4s ease-out ".concat(index * 0.1, "s forwards"),
+                  transition: 'all 0.3s ease'
+                },
+                onMouseEnter: function onMouseEnter(e) {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.1)';
+                },
+                onMouseLeave: function onMouseLeave(e) {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  style: {
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: member.type === 'student' ? '#0ea5e9' : '#f59e0b',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontWeight: '600',
+                    fontSize: '16px'
+                  },
+                  children: member.type === 'student' ? '👨‍🎓' : '👨‍🏫'
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                  style: {
+                    flex: 1
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                    style: {
+                      fontWeight: '600',
+                      color: '#1a1a1a',
+                      marginBottom: '4px'
+                    },
+                    children: [member.first_name, " ", member.last_name]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                    style: {
+                      fontSize: '14px',
+                      color: '#6b7280',
+                      marginBottom: '2px'
+                    },
+                    children: member.type === 'student' ? "Student ID: ".concat(member.student_id) : "Faculty ID: ".concat(member.faculty_id)
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                    style: {
+                      fontSize: '12px',
+                      color: '#9ca3af'
+                    },
+                    children: member.type === 'student' ? "".concat(member.program, " \u2022 ").concat(member.year_level || 'N/A', " \u2022 ").concat(member.section || 'N/A') : "".concat(member.department, " \u2022 ").concat(member.position || 'N/A')
+                  }), member.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+                    style: {
+                      fontSize: '12px',
+                      color: '#6b7280',
+                      marginTop: '4px'
+                    },
+                    children: ["\uD83D\uDCE7 ", member.email]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+                  style: {
+                    background: member.type === 'student' ? '#dcfce7' : '#fef3c7',
+                    color: member.type === 'student' ? '#166534' : '#92400e',
+                    padding: '4px 8px',
+                    borderRadius: '12px',
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    textTransform: 'uppercase'
+                  },
+                  children: member.type
+                })]
+              }, "".concat(member.type, "-").concat(member.id || index));
+            })
+          })]
+        });
+      }()]
     })]
   });
 }
@@ -58352,6 +58727,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Settings */ "./resources/js/components/Settings.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
@@ -58394,7 +58771,7 @@ function Dashboard() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-        var _yield$Promise$all, _yield$Promise$all2, studentsRes, facultyRes, studentsData, facultyData, _t;
+        var _yield$Promise$all, _yield$Promise$all2, studentsRes, facultyRes, studentsData, facultyData, activeFaculty, _t;
         return _regenerator().w(function (_context) {
           while (1) switch (_context.p = _context.n) {
             case 0:
@@ -58415,7 +58792,11 @@ function Dashboard() {
             case 3:
               facultyData = _context.v;
               setStudents(Array.isArray(studentsData) ? studentsData : []);
-              setFaculty(Array.isArray(facultyData) ? facultyData : []);
+              // Filter out archived faculty members
+              activeFaculty = Array.isArray(facultyData) ? facultyData.filter(function (faculty) {
+                return faculty.status !== 'archived';
+              }) : [];
+              setFaculty(activeFaculty);
               _context.n = 5;
               break;
             case 4:
@@ -58482,6 +58863,22 @@ function Dashboard() {
     _useState18 = _slicedToArray(_useState17, 2),
     studentToEdit = _useState18[0],
     setStudentToEdit = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState20 = _slicedToArray(_useState19, 2),
+    editingField = _useState20[0],
+    setEditingField = _useState20[1];
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState22 = _slicedToArray(_useState21, 2),
+    editValue = _useState22[0],
+    setEditValue = _useState22[1];
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState24 = _slicedToArray(_useState23, 2),
+    hasUnsavedChanges = _useState24[0],
+    setHasUnsavedChanges = _useState24[1];
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState26 = _slicedToArray(_useState25, 2),
+    pendingChanges = _useState26[0],
+    setPendingChanges = _useState26[1];
   var openEditStudent = function openEditStudent(student) {
     setStudentToEdit(student);
     setShowEditStudent(true);
@@ -58489,35 +58886,115 @@ function Dashboard() {
   var closeEditStudent = function closeEditStudent() {
     setShowEditStudent(false);
     setStudentToEdit(null);
+    setEditingField(null);
+    setEditValue('');
+    setHasUnsavedChanges(false);
+    setPendingChanges({});
   };
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState20 = _slicedToArray(_useState19, 2),
-    showAddFaculty = _useState20[0],
-    setShowAddFaculty = _useState20[1];
+  var startEditing = function startEditing(field, currentValue) {
+    setEditingField(field);
+    setEditValue(currentValue || '');
+  };
+  var saveEdit = function saveEdit() {
+    if (!studentToEdit || !editingField) return;
+
+    // Store the change in pending changes
+    var newPendingChanges = _objectSpread(_objectSpread({}, pendingChanges), {}, _defineProperty({}, editingField, editValue));
+    setPendingChanges(newPendingChanges);
+    setHasUnsavedChanges(true);
+    setEditingField(null);
+    setEditValue('');
+  };
+  var saveAllChanges = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var updatedStudent, response, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            if (!(!studentToEdit || Object.keys(pendingChanges).length === 0)) {
+              _context2.n = 1;
+              break;
+            }
+            return _context2.a(2);
+          case 1:
+            _context2.p = 1;
+            updatedStudent = _objectSpread(_objectSpread({}, studentToEdit), pendingChanges);
+            _context2.n = 2;
+            return fetch("/api/students/".concat(studentToEdit.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(updatedStudent)
+            });
+          case 2:
+            response = _context2.v;
+            if (response.ok) {
+              setStudentToEdit(updatedStudent);
+              setPendingChanges({});
+              setHasUnsavedChanges(false);
+              // Refresh the dashboard data
+              fetch('/api/students').then(function (r) {
+                return r.json();
+              }).then(function (d) {
+                return setStudents(Array.isArray(d) ? d : []);
+              });
+              alert('Student updated successfully!');
+            }
+            _context2.n = 4;
+            break;
+          case 3:
+            _context2.p = 3;
+            _t2 = _context2.v;
+            console.error('Error updating student:', _t2);
+          case 4:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 3]]);
+    }));
+    return function saveAllChanges() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var cancelEdit = function cancelEdit() {
+    setEditingField(null);
+    setEditValue('');
+  };
+  var discardChanges = function discardChanges() {
+    setPendingChanges({});
+    setHasUnsavedChanges(false);
+    setEditingField(null);
+    setEditValue('');
+  };
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState28 = _slicedToArray(_useState27, 2),
+    showAddFaculty = _useState28[0],
+    setShowAddFaculty = _useState28[1];
   var openAddFaculty = function openAddFaculty() {
     return setShowAddFaculty(true);
   };
   var closeAddFaculty = function closeAddFaculty() {
     return setShowAddFaculty(false);
   };
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState22 = _slicedToArray(_useState21, 2),
-    showFacultyList = _useState22[0],
-    setShowFacultyList = _useState22[1];
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState30 = _slicedToArray(_useState29, 2),
+    showFacultyList = _useState30[0],
+    setShowFacultyList = _useState30[1];
   var openFacultyList = function openFacultyList() {
     return setShowFacultyList(true);
   };
   var closeFacultyList = function closeFacultyList() {
     return setShowFacultyList(false);
   };
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState24 = _slicedToArray(_useState23, 2),
-    showFacultyDetails = _useState24[0],
-    setShowFacultyDetails = _useState24[1];
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-    _useState26 = _slicedToArray(_useState25, 2),
-    selectedFaculty = _useState26[0],
-    setSelectedFaculty = _useState26[1];
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState32 = _slicedToArray(_useState31, 2),
+    showFacultyDetails = _useState32[0],
+    setShowFacultyDetails = _useState32[1];
+  var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState34 = _slicedToArray(_useState33, 2),
+    selectedFaculty = _useState34[0],
+    setSelectedFaculty = _useState34[1];
   var openFacultyDetails = function openFacultyDetails(facultyMember) {
     setSelectedFaculty(facultyMember);
     setShowFacultyDetails(true);
@@ -58526,14 +59003,71 @@ function Dashboard() {
     setShowFacultyDetails(false);
     setSelectedFaculty(null);
   };
-  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState28 = _slicedToArray(_useState27, 2),
-    showEditFaculty = _useState28[0],
-    setShowEditFaculty = _useState28[1];
-  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-    _useState30 = _slicedToArray(_useState29, 2),
-    facultyToEdit = _useState30[0],
-    setFacultyToEdit = _useState30[1];
+
+  // Function to refresh all data
+  var refreshAllData = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var _yield$Promise$all3, _yield$Promise$all4, studentsRes, facultyRes, studentsData, facultyData, _t3;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.p = _context3.n) {
+          case 0:
+            _context3.p = 0;
+            _context3.n = 1;
+            return Promise.all([fetch('/api/students'), fetch('/api/faculty')]);
+          case 1:
+            _yield$Promise$all3 = _context3.v;
+            _yield$Promise$all4 = _slicedToArray(_yield$Promise$all3, 2);
+            studentsRes = _yield$Promise$all4[0];
+            facultyRes = _yield$Promise$all4[1];
+            _context3.n = 2;
+            return studentsRes.json();
+          case 2:
+            studentsData = _context3.v;
+            _context3.n = 3;
+            return facultyRes.json();
+          case 3:
+            facultyData = _context3.v;
+            setStudents(Array.isArray(studentsData) ? studentsData : []);
+            setFaculty(Array.isArray(facultyData) ? facultyData : []);
+            _context3.n = 5;
+            break;
+          case 4:
+            _context3.p = 4;
+            _t3 = _context3.v;
+            console.error('Error refreshing data:', _t3);
+          case 5:
+            return _context3.a(2);
+        }
+      }, _callee3, null, [[0, 4]]);
+    }));
+    return function refreshAllData() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState36 = _slicedToArray(_useState35, 2),
+    showEditFaculty = _useState36[0],
+    setShowEditFaculty = _useState36[1];
+  var _useState37 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState38 = _slicedToArray(_useState37, 2),
+    facultyToEdit = _useState38[0],
+    setFacultyToEdit = _useState38[1];
+  var _useState39 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState40 = _slicedToArray(_useState39, 2),
+    editingFacultyField = _useState40[0],
+    setEditingFacultyField = _useState40[1];
+  var _useState41 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState42 = _slicedToArray(_useState41, 2),
+    editFacultyValue = _useState42[0],
+    setEditFacultyValue = _useState42[1];
+  var _useState43 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState44 = _slicedToArray(_useState43, 2),
+    hasUnsavedFacultyChanges = _useState44[0],
+    setHasUnsavedFacultyChanges = _useState44[1];
+  var _useState45 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState46 = _slicedToArray(_useState45, 2),
+    pendingFacultyChanges = _useState46[0],
+    setPendingFacultyChanges = _useState46[1];
   var openEditFaculty = function openEditFaculty(facultyMember) {
     setFacultyToEdit(facultyMember);
     setShowEditFaculty(true);
@@ -58541,6 +59075,89 @@ function Dashboard() {
   var closeEditFaculty = function closeEditFaculty() {
     setShowEditFaculty(false);
     setFacultyToEdit(null);
+    setEditingFacultyField(null);
+    setEditFacultyValue('');
+    setHasUnsavedFacultyChanges(false);
+    setPendingFacultyChanges({});
+  };
+  var startFacultyEditing = function startFacultyEditing(field, currentValue) {
+    setEditingFacultyField(field);
+    setEditFacultyValue(currentValue || '');
+  };
+  var saveFacultyEdit = function saveFacultyEdit() {
+    if (!facultyToEdit || !editingFacultyField) return;
+
+    // Store the change in pending changes
+    var newPendingChanges = _objectSpread(_objectSpread({}, pendingFacultyChanges), {}, _defineProperty({}, editingFacultyField, editFacultyValue));
+    setPendingFacultyChanges(newPendingChanges);
+    setHasUnsavedFacultyChanges(true);
+    setEditingFacultyField(null);
+    setEditFacultyValue('');
+  };
+  var saveAllFacultyChanges = /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
+      var updatedFaculty, response, _t4;
+      return _regenerator().w(function (_context4) {
+        while (1) switch (_context4.p = _context4.n) {
+          case 0:
+            if (!(!facultyToEdit || Object.keys(pendingFacultyChanges).length === 0)) {
+              _context4.n = 1;
+              break;
+            }
+            return _context4.a(2);
+          case 1:
+            _context4.p = 1;
+            updatedFaculty = _objectSpread(_objectSpread({}, facultyToEdit), pendingFacultyChanges);
+            _context4.n = 2;
+            return fetch("/api/faculty/".concat(facultyToEdit.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(updatedFaculty)
+            });
+          case 2:
+            response = _context4.v;
+            if (response.ok) {
+              setFacultyToEdit(updatedFaculty);
+              setPendingFacultyChanges({});
+              setHasUnsavedFacultyChanges(false);
+              // Refresh the dashboard data
+              fetch('/api/faculty').then(function (r) {
+                return r.json();
+              }).then(function (d) {
+                var activeFaculty = Array.isArray(d) ? d.filter(function (faculty) {
+                  return faculty.status !== 'archived';
+                }) : [];
+                setFaculty(activeFaculty);
+              });
+              alert('Faculty updated successfully!');
+            }
+            _context4.n = 4;
+            break;
+          case 3:
+            _context4.p = 3;
+            _t4 = _context4.v;
+            console.error('Error updating faculty:', _t4);
+          case 4:
+            return _context4.a(2);
+        }
+      }, _callee4, null, [[1, 3]]);
+    }));
+    return function saveAllFacultyChanges() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  var cancelFacultyEdit = function cancelFacultyEdit() {
+    setEditingFacultyField(null);
+    setEditFacultyValue('');
+  };
+  var discardFacultyChanges = function discardFacultyChanges() {
+    setPendingFacultyChanges({});
+    setHasUnsavedFacultyChanges(false);
+    setEditingFacultyField(null);
+    setEditFacultyValue('');
   };
   var goToStudents = function goToStudents() {
     openList();
@@ -58849,7 +59466,11 @@ function Dashboard() {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(UserIcon, {})
           })]
         })]
-      }), currentView === 'students' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Students__WEBPACK_IMPORTED_MODULE_3__["default"], {}) : currentView === 'faculty' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_FacultyList__WEBPACK_IMPORTED_MODULE_4__["default"], {}) : currentView === 'courses' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Courses__WEBPACK_IMPORTED_MODULE_5__["default"], {}) : currentView === 'schedule' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Schedule__WEBPACK_IMPORTED_MODULE_6__["default"], {}) : currentView === 'settings' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Settings__WEBPACK_IMPORTED_MODULE_7__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), currentView === 'students' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Students__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        onDataUpdate: refreshAllData
+      }) : currentView === 'faculty' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_FacultyList__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        onDataUpdate: refreshAllData
+      }) : currentView === 'courses' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Courses__WEBPACK_IMPORTED_MODULE_5__["default"], {}) : currentView === 'schedule' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Schedule__WEBPACK_IMPORTED_MODULE_6__["default"], {}) : currentView === 'settings' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Settings__WEBPACK_IMPORTED_MODULE_7__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         style: {
           padding: '32px'
         },
@@ -58884,7 +59505,7 @@ function Dashboard() {
             iconDot: "#38bdf8"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StatCard, {
             title: "Faculty Members",
-            value: 184,
+            value: faculty.length,
             delta: "+5% from last month",
             iconBg: "#ecfccb",
             iconDot: "#84cc16"
@@ -58962,7 +59583,9 @@ function Dashboard() {
                     marginTop: 8
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
-                    onClick: goToStudents,
+                    onClick: function onClick() {
+                      return setCurrentView('students');
+                    },
                     style: {
                       color: '#16a34a',
                       cursor: 'pointer',
@@ -58992,20 +59615,10 @@ function Dashboard() {
                   fontWeight: 600
                 },
                 children: "Faculty Profiles"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-                style: {
-                  display: 'flex',
-                  gap: '8px'
-                },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  style: buttonStyleSecondary,
-                  onClick: goToFaculty,
-                  children: "View All"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                  style: buttonStylePrimary,
-                  onClick: openAddFaculty,
-                  children: "+ Add Faculty"
-                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                style: buttonStylePrimary,
+                onClick: openAddFaculty,
+                children: "+ Add Faculty"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               style: {
@@ -59037,7 +59650,9 @@ function Dashboard() {
                     marginTop: 8
                   },
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("a", {
-                    onClick: goToFaculty,
+                    onClick: function onClick() {
+                      return setCurrentView('faculty');
+                    },
                     style: {
                       color: '#16a34a',
                       cursor: 'pointer',
@@ -59413,9 +60028,24 @@ function Dashboard() {
             })]
           })
         }), showEditStudent && studentToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          style: modalOverlay,
+          style: {
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 16,
+            zIndex: 1000
+          },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            style: modalContent,
+            style: {
+              width: 'min(1100px, 100%)',
+              background: '#f3f4f6',
+              borderRadius: 12,
+              padding: 16,
+              boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               style: {
                 display: 'flex',
@@ -59428,30 +60058,1247 @@ function Dashboard() {
                   fontWeight: 700,
                   fontSize: 18
                 },
-                children: "Edit Student"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                onClick: closeEditStudent,
-                style: buttonStyleGhost,
-                children: "\u2715"
+                children: "Student Details"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                style: {
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'center'
+                },
+                children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    onClick: saveAllChanges,
+                    style: {
+                      background: '#16a34a',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: 8,
+                      padding: '8px 16px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      fontSize: '14px'
+                    },
+                    children: "Save Changes"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    onClick: discardChanges,
+                    style: {
+                      background: '#dc2626',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: 8,
+                      padding: '8px 16px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      fontSize: '14px'
+                    },
+                    children: "Discard"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  onClick: closeEditStudent,
+                  style: {
+                    background: 'transparent',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: 8,
+                    padding: '6px 10px',
+                    cursor: 'pointer'
+                  },
+                  children: "\u2715"
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               style: {
                 maxHeight: '75vh',
                 overflow: 'auto'
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                onSuccess: function onSuccess() {
-                  closeEditStudent();
-                  /* refresh preview */
-                  fetch('/api/students').then(function (r) {
-                    return r.json();
-                  }).then(function (d) {
-                    return setStudents(Array.isArray(d) ? d : []);
-                  });
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  background: '#fff',
+                  padding: '24px',
+                  borderRadius: '12px'
                 },
-                showForm: true,
-                showList: false,
-                editStudent: studentToEdit
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '24px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Personal Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Student ID:"
+                        }), editingField === 'student_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('student_id', studentToEdit.student_id);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.student_id || studentToEdit.student_id || '—', pendingChanges.student_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "First Name:"
+                        }), editingField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('first_name', studentToEdit.first_name);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.first_name || studentToEdit.first_name || '—', pendingChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Last Name:"
+                        }), editingField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('last_name', studentToEdit.last_name);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.last_name || studentToEdit.last_name || '—', pendingChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Date of Birth:"
+                        }), editingField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "date",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('date_of_birth', studentToEdit.date_of_birth);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.date_of_birth || studentToEdit.date_of_birth || '—', pendingChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Gender:"
+                        }), editingField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Gender"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Male",
+                              children: "Male"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Female",
+                              children: "Female"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Other",
+                              children: "Other"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('gender', studentToEdit.gender);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.gender || studentToEdit.gender || '—', pendingChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Personal Information:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: studentToEdit.personal_information || '—'
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '24px 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Contact Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Email:"
+                        }), editingField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "email",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('email', studentToEdit.email);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.email || studentToEdit.email || '—', pendingChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Phone:"
+                        }), editingField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "tel",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('phone', studentToEdit.phone);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.phone || studentToEdit.phone || '—', pendingChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Address:"
+                        }), editingField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('address', studentToEdit.address);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.address || studentToEdit.address || '—', pendingChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Academic Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Program/Course:"
+                        }), editingField === 'program' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Program/Course"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Nursing Program",
+                              children: "Nursing Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Teachers Education Program",
+                              children: "Teachers Education Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Engineering Program",
+                              children: "Engineering Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Criminal Justice Program",
+                              children: "Criminal Justice Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Computer Science Program",
+                              children: "Computer Science Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Arts and Sciences Program",
+                              children: "Arts and Sciences Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Business Administration Program",
+                              children: "Business Administration Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Accountancy Program",
+                              children: "Accountancy Program"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.program ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.program ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('program', studentToEdit.program);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.program ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.program || studentToEdit.program || '—', pendingChanges.program && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Year Level:"
+                        }), editingField === 'year_level' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Year Level"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "1st Year",
+                              children: "1st Year"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "2nd Year",
+                              children: "2nd Year"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "3rd Year",
+                              children: "3rd Year"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "4th Year",
+                              children: "4th Year"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "5th Year",
+                              children: "5th Year"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.year_level ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('year_level', studentToEdit.year_level);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.year_level ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.year_level || studentToEdit.year_level || '—', pendingChanges.year_level && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Section:"
+                        }), editingField === 'section' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveEdit();
+                              if (e.key === 'Escape') cancelEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.section ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.section ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('section', studentToEdit.section);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.section ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingChanges.section || studentToEdit.section || '—', pendingChanges.section && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Status:"
+                        }), editingField === 'status' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editValue,
+                            onChange: function onChange(e) {
+                              return setEditValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Status"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Active",
+                              children: "Active"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Inactive",
+                              children: "Inactive"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Graduated",
+                              children: "Graduated"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Transferred",
+                              children: "Transferred"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingChanges.status ? '#fef3c7' : 'transparent',
+                            border: pendingChanges.status ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startEditing('status', studentToEdit.status);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingChanges.status ? '#fef3c7' : 'transparent';
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                            style: {
+                              padding: '4px 8px',
+                              borderRadius: '6px',
+                              backgroundColor: (pendingChanges.status || studentToEdit.status) === 'Active' ? '#dcfce7' : '#fef3c7',
+                              color: (pendingChanges.status || studentToEdit.status) === 'Active' ? '#166534' : '#92400e',
+                              display: 'inline-block',
+                              fontSize: '12px',
+                              fontWeight: '600'
+                            },
+                            children: pendingChanges.status || studentToEdit.status || '—'
+                          }), pendingChanges.status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      })]
+                    })]
+                  })]
+                })
               })
             })]
           })
@@ -59489,7 +61336,10 @@ function Dashboard() {
                   fetch('/api/faculty').then(function (r) {
                     return r.json();
                   }).then(function (d) {
-                    return setFaculty(Array.isArray(d) ? d : []);
+                    var activeFaculty = Array.isArray(d) ? d.filter(function (faculty) {
+                      return faculty.status !== 'archived';
+                    }) : [];
+                    setFaculty(activeFaculty);
                   });
                 },
                 showForm: true,
@@ -59807,9 +61657,24 @@ function Dashboard() {
             })]
           })
         }), showEditFaculty && facultyToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-          style: modalOverlay,
+          style: {
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0,0,0,0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 16,
+            zIndex: 1000
+          },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            style: modalContent,
+            style: {
+              width: 'min(1100px, 100%)',
+              background: '#f3f4f6',
+              borderRadius: 12,
+              padding: 16,
+              boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            },
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
               style: {
                 display: 'flex',
@@ -59822,30 +61687,1037 @@ function Dashboard() {
                   fontWeight: 700,
                   fontSize: 18
                 },
-                children: "Edit Faculty"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
-                onClick: closeEditFaculty,
-                style: buttonStyleGhost,
-                children: "\u2715"
+                children: "Faculty Details"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                style: {
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'center'
+                },
+                children: [hasUnsavedFacultyChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    onClick: saveAllFacultyChanges,
+                    style: {
+                      background: '#16a34a',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: 8,
+                      padding: '8px 16px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      fontSize: '14px'
+                    },
+                    children: "Save Changes"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                    onClick: discardFacultyChanges,
+                    style: {
+                      background: '#dc2626',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: 8,
+                      padding: '8px 16px',
+                      cursor: 'pointer',
+                      fontWeight: '600',
+                      fontSize: '14px'
+                    },
+                    children: "Discard"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                  onClick: closeEditFaculty,
+                  style: {
+                    background: 'transparent',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: 8,
+                    padding: '6px 10px',
+                    cursor: 'pointer'
+                  },
+                  children: "\u2715"
+                })]
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               style: {
                 maxHeight: '75vh',
                 overflow: 'auto'
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                onSuccess: function onSuccess() {
-                  closeEditFaculty();
-                  /* refresh preview */
-                  fetch('/api/faculty').then(function (r) {
-                    return r.json();
-                  }).then(function (d) {
-                    return setFaculty(Array.isArray(d) ? d : []);
-                  });
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                style: {
+                  background: '#fff',
+                  padding: '24px',
+                  borderRadius: '12px'
                 },
-                showForm: true,
-                showList: false,
-                editFaculty: facultyToEdit
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                  style: {
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '24px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Personal Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Faculty ID:"
+                        }), editingFacultyField === 'faculty_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.faculty_id ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.faculty_id ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('faculty_id', facultyToEdit.faculty_id);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.faculty_id ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.faculty_id || facultyToEdit.faculty_id || '—', pendingFacultyChanges.faculty_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "First Name:"
+                        }), editingFacultyField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.first_name ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('first_name', facultyToEdit.first_name);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.first_name ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.first_name || facultyToEdit.first_name || '—', pendingFacultyChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Last Name:"
+                        }), editingFacultyField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.last_name ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('last_name', facultyToEdit.last_name);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.last_name ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.last_name || facultyToEdit.last_name || '—', pendingFacultyChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Date of Birth:"
+                        }), editingFacultyField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "date",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('date_of_birth', facultyToEdit.date_of_birth);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.date_of_birth || facultyToEdit.date_of_birth || '—', pendingFacultyChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Gender:"
+                        }), editingFacultyField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Gender"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Male",
+                              children: "Male"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Female",
+                              children: "Female"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Other",
+                              children: "Other"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.gender ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('gender', facultyToEdit.gender);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.gender ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.gender || facultyToEdit.gender || '—', pendingFacultyChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Personal Information:"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px'
+                          },
+                          children: facultyToEdit.personal_information || '—'
+                        })]
+                      })]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '24px 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Contact Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Email:"
+                        }), editingFacultyField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "email",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.email ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('email', facultyToEdit.email);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.email ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.email || facultyToEdit.email || '—', pendingFacultyChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Phone:"
+                        }), editingFacultyField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "tel",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.phone ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('phone', facultyToEdit.phone);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.phone ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.phone || facultyToEdit.phone || '—', pendingFacultyChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Address:"
+                        }), editingFacultyField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.address ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('address', facultyToEdit.address);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.address ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.address || facultyToEdit.address || '—', pendingFacultyChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("h3", {
+                      style: {
+                        margin: '0 0 16px 0',
+                        color: '#374151',
+                        borderBottom: '2px solid #e5e7eb',
+                        paddingBottom: '8px'
+                      },
+                      children: "Professional Information"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                      style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '12px'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Department:"
+                        }), editingFacultyField === 'department' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("select", {
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true,
+                            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "",
+                              children: "Select Department"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Nursing Program",
+                              children: "Nursing Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Teachers Education Program",
+                              children: "Teachers Education Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Engineering Program",
+                              children: "Engineering Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Criminal Justice Program",
+                              children: "Criminal Justice Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Computer Science Program",
+                              children: "Computer Science Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Arts and Sciences Program",
+                              children: "Arts and Sciences Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Business Administration Program",
+                              children: "Business Administration Program"
+                            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
+                              value: "Accountancy Program",
+                              children: "Accountancy Program"
+                            })]
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.department ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.department ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('department', facultyToEdit.department);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.department ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.department || facultyToEdit.department || '—', pendingFacultyChanges.department && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("label", {
+                          style: {
+                            fontWeight: '600',
+                            color: '#6b7280',
+                            fontSize: '14px'
+                          },
+                          children: "Position:"
+                        }), editingFacultyField === 'position' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            marginTop: '4px',
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center'
+                          },
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+                            type: "text",
+                            value: editFacultyValue,
+                            onChange: function onChange(e) {
+                              return setEditFacultyValue(e.target.value);
+                            },
+                            onKeyDown: function onKeyDown(e) {
+                              if (e.key === 'Enter') saveFacultyEdit();
+                              if (e.key === 'Escape') cancelFacultyEdit();
+                            },
+                            style: {
+                              padding: '4px 8px',
+                              border: '1px solid #d1d5db',
+                              borderRadius: '4px',
+                              fontSize: '14px',
+                              outline: 'none',
+                              width: '200px'
+                            },
+                            autoFocus: true
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: saveFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#16a34a',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2713"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+                            onClick: cancelFacultyEdit,
+                            style: {
+                              padding: '4px 8px',
+                              background: '#dc2626',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '4px',
+                              cursor: 'pointer',
+                              fontSize: '12px'
+                            },
+                            children: "\u2715"
+                          })]
+                        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+                          style: {
+                            color: '#374151',
+                            marginTop: '4px',
+                            cursor: 'pointer',
+                            padding: '2px 4px',
+                            borderRadius: '4px',
+                            backgroundColor: pendingFacultyChanges.position ? '#fef3c7' : 'transparent',
+                            border: pendingFacultyChanges.position ? '1px solid #f59e0b' : '1px solid transparent'
+                          },
+                          onDoubleClick: function onDoubleClick() {
+                            return startFacultyEditing('position', facultyToEdit.position);
+                          },
+                          onMouseEnter: function onMouseEnter(e) {
+                            return e.target.style.background = '#f3f4f6';
+                          },
+                          onMouseLeave: function onMouseLeave(e) {
+                            return e.target.style.background = pendingFacultyChanges.position ? '#fef3c7' : 'transparent';
+                          },
+                          children: [pendingFacultyChanges.position || facultyToEdit.position || '—', pendingFacultyChanges.position && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+                            style: {
+                              color: '#f59e0b',
+                              marginLeft: '8px',
+                              fontSize: '12px'
+                            },
+                            children: "\u25CF"
+                          })]
+                        })]
+                      })]
+                    })]
+                  })]
+                })
               })
             })]
           })
@@ -59872,12 +62744,12 @@ var buttonStyleSecondary = {
   fontWeight: 600,
   cursor: 'pointer'
 };
-function StatCard(_ref4) {
-  var title = _ref4.title,
-    value = _ref4.value,
-    delta = _ref4.delta,
-    iconBg = _ref4.iconBg,
-    iconDot = _ref4.iconDot;
+function StatCard(_ref7) {
+  var title = _ref7.title,
+    value = _ref7.value,
+    delta = _ref7.delta,
+    iconBg = _ref7.iconBg,
+    iconDot = _ref7.iconDot;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     style: {
       background: '#fff',
@@ -59934,20 +62806,124 @@ function StatCard(_ref4) {
     })]
   });
 }
-function ListItem(_ref5) {
-  var title = _ref5.title,
-    subtitle = _ref5.subtitle,
-    meta = _ref5.meta,
-    student = _ref5.student,
-    onViewDetails = _ref5.onViewDetails,
-    onEdit = _ref5.onEdit;
+function ListItem(_ref8) {
+  var title = _ref8.title,
+    subtitle = _ref8.subtitle,
+    meta = _ref8.meta,
+    student = _ref8.student,
+    onViewDetails = _ref8.onViewDetails,
+    onEdit = _ref8.onEdit;
+  var _useState47 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState48 = _slicedToArray(_useState47, 2),
+    editingField = _useState48[0],
+    setEditingField = _useState48[1];
+  var _useState49 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState50 = _slicedToArray(_useState49, 2),
+    editValue = _useState50[0],
+    setEditValue = _useState50[1];
+  var _useState51 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState52 = _slicedToArray(_useState51, 2),
+    hasUnsavedChanges = _useState52[0],
+    setHasUnsavedChanges = _useState52[1];
+  var _useState53 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState54 = _slicedToArray(_useState53, 2),
+    pendingChanges = _useState54[0],
+    setPendingChanges = _useState54[1];
+  var startEditing = function startEditing(field, currentValue) {
+    setEditingField(field);
+    setEditValue(currentValue || '');
+  };
+  var saveEdit = /*#__PURE__*/function () {
+    var _ref9 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5() {
+      var newPendingChanges;
+      return _regenerator().w(function (_context5) {
+        while (1) switch (_context5.n) {
+          case 0:
+            if (!(!student || !editingField)) {
+              _context5.n = 1;
+              break;
+            }
+            return _context5.a(2);
+          case 1:
+            // Store the change in pending changes
+            newPendingChanges = _objectSpread(_objectSpread({}, pendingChanges), {}, _defineProperty({}, editingField, editValue));
+            setPendingChanges(newPendingChanges);
+            setHasUnsavedChanges(true);
+            setEditingField(null);
+            setEditValue('');
+          case 2:
+            return _context5.a(2);
+        }
+      }, _callee5);
+    }));
+    return function saveEdit() {
+      return _ref9.apply(this, arguments);
+    };
+  }();
+  var saveAllChanges = /*#__PURE__*/function () {
+    var _ref0 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6() {
+      var updatedStudent, response, _t5;
+      return _regenerator().w(function (_context6) {
+        while (1) switch (_context6.p = _context6.n) {
+          case 0:
+            if (!(!student || Object.keys(pendingChanges).length === 0)) {
+              _context6.n = 1;
+              break;
+            }
+            return _context6.a(2);
+          case 1:
+            _context6.p = 1;
+            updatedStudent = _objectSpread(_objectSpread({}, student), pendingChanges);
+            _context6.n = 2;
+            return fetch("/api/students/".concat(student.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(updatedStudent)
+            });
+          case 2:
+            response = _context6.v;
+            if (response.ok) {
+              setPendingChanges({});
+              setHasUnsavedChanges(false);
+              // Refresh the dashboard data
+              window.location.reload(); // Simple refresh for now
+            }
+            _context6.n = 4;
+            break;
+          case 3:
+            _context6.p = 3;
+            _t5 = _context6.v;
+            console.error('Error updating student:', _t5);
+          case 4:
+            return _context6.a(2);
+        }
+      }, _callee6, null, [[1, 3]]);
+    }));
+    return function saveAllChanges() {
+      return _ref0.apply(this, arguments);
+    };
+  }();
+  var cancelEdit = function cancelEdit() {
+    setEditingField(null);
+    setEditValue('');
+  };
+  var discardChanges = function discardChanges() {
+    setPendingChanges({});
+    setHasUnsavedChanges(false);
+    setEditingField(null);
+    setEditValue('');
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
     style: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '16px 20px',
-      borderBottom: '1px solid #f3f4f6'
+      borderBottom: '1px solid #f3f4f6',
+      position: 'relative'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       style: {
@@ -59979,6 +62955,9 @@ function ListItem(_ref5) {
           })
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        style: {
+          flex: 1
+        },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
             fontWeight: 600,
@@ -59986,28 +62965,282 @@ function ListItem(_ref5) {
             color: '#1a1a1a',
             marginBottom: 4
           },
-          children: title
+          children: editingField === 'title' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              type: "text",
+              value: editValue,
+              onChange: function onChange(e) {
+                return setEditValue(e.target.value);
+              },
+              onKeyDown: function onKeyDown(e) {
+                if (e.key === 'Enter') saveEdit();
+                if (e.key === 'Escape') cancelEdit();
+              },
+              style: {
+                padding: '4px 8px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px',
+                fontSize: '15px',
+                outline: 'none',
+                width: '200px'
+              },
+              autoFocus: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: saveEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#16a34a',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2713"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: cancelEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#dc2626',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2715"
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              cursor: 'pointer',
+              padding: '2px 4px',
+              borderRadius: '4px',
+              backgroundColor: pendingChanges.first_name || pendingChanges.last_name ? '#fef3c7' : 'transparent',
+              border: pendingChanges.first_name || pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+            },
+            onDoubleClick: function onDoubleClick() {
+              return startEditing('title', title);
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              return e.target.style.background = '#f3f4f6';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              return e.target.style.background = pendingChanges.first_name || pendingChanges.last_name ? '#fef3c7' : 'transparent';
+            },
+            children: [pendingChanges.first_name && pendingChanges.last_name ? "".concat(pendingChanges.first_name, " ").concat(pendingChanges.last_name) : title, (pendingChanges.first_name || pendingChanges.last_name) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              style: {
+                color: '#f59e0b',
+                marginLeft: '8px',
+                fontSize: '12px'
+              },
+              children: "\u25CF"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
             color: '#6b7280',
             fontSize: 13,
             marginBottom: 2
           },
-          children: subtitle
+          children: editingField === 'subtitle' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              type: "text",
+              value: editValue,
+              onChange: function onChange(e) {
+                return setEditValue(e.target.value);
+              },
+              onKeyDown: function onKeyDown(e) {
+                if (e.key === 'Enter') saveEdit();
+                if (e.key === 'Escape') cancelEdit();
+              },
+              style: {
+                padding: '4px 8px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px',
+                fontSize: '13px',
+                outline: 'none',
+                width: '200px'
+              },
+              autoFocus: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: saveEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#16a34a',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2713"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: cancelEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#dc2626',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2715"
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              cursor: 'pointer',
+              padding: '2px 4px',
+              borderRadius: '4px',
+              backgroundColor: pendingChanges.program || pendingChanges.year_level ? '#fef3c7' : 'transparent',
+              border: pendingChanges.program || pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+            },
+            onDoubleClick: function onDoubleClick() {
+              return startEditing('subtitle', subtitle);
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              return e.target.style.background = '#f3f4f6';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              return e.target.style.background = pendingChanges.program || pendingChanges.year_level ? '#fef3c7' : 'transparent';
+            },
+            children: [pendingChanges.program && pendingChanges.year_level ? "".concat(pendingChanges.program, " \xB7 ").concat(pendingChanges.year_level, " Year") : subtitle, (pendingChanges.program || pendingChanges.year_level) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              style: {
+                color: '#f59e0b',
+                marginLeft: '8px',
+                fontSize: '12px'
+              },
+              children: "\u25CF"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           style: {
             color: '#9ca3af',
             fontSize: 12
           },
-          children: meta
+          children: editingField === 'meta' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("input", {
+              type: "text",
+              value: editValue,
+              onChange: function onChange(e) {
+                return setEditValue(e.target.value);
+              },
+              onKeyDown: function onKeyDown(e) {
+                if (e.key === 'Enter') saveEdit();
+                if (e.key === 'Escape') cancelEdit();
+              },
+              style: {
+                padding: '4px 8px',
+                border: '1px solid #d1d5db',
+                borderRadius: '4px',
+                fontSize: '12px',
+                outline: 'none',
+                width: '200px'
+              },
+              autoFocus: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: saveEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#16a34a',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2713"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+              onClick: cancelEdit,
+              style: {
+                padding: '4px 8px',
+                background: '#dc2626',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px'
+              },
+              children: "\u2715"
+            })]
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+            style: {
+              cursor: 'pointer',
+              padding: '2px 4px',
+              borderRadius: '4px',
+              backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+              border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+            },
+            onDoubleClick: function onDoubleClick() {
+              return startEditing('meta', meta);
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              return e.target.style.background = '#f3f4f6';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              return e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent';
+            },
+            children: [pendingChanges.student_id ? "ID: ".concat(pendingChanges.student_id) : meta, pendingChanges.student_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+              style: {
+                color: '#f59e0b',
+                marginLeft: '8px',
+                fontSize: '12px'
+              },
+              children: "\u25CF"
+            })]
+          })
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
       style: {
         display: 'flex',
-        gap: 8
+        gap: 8,
+        alignItems: 'center'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+      children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          onClick: saveAllChanges,
+          style: {
+            background: '#16a34a',
+            color: 'white',
+            border: 'none',
+            borderRadius: 6,
+            padding: '6px 12px',
+            cursor: 'pointer',
+            fontWeight: '600',
+            fontSize: '12px'
+          },
+          children: "Save"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
+          onClick: discardChanges,
+          style: {
+            background: '#dc2626',
+            color: 'white',
+            border: 'none',
+            borderRadius: 6,
+            padding: '6px 12px',
+            cursor: 'pointer',
+            fontWeight: '600',
+            fontSize: '12px'
+          },
+          children: "Discard"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("button", {
         style: {
           width: 32,
           height: 32,
@@ -60113,9 +63346,9 @@ var buttonStyleGhost = {
 };
 
 // Icon Components
-function DashboardIcon(_ref6) {
-  var _ref6$color = _ref6.color,
-    color = _ref6$color === void 0 ? '#4a5568' : _ref6$color;
+function DashboardIcon(_ref1) {
+  var _ref1$color = _ref1.color,
+    color = _ref1$color === void 0 ? '#4a5568' : _ref1$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -60128,9 +63361,9 @@ function DashboardIcon(_ref6) {
     })
   });
 }
-function StudentsIcon(_ref7) {
-  var _ref7$color = _ref7.color,
-    color = _ref7$color === void 0 ? '#4a5568' : _ref7$color;
+function StudentsIcon(_ref10) {
+  var _ref10$color = _ref10.color,
+    color = _ref10$color === void 0 ? '#4a5568' : _ref10$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -60143,9 +63376,9 @@ function StudentsIcon(_ref7) {
     })
   });
 }
-function FacultyIcon(_ref8) {
-  var _ref8$color = _ref8.color,
-    color = _ref8$color === void 0 ? '#4a5568' : _ref8$color;
+function FacultyIcon(_ref11) {
+  var _ref11$color = _ref11.color,
+    color = _ref11$color === void 0 ? '#4a5568' : _ref11$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -60158,9 +63391,9 @@ function FacultyIcon(_ref8) {
     })
   });
 }
-function CoursesIcon(_ref9) {
-  var _ref9$color = _ref9.color,
-    color = _ref9$color === void 0 ? '#4a5568' : _ref9$color;
+function CoursesIcon(_ref12) {
+  var _ref12$color = _ref12.color,
+    color = _ref12$color === void 0 ? '#4a5568' : _ref12$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -60173,9 +63406,9 @@ function CoursesIcon(_ref9) {
     })
   });
 }
-function ScheduleIcon(_ref0) {
-  var _ref0$color = _ref0.color,
-    color = _ref0$color === void 0 ? '#4a5568' : _ref0$color;
+function ScheduleIcon(_ref13) {
+  var _ref13$color = _ref13.color,
+    color = _ref13$color === void 0 ? '#4a5568' : _ref13$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -60188,9 +63421,9 @@ function ScheduleIcon(_ref0) {
     })
   });
 }
-function SettingsIcon(_ref1) {
-  var _ref1$color = _ref1.color,
-    color = _ref1$color === void 0 ? '#4a5568' : _ref1$color;
+function SettingsIcon(_ref14) {
+  var _ref14$color = _ref14.color,
+    color = _ref14$color === void 0 ? '#4a5568' : _ref14$color;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
     width: "24",
     height: "24",
@@ -61009,7 +64242,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ FacultyList)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Faculty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Faculty */ "./resources/js/components/Faculty.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -61022,7 +64262,9 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
-function FacultyList() {
+
+function FacultyList(_ref) {
+  var onDataUpdate = _ref.onDataUpdate;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     faculty = _useState2[0],
@@ -61039,55 +64281,291 @@ function FacultyList() {
     _useState8 = _slicedToArray(_useState7, 2),
     selectedRow = _useState8[0],
     setSelectedRow = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState0 = _slicedToArray(_useState9, 2),
+    showAddFaculty = _useState0[0],
+    setShowAddFaculty = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState1, 2),
+    showEditFaculty = _useState10[0],
+    setShowEditFaculty = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState12 = _slicedToArray(_useState11, 2),
+    facultyToEdit = _useState12[0],
+    setFacultyToEdit = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState14 = _slicedToArray(_useState13, 2),
+    showFacultyDetails = _useState14[0],
+    setShowFacultyDetails = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState16 = _slicedToArray(_useState15, 2),
+    selectedFaculty = _useState16[0],
+    setSelectedFaculty = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState18 = _slicedToArray(_useState17, 2),
+    showDeleteFaculty = _useState18[0],
+    setShowDeleteFaculty = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState20 = _slicedToArray(_useState19, 2),
+    facultyToDelete = _useState20[0],
+    setFacultyToDelete = _useState20[1];
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState22 = _slicedToArray(_useState21, 2),
+    editingField = _useState22[0],
+    setEditingField = _useState22[1];
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState24 = _slicedToArray(_useState23, 2),
+    editValue = _useState24[0],
+    setEditValue = _useState24[1];
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState26 = _slicedToArray(_useState25, 2),
+    hasUnsavedChanges = _useState26[0],
+    setHasUnsavedChanges = _useState26[1];
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState28 = _slicedToArray(_useState27, 2),
+    pendingChanges = _useState28[0],
+    setPendingChanges = _useState28[1];
+  var fetchFaculty = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, activeFaculty, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            _context.n = 1;
+            return fetch('/api/faculty');
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            // Filter out archived faculty members
+            activeFaculty = Array.isArray(data) ? data.filter(function (faculty) {
+              return faculty.status !== 'archived';
+            }) : [];
+            setFaculty(activeFaculty);
+            _context.n = 4;
+            break;
+          case 3:
+            _context.p = 3;
+            _t = _context.v;
+            setFaculty([]);
+          case 4:
+            _context.p = 4;
+            setLoading(false);
+            return _context.f(4);
+          case 5:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 3, 4, 5]]);
+    }));
+    return function fetchFaculty() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var fetchFaculty = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-        var response, data, _t;
-        return _regenerator().w(function (_context) {
-          while (1) switch (_context.p = _context.n) {
-            case 0:
-              _context.p = 0;
-              _context.n = 1;
-              return fetch('/api/faculty');
-            case 1:
-              response = _context.v;
-              _context.n = 2;
-              return response.json();
-            case 2:
-              data = _context.v;
-              setFaculty(Array.isArray(data) ? data : []);
-              _context.n = 4;
-              break;
-            case 3:
-              _context.p = 3;
-              _t = _context.v;
-              setFaculty([]);
-            case 4:
-              _context.p = 4;
-              setLoading(false);
-              return _context.f(4);
-            case 5:
-              return _context.a(2);
-          }
-        }, _callee, null, [[0, 3, 4, 5]]);
-      }));
-      return function fetchFaculty() {
-        return _ref.apply(this, arguments);
-      };
-    }();
     fetchFaculty();
   }, []);
   var filteredFaculty = faculty.filter(function (member) {
     var searchLower = searchTerm.toLowerCase();
     return (member.first_name + ' ' + member.last_name).toLowerCase().includes(searchLower) || (member.email || '').toLowerCase().includes(searchLower) || (member.faculty_id || '').toLowerCase().includes(searchLower) || (member.department || '').toLowerCase().includes(searchLower);
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  var openAddFaculty = function openAddFaculty() {
+    setShowAddFaculty(true);
+  };
+  var closeAddFaculty = function closeAddFaculty() {
+    setShowAddFaculty(false);
+  };
+  var openDeleteFaculty = function openDeleteFaculty(faculty) {
+    setFacultyToDelete(faculty);
+    setShowDeleteFaculty(true);
+  };
+  var closeDeleteFaculty = function closeDeleteFaculty() {
+    setShowDeleteFaculty(false);
+    setFacultyToDelete(null);
+  };
+  var deleteFaculty = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            if (facultyToDelete) {
+              _context2.n = 1;
+              break;
+            }
+            return _context2.a(2);
+          case 1:
+            _context2.p = 1;
+            _context2.n = 2;
+            return fetch("/api/faculty/".concat(facultyToDelete.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(_objectSpread(_objectSpread({}, facultyToDelete), {}, {
+                status: 'archived',
+                archived_at: new Date().toISOString()
+              }))
+            });
+          case 2:
+            response = _context2.v;
+            if (response.ok) {
+              closeDeleteFaculty();
+              refreshFaculty();
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+              alert('Faculty deleted successfully!');
+            } else {
+              alert('Failed to delete faculty. Please try again.');
+            }
+            _context2.n = 4;
+            break;
+          case 3:
+            _context2.p = 3;
+            _t2 = _context2.v;
+            console.error('Error deleting faculty:', _t2);
+            alert('Error deleting faculty. Please try again.');
+          case 4:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 3]]);
+    }));
+    return function deleteFaculty() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  var openEditFaculty = function openEditFaculty(member) {
+    setFacultyToEdit(member);
+    setShowEditFaculty(true);
+  };
+  var closeEditFaculty = function closeEditFaculty() {
+    setShowEditFaculty(false);
+    setFacultyToEdit(null);
+  };
+  var refreshFaculty = function refreshFaculty() {
+    fetchFaculty();
+  };
+  var openFacultyDetails = function openFacultyDetails(member) {
+    setSelectedFaculty(member);
+    setShowFacultyDetails(true);
+  };
+  var closeFacultyDetails = function closeFacultyDetails() {
+    setShowFacultyDetails(false);
+    setSelectedFaculty(null);
+    setEditingField(null);
+    setEditValue('');
+  };
+  var startEditing = function startEditing(field, value) {
+    setEditingField(field);
+    setEditValue(value || '');
+  };
+  var saveEdit = /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var currentFaculty, newPendingChanges;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.n) {
+          case 0:
+            currentFaculty = selectedFaculty || facultyToEdit;
+            if (!(!currentFaculty || !editingField)) {
+              _context3.n = 1;
+              break;
+            }
+            return _context3.a(2);
+          case 1:
+            // Store the change in pending changes
+            newPendingChanges = _objectSpread(_objectSpread({}, pendingChanges), {}, _defineProperty({}, editingField, editValue));
+            setPendingChanges(newPendingChanges);
+            setHasUnsavedChanges(true);
+            setEditingField(null);
+            setEditValue('');
+          case 2:
+            return _context3.a(2);
+        }
+      }, _callee3);
+    }));
+    return function saveEdit() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  var saveAllChanges = /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
+      var currentFaculty, updatedFaculty, response, _t3;
+      return _regenerator().w(function (_context4) {
+        while (1) switch (_context4.p = _context4.n) {
+          case 0:
+            currentFaculty = selectedFaculty || facultyToEdit;
+            if (!(!currentFaculty || Object.keys(pendingChanges).length === 0)) {
+              _context4.n = 1;
+              break;
+            }
+            return _context4.a(2);
+          case 1:
+            _context4.p = 1;
+            updatedFaculty = _objectSpread(_objectSpread({}, currentFaculty), pendingChanges);
+            _context4.n = 2;
+            return fetch("/api/faculty/".concat(currentFaculty.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(updatedFaculty)
+            });
+          case 2:
+            response = _context4.v;
+            if (response.ok) {
+              if (selectedFaculty) {
+                setSelectedFaculty(updatedFaculty);
+              }
+              if (facultyToEdit) {
+                setFacultyToEdit(updatedFaculty);
+              }
+              setPendingChanges({});
+              setHasUnsavedChanges(false);
+              refreshFaculty();
+              // Notify parent component (Dashboard) to refresh its data
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+              // Show success message
+              alert('Faculty details updated successfully!');
+            }
+            _context4.n = 4;
+            break;
+          case 3:
+            _context4.p = 3;
+            _t3 = _context4.v;
+            console.error('Error updating faculty:', _t3);
+          case 4:
+            return _context4.a(2);
+        }
+      }, _callee4, null, [[1, 3]]);
+    }));
+    return function saveAllChanges() {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+  var discardChanges = function discardChanges() {
+    setPendingChanges({});
+    setHasUnsavedChanges(false);
+    setEditingField(null);
+    setEditValue('');
+  };
+  var cancelEdit = function cancelEdit() {
+    setEditingField(null);
+    setEditValue('');
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     style: {
       padding: '32px',
       background: '#f5f7fa',
       minHeight: '100vh'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       style: {
         background: 'white',
         padding: '20px 24px',
@@ -61098,11 +64576,11 @@ function FacultyList() {
         gap: 16,
         alignItems: 'center'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         style: {
           position: 'relative'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
           style: {
             padding: '10px 36px 10px 14px',
             borderRadius: 8,
@@ -61113,16 +64591,16 @@ function FacultyList() {
             cursor: 'pointer',
             appearance: 'none'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Add filter"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Department"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Position"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Status"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           style: {
             position: 'absolute',
             right: 12,
@@ -61134,7 +64612,7 @@ function FacultyList() {
           height: "12",
           viewBox: "0 0 12 12",
           fill: "none",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M2.5 4.5L6 8L9.5 4.5",
             stroke: "#6b7280",
             strokeWidth: "1.5",
@@ -61142,14 +64620,14 @@ function FacultyList() {
             strokeLinejoin: "round"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         style: {
           flex: 1,
           position: 'relative',
           display: 'flex',
           alignItems: 'center'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           style: {
             position: 'absolute',
             left: 14,
@@ -61159,14 +64637,14 @@ function FacultyList() {
           height: "18",
           viewBox: "0 0 24 24",
           fill: "none",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z",
             stroke: "#9ca3af",
             strokeWidth: "2",
             strokeLinecap: "round",
             strokeLinejoin: "round"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "text",
           placeholder: "Search for a faculty member by name or email",
           value: searchTerm,
@@ -61183,45 +64661,102 @@ function FacultyList() {
           }
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      style: {
+        background: 'white',
+        padding: '16px 24px',
+        border: '1px solid #e5e7eb',
+        borderTop: 'none',
+        borderBottom: 'none',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          fontSize: '18px',
+          fontWeight: '600',
+          color: '#374151'
+        },
+        children: ["Faculty (", filteredFaculty.length, ")"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+        onClick: openAddFaculty,
+        style: {
+          background: '#16a34a',
+          color: 'white',
+          border: 'none',
+          borderRadius: 8,
+          padding: '10px 20px',
+          cursor: 'pointer',
+          fontWeight: '600',
+          fontSize: '14px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          transition: 'all 0.2s'
+        },
+        onMouseEnter: function onMouseEnter(e) {
+          return e.target.style.background = '#15803d';
+        },
+        onMouseLeave: function onMouseLeave(e) {
+          return e.target.style.background = '#16a34a';
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+          width: "16",
+          height: "16",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            d: "M12 5v14m-7-7h14",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        }), "Add Faculty"]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       style: {
         background: 'white',
         borderRadius: '0 0 12px 12px',
         border: '1px solid #e5e7eb',
         overflow: 'hidden'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
         style: {
           width: '100%',
           borderCollapse: 'collapse'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
             style: {
               background: '#f9fafb',
               borderBottom: '1px solid #e5e7eb'
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Name"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Faculty ID"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Email address"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Department"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Position"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Actions"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
-          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-              colSpan: "5",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              colSpan: "6",
               style: {
                 padding: 40,
                 textAlign: 'center',
@@ -61229,9 +64764,9 @@ function FacultyList() {
               },
               children: "Loading faculty members..."
             })
-          }) : filteredFaculty.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-              colSpan: "5",
+          }) : filteredFaculty.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              colSpan: "6",
               style: {
                 padding: 40,
                 textAlign: 'center',
@@ -61240,7 +64775,10 @@ function FacultyList() {
               children: searchTerm ? 'No faculty members found matching your search.' : 'No faculty members found.'
             })
           }) : filteredFaculty.map(function (member, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+              onClick: function onClick() {
+                return openFacultyDetails(member);
+              },
               onMouseEnter: function onMouseEnter() {
                 return setSelectedRow(index);
               },
@@ -61253,24 +64791,2439 @@ function FacultyList() {
                 cursor: 'pointer',
                 transition: 'background 0.15s'
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
                 style: tableCellStyle,
                 children: [member.first_name, " ", member.last_name]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: member.faculty_id || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: member.email || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: member.department || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: member.position || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                style: tableCellStyle,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    onClick: function onClick(e) {
+                      e.stopPropagation();
+                      openEditFaculty(member);
+                    },
+                    style: {
+                      width: 32,
+                      height: 32,
+                      borderRadius: 6,
+                      border: 'none',
+                      background: '#f0fdf4',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    },
+                    title: "Edit",
+                    onMouseEnter: function onMouseEnter(e) {
+                      return e.currentTarget.style.background = '#dcfce7';
+                    },
+                    onMouseLeave: function onMouseLeave(e) {
+                      return e.currentTarget.style.background = '#f0fdf4';
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                      width: "18",
+                      height: "18",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+                        fill: "#16a34a"
+                      })
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    onClick: function onClick(e) {
+                      e.stopPropagation();
+                      openDeleteFaculty(member);
+                    },
+                    style: {
+                      width: 32,
+                      height: 32,
+                      borderRadius: 6,
+                      border: 'none',
+                      background: '#fef2f2',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    },
+                    title: "Delete",
+                    onMouseEnter: function onMouseEnter(e) {
+                      return e.currentTarget.style.background = '#fee2e2';
+                    },
+                    onMouseLeave: function onMouseLeave(e) {
+                      return e.currentTarget.style.background = '#fef2f2';
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                      width: "18",
+                      height: "18",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M3 6h18l-2 13H5L3 6zM8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6",
+                        stroke: "#dc2626",
+                        strokeWidth: "2",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                      })
+                    })
+                  })]
+                })
               })]
             }, member.id);
           })
+        })]
+      })
+    }), showEditFaculty && facultyToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Faculty Details"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: saveAllChanges,
+                style: {
+                  background: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Save Changes"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: discardChanges,
+                style: {
+                  background: '#dc2626',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Discard"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              onClick: closeEditFaculty,
+              style: {
+                background: 'transparent',
+                border: '1px solid #e5e7eb',
+                borderRadius: 8,
+                padding: '6px 10px',
+                cursor: 'pointer'
+              },
+              children: "\u2715"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              background: '#fff',
+              padding: '24px',
+              borderRadius: '12px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              style: {
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '24px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Personal Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Faculty ID:"
+                    }), editingField === 'faculty_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.faculty_id ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.faculty_id ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('faculty_id', facultyToEdit.faculty_id);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.faculty_id ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.faculty_id || facultyToEdit.faculty_id || '—', pendingChanges.faculty_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "First Name:"
+                    }), editingField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('first_name', facultyToEdit.first_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.first_name || facultyToEdit.first_name || '—', pendingChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Last Name:"
+                    }), editingField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('last_name', facultyToEdit.last_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.last_name || facultyToEdit.last_name || '—', pendingChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Date of Birth:"
+                    }), editingField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "date",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('date_of_birth', facultyToEdit.date_of_birth);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.date_of_birth || facultyToEdit.date_of_birth || '—', pendingChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Gender:"
+                    }), editingField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Gender"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Male",
+                          children: "Male"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Female",
+                          children: "Female"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Other",
+                          children: "Other"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('gender', facultyToEdit.gender);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.gender || facultyToEdit.gender || '—', pendingChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Personal Information:"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px'
+                      },
+                      children: facultyToEdit.personal_information || '—'
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '24px 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Contact Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Email:"
+                    }), editingField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "email",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('email', facultyToEdit.email);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.email || facultyToEdit.email || '—', pendingChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Phone:"
+                    }), editingField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "tel",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('phone', facultyToEdit.phone);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.phone || facultyToEdit.phone || '—', pendingChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Address:"
+                    }), editingField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('address', facultyToEdit.address);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.address || facultyToEdit.address || '—', pendingChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Professional Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Department:"
+                    }), editingField === 'department' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Department"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Nursing Program",
+                          children: "Nursing Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Teachers Education Program",
+                          children: "Teachers Education Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Engineering Program",
+                          children: "Engineering Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Criminal Justice Program",
+                          children: "Criminal Justice Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Computer Science Program",
+                          children: "Computer Science Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Arts and Sciences Program",
+                          children: "Arts and Sciences Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Business Administration Program",
+                          children: "Business Administration Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Accountancy Program",
+                          children: "Accountancy Program"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.department ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.department ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('department', facultyToEdit.department);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.department ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.department || facultyToEdit.department || '—', pendingChanges.department && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Position:"
+                    }), editingField === 'position' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.position ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.position ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('position', facultyToEdit.position);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.position ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.position || facultyToEdit.position || '—', pendingChanges.position && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              })]
+            })
+          })
+        })]
+      })
+    }), showFacultyDetails && selectedFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Faculty Details"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: saveAllChanges,
+                style: {
+                  background: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Save Changes"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: discardChanges,
+                style: {
+                  background: '#dc2626',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Discard"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              onClick: closeFacultyDetails,
+              style: {
+                background: 'transparent',
+                border: '1px solid #e5e7eb',
+                borderRadius: 8,
+                padding: '6px 10px',
+                cursor: 'pointer'
+              },
+              children: "\u2715"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              background: '#fff',
+              padding: '24px',
+              borderRadius: '12px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              style: {
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '24px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Personal Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Faculty ID:"
+                    }), editingField === 'faculty_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.faculty_id ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.faculty_id ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('faculty_id', selectedFaculty.faculty_id);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.faculty_id ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.faculty_id || selectedFaculty.faculty_id || '—', pendingChanges.faculty_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "First Name:"
+                    }), editingField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('first_name', selectedFaculty.first_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.first_name || selectedFaculty.first_name || '—', pendingChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Last Name:"
+                    }), editingField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('last_name', selectedFaculty.last_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.last_name || selectedFaculty.last_name || '—', pendingChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Date of Birth:"
+                    }), editingField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "date",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('date_of_birth', selectedFaculty.date_of_birth);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.date_of_birth || selectedFaculty.date_of_birth || '—', pendingChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Gender:"
+                    }), editingField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Gender"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Male",
+                          children: "Male"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Female",
+                          children: "Female"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Other",
+                          children: "Other"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('gender', selectedFaculty.gender);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.gender || selectedFaculty.gender || '—', pendingChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Personal Information:"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px'
+                      },
+                      children: selectedFaculty.personal_information || '—'
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '24px 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Contact Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Email:"
+                    }), editingField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "email",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('email', selectedFaculty.email);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.email || selectedFaculty.email || '—', pendingChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Phone:"
+                    }), editingField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "tel",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('phone', selectedFaculty.phone);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.phone || selectedFaculty.phone || '—', pendingChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Address:"
+                    }), editingField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('address', selectedFaculty.address);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.address || selectedFaculty.address || '—', pendingChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Academic Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Department:"
+                    }), editingField === 'department' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Department"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Nursing Program",
+                          children: "Nursing Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Teachers Education Program",
+                          children: "Teachers Education Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Engineering Program",
+                          children: "Engineering Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Criminal Justice Program",
+                          children: "Criminal Justice Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Computer Science Program",
+                          children: "Computer Science Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Arts and Sciences Program",
+                          children: "Arts and Sciences Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Business Administration Program",
+                          children: "Business Administration Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Accountancy Program",
+                          children: "Accountancy Program"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.department ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.department ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('department', selectedFaculty.department);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.department ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.department || selectedFaculty.department || '—', pendingChanges.department && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Position:"
+                    }), editingField === 'position' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.position ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.position ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('position', selectedFaculty.position);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.position ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.position || selectedFaculty.position || '—', pendingChanges.position && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Attainment:"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px'
+                      },
+                      children: selectedFaculty.attainment || '—'
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Status:"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                      style: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
+                        color: '#374151',
+                        marginTop: '4px',
+                        padding: '4px 8px',
+                        borderRadius: '6px',
+                        backgroundColor: selectedFaculty.status === 'Active' ? '#dcfce7' : '#fef3c7'
+                      }, "color", selectedFaculty.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'),
+                      children: selectedFaculty.status || '—'
+                    })]
+                  })]
+                })]
+              })]
+            })
+          })
+        })]
+      })
+    }), showAddFaculty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Add Faculty"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: closeAddFaculty,
+            style: {
+              background: 'transparent',
+              border: '1px solid #e5e7eb',
+              borderRadius: 8,
+              padding: '6px 10px',
+              cursor: 'pointer'
+            },
+            children: "\u2715"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            onSuccess: function onSuccess() {
+              closeAddFaculty();
+              refreshFaculty();
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+            },
+            showForm: true,
+            showList: false
+          })
+        })]
+      })
+    }), showDeleteFaculty && facultyToDelete && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          background: 'white',
+          borderRadius: 12,
+          padding: 24,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+          maxWidth: '400px',
+          width: '100%'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            textAlign: 'center',
+            marginBottom: 20
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              width: 48,
+              height: 48,
+              borderRadius: '50%',
+              background: '#fef2f2',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 16px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z",
+                stroke: "#dc2626",
+                strokeWidth: "2",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#374151',
+              margin: '0 0 8px 0'
+            },
+            children: "Delete Faculty"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            style: {
+              color: '#6b7280',
+              margin: 0,
+              lineHeight: '1.5'
+            },
+            children: ["Are you sure you want to delete ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+              children: [facultyToDelete.first_name, " ", facultyToDelete.last_name]
+            }), "? This action cannot be undone."]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            gap: '12px',
+            justifyContent: 'flex-end'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: closeDeleteFaculty,
+            style: {
+              background: 'transparent',
+              border: '1px solid #d1d5db',
+              borderRadius: 8,
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '14px',
+              color: '#374151'
+            },
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: deleteFaculty,
+            style: {
+              background: '#dc2626',
+              border: 'none',
+              borderRadius: 8,
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '14px',
+              color: 'white'
+            },
+            children: "Delete"
+          })]
         })]
       })
     })]
@@ -62540,7 +68493,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Students)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Home */ "./resources/js/components/Home.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -62553,7 +68513,9 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
-function Students() {
+
+function Students(_ref) {
+  var onDataUpdate = _ref.onDataUpdate;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
     students = _useState2[0],
@@ -62570,55 +68532,286 @@ function Students() {
     _useState8 = _slicedToArray(_useState7, 2),
     selectedRow = _useState8[0],
     setSelectedRow = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState0 = _slicedToArray(_useState9, 2),
+    showEditStudent = _useState0[0],
+    setShowEditStudent = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState10 = _slicedToArray(_useState1, 2),
+    studentToEdit = _useState10[0],
+    setStudentToEdit = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState12 = _slicedToArray(_useState11, 2),
+    showStudentDetails = _useState12[0],
+    setShowStudentDetails = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState14 = _slicedToArray(_useState13, 2),
+    selectedStudent = _useState14[0],
+    setSelectedStudent = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState16 = _slicedToArray(_useState15, 2),
+    editingField = _useState16[0],
+    setEditingField = _useState16[1];
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState18 = _slicedToArray(_useState17, 2),
+    editValue = _useState18[0],
+    setEditValue = _useState18[1];
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState20 = _slicedToArray(_useState19, 2),
+    hasUnsavedChanges = _useState20[0],
+    setHasUnsavedChanges = _useState20[1];
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState22 = _slicedToArray(_useState21, 2),
+    pendingChanges = _useState22[0],
+    setPendingChanges = _useState22[1];
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState24 = _slicedToArray(_useState23, 2),
+    showAddStudent = _useState24[0],
+    setShowAddStudent = _useState24[1];
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState26 = _slicedToArray(_useState25, 2),
+    showDeleteStudent = _useState26[0],
+    setShowDeleteStudent = _useState26[1];
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState28 = _slicedToArray(_useState27, 2),
+    studentToDelete = _useState28[0],
+    setStudentToDelete = _useState28[1];
+  var fetchStudents = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            _context.n = 1;
+            return fetch('/api/students');
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            setStudents(Array.isArray(data) ? data : []);
+            _context.n = 4;
+            break;
+          case 3:
+            _context.p = 3;
+            _t = _context.v;
+            setStudents([]);
+          case 4:
+            _context.p = 4;
+            setLoading(false);
+            return _context.f(4);
+          case 5:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 3, 4, 5]]);
+    }));
+    return function fetchStudents() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var fetchStudents = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-        var response, data, _t;
-        return _regenerator().w(function (_context) {
-          while (1) switch (_context.p = _context.n) {
-            case 0:
-              _context.p = 0;
-              _context.n = 1;
-              return fetch('/api/students');
-            case 1:
-              response = _context.v;
-              _context.n = 2;
-              return response.json();
-            case 2:
-              data = _context.v;
-              setStudents(Array.isArray(data) ? data : []);
-              _context.n = 4;
-              break;
-            case 3:
-              _context.p = 3;
-              _t = _context.v;
-              setStudents([]);
-            case 4:
-              _context.p = 4;
-              setLoading(false);
-              return _context.f(4);
-            case 5:
-              return _context.a(2);
-          }
-        }, _callee, null, [[0, 3, 4, 5]]);
-      }));
-      return function fetchStudents() {
-        return _ref.apply(this, arguments);
-      };
-    }();
     fetchStudents();
   }, []);
+  var openEditStudent = function openEditStudent(student) {
+    setStudentToEdit(student);
+    setShowEditStudent(true);
+  };
+  var closeEditStudent = function closeEditStudent() {
+    setShowEditStudent(false);
+    setStudentToEdit(null);
+    setEditingField(null);
+    setEditValue('');
+    setHasUnsavedChanges(false);
+    setPendingChanges({});
+  };
+  var refreshStudents = function refreshStudents() {
+    fetchStudents();
+  };
+  var openStudentDetails = function openStudentDetails(student) {
+    setSelectedStudent(student);
+    setShowStudentDetails(true);
+  };
+  var closeStudentDetails = function closeStudentDetails() {
+    setShowStudentDetails(false);
+    setSelectedStudent(null);
+    setEditingField(null);
+    setEditValue('');
+    setHasUnsavedChanges(false);
+    setPendingChanges({});
+  };
+  var startEditing = function startEditing(field, currentValue) {
+    setEditingField(field);
+    setEditValue(currentValue || '');
+  };
+  var saveEdit = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var currentStudent, newPendingChanges;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.n) {
+          case 0:
+            currentStudent = selectedStudent || studentToEdit;
+            if (!(!currentStudent || !editingField)) {
+              _context2.n = 1;
+              break;
+            }
+            return _context2.a(2);
+          case 1:
+            // Store the change in pending changes
+            newPendingChanges = _objectSpread(_objectSpread({}, pendingChanges), {}, _defineProperty({}, editingField, editValue));
+            setPendingChanges(newPendingChanges);
+            setHasUnsavedChanges(true);
+            setEditingField(null);
+            setEditValue('');
+          case 2:
+            return _context2.a(2);
+        }
+      }, _callee2);
+    }));
+    return function saveEdit() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  var saveAllChanges = /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var currentStudent, updatedStudent, response, _t2;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.p = _context3.n) {
+          case 0:
+            currentStudent = selectedStudent || studentToEdit;
+            if (!(!currentStudent || Object.keys(pendingChanges).length === 0)) {
+              _context3.n = 1;
+              break;
+            }
+            return _context3.a(2);
+          case 1:
+            _context3.p = 1;
+            updatedStudent = _objectSpread(_objectSpread({}, currentStudent), pendingChanges);
+            _context3.n = 2;
+            return fetch("/api/students/".concat(currentStudent.id), {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(updatedStudent)
+            });
+          case 2:
+            response = _context3.v;
+            if (response.ok) {
+              if (selectedStudent) {
+                setSelectedStudent(updatedStudent);
+              }
+              if (studentToEdit) {
+                setStudentToEdit(updatedStudent);
+              }
+              setPendingChanges({});
+              setHasUnsavedChanges(false);
+              refreshStudents();
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+              alert('Student details updated successfully!');
+            }
+            _context3.n = 4;
+            break;
+          case 3:
+            _context3.p = 3;
+            _t2 = _context3.v;
+            console.error('Error updating student:', _t2);
+          case 4:
+            return _context3.a(2);
+        }
+      }, _callee3, null, [[1, 3]]);
+    }));
+    return function saveAllChanges() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  var cancelEdit = function cancelEdit() {
+    setEditingField(null);
+    setEditValue('');
+  };
+  var discardChanges = function discardChanges() {
+    setPendingChanges({});
+    setHasUnsavedChanges(false);
+    setEditingField(null);
+    setEditValue('');
+  };
+  var openAddStudent = function openAddStudent() {
+    setShowAddStudent(true);
+  };
+  var closeAddStudent = function closeAddStudent() {
+    setShowAddStudent(false);
+  };
+  var openDeleteStudent = function openDeleteStudent(student) {
+    setStudentToDelete(student);
+    setShowDeleteStudent(true);
+  };
+  var closeDeleteStudent = function closeDeleteStudent() {
+    setShowDeleteStudent(false);
+    setStudentToDelete(null);
+  };
+  var deleteStudent = /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4() {
+      var response, _t3;
+      return _regenerator().w(function (_context4) {
+        while (1) switch (_context4.p = _context4.n) {
+          case 0:
+            if (studentToDelete) {
+              _context4.n = 1;
+              break;
+            }
+            return _context4.a(2);
+          case 1:
+            _context4.p = 1;
+            _context4.n = 2;
+            return fetch("/api/students/".concat(studentToDelete.id), {
+              method: 'DELETE',
+              headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              }
+            });
+          case 2:
+            response = _context4.v;
+            if (response.ok) {
+              alert('Student deleted successfully!');
+              refreshStudents();
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+              closeDeleteStudent();
+            } else {
+              alert('Error deleting student');
+            }
+            _context4.n = 4;
+            break;
+          case 3:
+            _context4.p = 3;
+            _t3 = _context4.v;
+            console.error('Error deleting student:', _t3);
+            alert('Error deleting student');
+          case 4:
+            return _context4.a(2);
+        }
+      }, _callee4, null, [[1, 3]]);
+    }));
+    return function deleteStudent() {
+      return _ref5.apply(this, arguments);
+    };
+  }();
   var filteredStudents = students.filter(function (student) {
     var searchLower = searchTerm.toLowerCase();
     return (student.first_name + ' ' + student.last_name).toLowerCase().includes(searchLower) || (student.email || '').toLowerCase().includes(searchLower) || (student.student_id || '').toLowerCase().includes(searchLower);
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     style: {
       padding: '32px',
       background: '#f5f7fa',
       minHeight: '100vh'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       style: {
         background: 'white',
         padding: '20px 24px',
@@ -62629,11 +68822,11 @@ function Students() {
         gap: 16,
         alignItems: 'center'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         style: {
           position: 'relative'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
           style: {
             padding: '10px 36px 10px 14px',
             borderRadius: 8,
@@ -62644,16 +68837,16 @@ function Students() {
             cursor: 'pointer',
             appearance: 'none'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Add filter"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Department"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Gender"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
             children: "Year Level"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           style: {
             position: 'absolute',
             right: 12,
@@ -62665,7 +68858,7 @@ function Students() {
           height: "12",
           viewBox: "0 0 12 12",
           fill: "none",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M2.5 4.5L6 8L9.5 4.5",
             stroke: "#6b7280",
             strokeWidth: "1.5",
@@ -62673,14 +68866,14 @@ function Students() {
             strokeLinejoin: "round"
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         style: {
           flex: 1,
           position: 'relative',
           display: 'flex',
           alignItems: 'center'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
           style: {
             position: 'absolute',
             left: 14,
@@ -62690,14 +68883,14 @@ function Students() {
           height: "18",
           viewBox: "0 0 24 24",
           fill: "none",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
             d: "M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z",
             stroke: "#9ca3af",
             strokeWidth: "2",
             strokeLinecap: "round",
             strokeLinejoin: "round"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
           type: "text",
           placeholder: "Search for a student by name or email",
           value: searchTerm,
@@ -62714,45 +68907,102 @@ function Students() {
           }
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      style: {
+        background: 'white',
+        padding: '16px 24px',
+        border: '1px solid #e5e7eb',
+        borderTop: 'none',
+        borderBottom: 'none',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          fontSize: '18px',
+          fontWeight: '600',
+          color: '#374151'
+        },
+        children: ["Students (", filteredStudents.length, ")"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("button", {
+        onClick: openAddStudent,
+        style: {
+          background: '#16a34a',
+          color: 'white',
+          border: 'none',
+          borderRadius: 8,
+          padding: '10px 20px',
+          cursor: 'pointer',
+          fontWeight: '600',
+          fontSize: '14px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          transition: 'all 0.2s'
+        },
+        onMouseEnter: function onMouseEnter(e) {
+          return e.target.style.background = '#15803d';
+        },
+        onMouseLeave: function onMouseLeave(e) {
+          return e.target.style.background = '#16a34a';
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+          width: "16",
+          height: "16",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+            d: "M12 5v14m-7-7h14",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            strokeLinecap: "round",
+            strokeLinejoin: "round"
+          })
+        }), "Add Student"]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       style: {
         background: 'white',
         borderRadius: '0 0 12px 12px',
         border: '1px solid #e5e7eb',
         overflow: 'hidden'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
         style: {
           width: '100%',
           borderCollapse: 'collapse'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
             style: {
               background: '#f9fafb',
               borderBottom: '1px solid #e5e7eb'
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Name"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Student ID"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Email address"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Department"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("th", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
               style: tableHeaderStyle,
               children: "Gender"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+              style: tableHeaderStyle,
+              children: "Actions"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
-          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-              colSpan: "5",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+          children: loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              colSpan: "6",
               style: {
                 padding: 40,
                 textAlign: 'center',
@@ -62760,9 +69010,9 @@ function Students() {
               },
               children: "Loading students..."
             })
-          }) : filteredStudents.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
-              colSpan: "5",
+          }) : filteredStudents.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+              colSpan: "6",
               style: {
                 padding: 40,
                 textAlign: 'center',
@@ -62771,7 +69021,10 @@ function Students() {
               children: searchTerm ? 'No students found matching your search.' : 'No students found.'
             })
           }) : filteredStudents.map(function (student, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+              onClick: function onClick() {
+                return openStudentDetails(student);
+              },
               onMouseEnter: function onMouseEnter() {
                 return setSelectedRow(index);
               },
@@ -62784,24 +69037,2794 @@ function Students() {
                 cursor: 'pointer',
                 transition: 'background 0.15s'
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
                 style: tableCellStyle,
                 children: [student.first_name, " ", student.last_name]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: student.student_id || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: student.email || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: student.program || '—'
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                 style: tableCellStyle,
                 children: student.gender || '—'
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                style: tableCellStyle,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    onClick: function onClick(e) {
+                      e.stopPropagation();
+                      openEditStudent(student);
+                    },
+                    style: {
+                      width: 32,
+                      height: 32,
+                      borderRadius: 6,
+                      border: 'none',
+                      background: '#f0fdf4',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    },
+                    title: "Edit",
+                    onMouseEnter: function onMouseEnter(e) {
+                      return e.currentTarget.style.background = '#dcfce7';
+                    },
+                    onMouseLeave: function onMouseLeave(e) {
+                      return e.currentTarget.style.background = '#f0fdf4';
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                      width: "18",
+                      height: "18",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z",
+                        fill: "#16a34a"
+                      })
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                    onClick: function onClick(e) {
+                      e.stopPropagation();
+                      openDeleteStudent(student);
+                    },
+                    style: {
+                      width: 32,
+                      height: 32,
+                      borderRadius: 6,
+                      border: 'none',
+                      background: '#fef2f2',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s'
+                    },
+                    title: "Delete",
+                    onMouseEnter: function onMouseEnter(e) {
+                      return e.currentTarget.style.background = '#fee2e2';
+                    },
+                    onMouseLeave: function onMouseLeave(e) {
+                      return e.currentTarget.style.background = '#fef2f2';
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+                      width: "18",
+                      height: "18",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                        d: "M3 6h18l-2 13H5L3 6zM8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6",
+                        stroke: "#dc2626",
+                        strokeWidth: "2",
+                        strokeLinecap: "round",
+                        strokeLinejoin: "round"
+                      })
+                    })
+                  })]
+                })
               })]
             }, student.id);
           })
+        })]
+      })
+    }), showEditStudent && studentToEdit && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Edit Student"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: saveAllChanges,
+                style: {
+                  background: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Save Changes"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: discardChanges,
+                style: {
+                  background: '#dc2626',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Discard"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              onClick: closeEditStudent,
+              style: {
+                background: 'transparent',
+                border: '1px solid #e5e7eb',
+                borderRadius: 8,
+                padding: '6px 10px',
+                cursor: 'pointer'
+              },
+              children: "\u2715"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              background: '#fff',
+              padding: '24px',
+              borderRadius: '12px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              style: {
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '24px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Personal Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Student ID:"
+                    }), editingField === 'student_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('student_id', studentToEdit.student_id);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.student_id || studentToEdit.student_id || '—', pendingChanges.student_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "First Name:"
+                    }), editingField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('first_name', studentToEdit.first_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.first_name || studentToEdit.first_name || '—', pendingChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Last Name:"
+                    }), editingField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('last_name', studentToEdit.last_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.last_name || studentToEdit.last_name || '—', pendingChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Date of Birth:"
+                    }), editingField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "date",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('date_of_birth', studentToEdit.date_of_birth);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.date_of_birth || studentToEdit.date_of_birth || '—', pendingChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Gender:"
+                    }), editingField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Gender"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Male",
+                          children: "Male"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Female",
+                          children: "Female"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Other",
+                          children: "Other"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('gender', studentToEdit.gender);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.gender || studentToEdit.gender || '—', pendingChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '24px 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Contact Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Email:"
+                    }), editingField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "email",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('email', studentToEdit.email);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.email || studentToEdit.email || '—', pendingChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Phone:"
+                    }), editingField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "tel",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('phone', studentToEdit.phone);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.phone || studentToEdit.phone || '—', pendingChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Address:"
+                    }), editingField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('address', studentToEdit.address);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.address || studentToEdit.address || '—', pendingChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Academic Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Program/Course:"
+                    }), editingField === 'program' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Program/Course"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Nursing Program",
+                          children: "Nursing Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Teachers Education Program",
+                          children: "Teachers Education Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Engineering Program",
+                          children: "Engineering Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Criminal Justice Program",
+                          children: "Criminal Justice Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Computer Science Program",
+                          children: "Computer Science Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Arts and Sciences Program",
+                          children: "Arts and Sciences Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Business Administration Program",
+                          children: "Business Administration Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Accountancy Program",
+                          children: "Accountancy Program"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.program ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.program ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('program', studentToEdit.program);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.program ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.program || studentToEdit.program || '—', pendingChanges.program && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Year Level:"
+                    }), editingField === 'year_level' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Year Level"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "1st Year",
+                          children: "1st Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "2nd Year",
+                          children: "2nd Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "3rd Year",
+                          children: "3rd Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "4th Year",
+                          children: "4th Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "5th Year",
+                          children: "5th Year"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.year_level ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('year_level', studentToEdit.year_level);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.year_level ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.year_level || studentToEdit.year_level || '—', pendingChanges.year_level && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Section:"
+                    }), editingField === 'section' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.section ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.section ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('section', studentToEdit.section);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.section ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.section || studentToEdit.section || '—', pendingChanges.section && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Status:"
+                    }), editingField === 'status' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Status"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Active",
+                          children: "Active"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Inactive",
+                          children: "Inactive"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Graduated",
+                          children: "Graduated"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Transferred",
+                          children: "Transferred"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+                        color: '#374151',
+                        marginTop: '4px',
+                        padding: '4px 8px',
+                        borderRadius: '6px',
+                        backgroundColor: pendingChanges.status ? '#fef3c7' : studentToEdit.status === 'Active' ? '#dcfce7' : '#fef3c7'
+                      }, "color", pendingChanges.status ? '#92400e' : studentToEdit.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'), "cursor", 'pointer'), "border", pendingChanges.status ? '1px solid #f59e0b' : '1px solid transparent'),
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('status', studentToEdit.status);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.opacity = '0.8';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.opacity = '1';
+                      },
+                      children: [pendingChanges.status || studentToEdit.status || '—', pendingChanges.status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              })]
+            })
+          })
+        })]
+      })
+    }), showStudentDetails && selectedStudent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Student Details"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              gap: '8px',
+              alignItems: 'center'
+            },
+            children: [hasUnsavedChanges && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: saveAllChanges,
+                style: {
+                  background: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Save Changes"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                onClick: discardChanges,
+                style: {
+                  background: '#dc2626',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: 8,
+                  padding: '8px 16px',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  fontSize: '14px'
+                },
+                children: "Discard"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              onClick: closeStudentDetails,
+              style: {
+                background: 'transparent',
+                border: '1px solid #e5e7eb',
+                borderRadius: 8,
+                padding: '6px 10px',
+                cursor: 'pointer'
+              },
+              children: "\u2715"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              background: '#fff',
+              padding: '24px',
+              borderRadius: '12px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              style: {
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '24px'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Personal Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Student ID:"
+                    }), editingField === 'student_id' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('student_id', selectedStudent.student_id);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.student_id || selectedStudent.student_id || '—', pendingChanges.student_id && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "First Name:"
+                    }), editingField === 'first_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('first_name', selectedStudent.first_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.first_name || selectedStudent.first_name || '—', pendingChanges.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Last Name:"
+                    }), editingField === 'last_name' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('last_name', selectedStudent.last_name);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.last_name || selectedStudent.last_name || '—', pendingChanges.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Date of Birth:"
+                    }), editingField === 'date_of_birth' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "date",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('date_of_birth', selectedStudent.date_of_birth);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.date_of_birth || selectedStudent.date_of_birth || '—', pendingChanges.date_of_birth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Gender:"
+                    }), editingField === 'gender' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Gender"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Male",
+                          children: "Male"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Female",
+                          children: "Female"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Other",
+                          children: "Other"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('gender', selectedStudent.gender);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.gender || selectedStudent.gender || '—', pendingChanges.gender && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '24px 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Contact Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Email:"
+                    }), editingField === 'email' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "email",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('email', selectedStudent.email);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.email || selectedStudent.email || '—', pendingChanges.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Phone:"
+                    }), editingField === 'phone' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "tel",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('phone', selectedStudent.phone);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.phone || selectedStudent.phone || '—', pendingChanges.phone && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Address:"
+                    }), editingField === 'address' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('address', selectedStudent.address);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.address || selectedStudent.address || '—', pendingChanges.address && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+                  style: {
+                    margin: '0 0 16px 0',
+                    color: '#374151',
+                    borderBottom: '2px solid #e5e7eb',
+                    paddingBottom: '8px'
+                  },
+                  children: "Academic Information"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Program/Course:"
+                    }), editingField === 'program' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Program/Course"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Nursing Program",
+                          children: "Nursing Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Teachers Education Program",
+                          children: "Teachers Education Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Engineering Program",
+                          children: "Engineering Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Criminal Justice Program",
+                          children: "Criminal Justice Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Computer Science Program",
+                          children: "Computer Science Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Arts and Sciences Program",
+                          children: "Arts and Sciences Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Business Administration Program",
+                          children: "Business Administration Program"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Accountancy Program",
+                          children: "Accountancy Program"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.program ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.program ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('program', selectedStudent.program);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.program ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.program || selectedStudent.program || '—', pendingChanges.program && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Year Level:"
+                    }), editingField === 'year_level' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Year Level"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "1st Year",
+                          children: "1st Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "2nd Year",
+                          children: "2nd Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "3rd Year",
+                          children: "3rd Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "4th Year",
+                          children: "4th Year"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "5th Year",
+                          children: "5th Year"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.year_level ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('year_level', selectedStudent.year_level);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.year_level ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.year_level || selectedStudent.year_level || '—', pendingChanges.year_level && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Section:"
+                    }), editingField === 'section' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                        type: "text",
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        color: '#374151',
+                        marginTop: '4px',
+                        cursor: 'pointer',
+                        padding: '2px 4px',
+                        borderRadius: '4px',
+                        backgroundColor: pendingChanges.section ? '#fef3c7' : 'transparent',
+                        border: pendingChanges.section ? '1px solid #f59e0b' : '1px solid transparent'
+                      },
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('section', selectedStudent.section);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.background = '#f3f4f6';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.background = pendingChanges.section ? '#fef3c7' : 'transparent';
+                      },
+                      children: [pendingChanges.section || selectedStudent.section || '—', pendingChanges.section && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                      style: {
+                        fontWeight: '600',
+                        color: '#6b7280',
+                        fontSize: '14px'
+                      },
+                      children: "Status:"
+                    }), editingField === 'status' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: {
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '8px',
+                        alignItems: 'center'
+                      },
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+                        value: editValue,
+                        onChange: function onChange(e) {
+                          return setEditValue(e.target.value);
+                        },
+                        onKeyDown: function onKeyDown(e) {
+                          if (e.key === 'Enter') saveEdit();
+                          if (e.key === 'Escape') cancelEdit();
+                        },
+                        style: {
+                          padding: '4px 8px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '4px',
+                          fontSize: '14px',
+                          outline: 'none',
+                          width: '200px'
+                        },
+                        autoFocus: true,
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "",
+                          children: "Select Status"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Active",
+                          children: "Active"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Inactive",
+                          children: "Inactive"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Graduated",
+                          children: "Graduated"
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                          value: "Transferred",
+                          children: "Transferred"
+                        })]
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: saveEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#16a34a',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2713"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+                        onClick: cancelEdit,
+                        style: {
+                          padding: '4px 8px',
+                          background: '#dc2626',
+                          color: 'white',
+                          border: 'none',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: '12px'
+                        },
+                        children: "\u2715"
+                      })]
+                    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      style: _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+                        color: '#374151',
+                        marginTop: '4px',
+                        padding: '4px 8px',
+                        borderRadius: '6px',
+                        backgroundColor: pendingChanges.status ? '#fef3c7' : selectedStudent.status === 'Active' ? '#dcfce7' : '#fef3c7'
+                      }, "color", pendingChanges.status ? '#92400e' : selectedStudent.status === 'Active' ? '#166534' : '#92400e'), "display", 'inline-block'), "fontSize", '12px'), "fontWeight", '600'), "cursor", 'pointer'), "border", pendingChanges.status ? '1px solid #f59e0b' : '1px solid transparent'),
+                      onDoubleClick: function onDoubleClick() {
+                        return startEditing('status', selectedStudent.status);
+                      },
+                      onMouseEnter: function onMouseEnter(e) {
+                        return e.target.style.opacity = '0.8';
+                      },
+                      onMouseLeave: function onMouseLeave(e) {
+                        return e.target.style.opacity = '1';
+                      },
+                      children: [pendingChanges.status || selectedStudent.status || '—', pendingChanges.status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        style: {
+                          color: '#f59e0b',
+                          marginLeft: '8px',
+                          fontSize: '12px'
+                        },
+                        children: "\u25CF"
+                      })]
+                    })]
+                  })]
+                })]
+              })]
+            })
+          })
+        })]
+      })
+    }), showAddStudent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          width: 'min(1100px, 100%)',
+          background: '#f3f4f6',
+          borderRadius: 12,
+          padding: 16,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: 12
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              fontWeight: 700,
+              fontSize: 18
+            },
+            children: "Add Student"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: closeAddStudent,
+            style: {
+              background: 'transparent',
+              border: '1px solid #e5e7eb',
+              borderRadius: 8,
+              padding: '6px 10px',
+              cursor: 'pointer'
+            },
+            children: "\u2715"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          style: {
+            maxHeight: '75vh',
+            overflow: 'auto'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            onSuccess: function onSuccess() {
+              closeAddStudent();
+              refreshStudents();
+              if (onDataUpdate) {
+                onDataUpdate();
+              }
+            },
+            showForm: true,
+            showList: false
+          })
+        })]
+      })
+    }), showDeleteStudent && studentToDelete && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      style: {
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.45)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 16,
+        zIndex: 1000
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          background: 'white',
+          borderRadius: 12,
+          padding: 24,
+          boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+          maxWidth: '400px',
+          width: '100%'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            textAlign: 'center',
+            marginBottom: 20
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            style: {
+              width: 48,
+              height: 48,
+              borderRadius: '50%',
+              background: '#fef2f2',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 16px'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
+              width: "24",
+              height: "24",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
+                d: "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z",
+                stroke: "#dc2626",
+                strokeWidth: "2",
+                strokeLinecap: "round",
+                strokeLinejoin: "round"
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              fontSize: '18px',
+              fontWeight: '600',
+              color: '#374151',
+              margin: '0 0 8px 0'
+            },
+            children: "Delete Student"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            style: {
+              color: '#6b7280',
+              margin: 0,
+              lineHeight: '1.5'
+            },
+            children: ["Are you sure you want to delete ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+              children: [studentToDelete.first_name, " ", studentToDelete.last_name]
+            }), "? This action cannot be undone."]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            gap: '12px',
+            justifyContent: 'flex-end'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: closeDeleteStudent,
+            style: {
+              background: 'transparent',
+              border: '1px solid #d1d5db',
+              borderRadius: 8,
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '14px',
+              color: '#374151'
+            },
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: deleteStudent,
+            style: {
+              background: '#dc2626',
+              border: 'none',
+              borderRadius: 8,
+              padding: '10px 20px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '14px',
+              color: 'white'
+            },
+            children: "Delete"
+          })]
         })]
       })
     })]
