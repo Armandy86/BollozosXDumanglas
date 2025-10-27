@@ -15,7 +15,11 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
+});
+
+Route::get('/login', function () {
+    return view('login');
 });
 
 Route::get('/home', [StudentController::class, 'index']);

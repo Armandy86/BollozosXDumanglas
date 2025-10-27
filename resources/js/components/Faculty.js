@@ -24,6 +24,18 @@ export default function Faculty({ onSuccess, showForm = true, showList = true, e
     const [editingFaculty, setEditingFaculty] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
 
+    // Define programs list
+    const programs = [
+        'Nursing Program',
+        'Teachers Education Program', 
+        'Engineering Program',
+        'Criminal Justice Program',
+        'Computer Science Program',
+        'Arts and Sciences Program',
+        'Business Administration Program',
+        'Accountancy Program'
+    ];
+
     // Load faculty when list is intended to be shown
     useEffect(() => {
         if (showList) {
@@ -420,12 +432,10 @@ export default function Faculty({ onSuccess, showForm = true, showList = true, e
                                 onChange={handleInputChange}
                                 style={inputStyle}
                             >
-                                <option value="">Select Department</option>
-                                <option value="Computer Science">Computer Science</option>
-                                <option value="Information Technology">Information Technology</option>
-                                <option value="Engineering">Engineering</option>
-                                <option value="Business">Business</option>
-                                <option value="Education">Education</option>
+                                <option value="">Select Department/Program</option>
+                                {programs.map((program, index) => (
+                                    <option key={index} value={program}>{program}</option>
+                                ))}
                             </select>
 
                             <input

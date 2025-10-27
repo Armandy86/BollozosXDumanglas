@@ -13,6 +13,20 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [currentView, setCurrentView] = useState('dashboard');
 
+    // Initialize theme on component mount
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
+    // Check authentication on component mount
+    useEffect(() => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = '/login';
+        }
+    }, []);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -25,7 +39,9 @@ export default function Dashboard() {
                 const facultyData = await facultyRes.json();
                 
                 setStudents(Array.isArray(studentsData) ? studentsData : []);
-                setFaculty(Array.isArray(facultyData) ? facultyData : []);
+                // Filter out archived faculty members
+                const activeFaculty = Array.isArray(facultyData) ? facultyData.filter(faculty => faculty.status !== 'archived') : [];
+                setFaculty(activeFaculty);
             } catch (e) {
                 setStudents([]);
                 setFaculty([]);
@@ -56,6 +72,11 @@ export default function Dashboard() {
 
     const [showEditStudent, setShowEditStudent] = useState(false);
     const [studentToEdit, setStudentToEdit] = useState(null);
+    const [editingField, setEditingField] = useState(null);
+    const [editValue, setEditValue] = useState('');
+    const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+    const [pendingChanges, setPendingChanges] = useState({});
+    
     const openEditStudent = (student) => {
         setStudentToEdit(student);
         setShowEditStudent(true);
@@ -63,6 +84,66 @@ export default function Dashboard() {
     const closeEditStudent = () => {
         setShowEditStudent(false);
         setStudentToEdit(null);
+        setEditingField(null);
+        setEditValue('');
+        setHasUnsavedChanges(false);
+        setPendingChanges({});
+    };
+
+    const startEditing = (field, currentValue) => {
+        setEditingField(field);
+        setEditValue(currentValue || '');
+    };
+
+    const saveEdit = () => {
+        if (!studentToEdit || !editingField) return;
+        
+        // Store the change in pending changes
+        const newPendingChanges = { ...pendingChanges, [editingField]: editValue };
+        setPendingChanges(newPendingChanges);
+        setHasUnsavedChanges(true);
+        
+        setEditingField(null);
+        setEditValue('');
+    };
+
+    const saveAllChanges = async () => {
+        if (!studentToEdit || Object.keys(pendingChanges).length === 0) return;
+        
+        try {
+            const updatedStudent = { ...studentToEdit, ...pendingChanges };
+            const response = await fetch(`/api/students/${studentToEdit.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(updatedStudent)
+            });
+
+            if (response.ok) {
+                setStudentToEdit(updatedStudent);
+                setPendingChanges({});
+                setHasUnsavedChanges(false);
+                // Refresh the dashboard data
+                fetch('/api/students').then(r=>r.json()).then(d=>setStudents(Array.isArray(d)?d:[]));
+                alert('Student updated successfully!');
+            }
+        } catch (error) {
+            console.error('Error updating student:', error);
+        }
+    };
+
+    const cancelEdit = () => {
+        setEditingField(null);
+        setEditValue('');
+    };
+
+    const discardChanges = () => {
+        setPendingChanges({});
+        setHasUnsavedChanges(false);
+        setEditingField(null);
+        setEditValue('');
     };
 
     const [showAddFaculty, setShowAddFaculty] = useState(false);
@@ -83,8 +164,31 @@ export default function Dashboard() {
         setSelectedFaculty(null);
     };
 
+    // Function to refresh all data
+    const refreshAllData = async () => {
+        try {
+            const [studentsRes, facultyRes] = await Promise.all([
+                fetch('/api/students'),
+                fetch('/api/faculty')
+            ]);
+            
+            const studentsData = await studentsRes.json();
+            const facultyData = await facultyRes.json();
+            
+            setStudents(Array.isArray(studentsData) ? studentsData : []);
+            setFaculty(Array.isArray(facultyData) ? facultyData : []);
+        } catch (e) {
+            console.error('Error refreshing data:', e);
+        }
+    };
+
     const [showEditFaculty, setShowEditFaculty] = useState(false);
     const [facultyToEdit, setFacultyToEdit] = useState(null);
+    const [editingFacultyField, setEditingFacultyField] = useState(null);
+    const [editFacultyValue, setEditFacultyValue] = useState('');
+    const [hasUnsavedFacultyChanges, setHasUnsavedFacultyChanges] = useState(false);
+    const [pendingFacultyChanges, setPendingFacultyChanges] = useState({});
+    
     const openEditFaculty = (facultyMember) => {
         setFacultyToEdit(facultyMember);
         setShowEditFaculty(true);
@@ -92,6 +196,69 @@ export default function Dashboard() {
     const closeEditFaculty = () => {
         setShowEditFaculty(false);
         setFacultyToEdit(null);
+        setEditingFacultyField(null);
+        setEditFacultyValue('');
+        setHasUnsavedFacultyChanges(false);
+        setPendingFacultyChanges({});
+    };
+
+    const startFacultyEditing = (field, currentValue) => {
+        setEditingFacultyField(field);
+        setEditFacultyValue(currentValue || '');
+    };
+
+    const saveFacultyEdit = () => {
+        if (!facultyToEdit || !editingFacultyField) return;
+        
+        // Store the change in pending changes
+        const newPendingChanges = { ...pendingFacultyChanges, [editingFacultyField]: editFacultyValue };
+        setPendingFacultyChanges(newPendingChanges);
+        setHasUnsavedFacultyChanges(true);
+        
+        setEditingFacultyField(null);
+        setEditFacultyValue('');
+    };
+
+    const saveAllFacultyChanges = async () => {
+        if (!facultyToEdit || Object.keys(pendingFacultyChanges).length === 0) return;
+        
+        try {
+            const updatedFaculty = { ...facultyToEdit, ...pendingFacultyChanges };
+            const response = await fetch(`/api/faculty/${facultyToEdit.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(updatedFaculty)
+            });
+
+            if (response.ok) {
+                setFacultyToEdit(updatedFaculty);
+                setPendingFacultyChanges({});
+                setHasUnsavedFacultyChanges(false);
+                // Refresh the dashboard data
+                fetch('/api/faculty').then(r=>r.json()).then(d=>{
+                    const activeFaculty = Array.isArray(d) ? d.filter(faculty => faculty.status !== 'archived') : [];
+                    setFaculty(activeFaculty);
+                });
+                alert('Faculty updated successfully!');
+            }
+        } catch (error) {
+            console.error('Error updating faculty:', error);
+        }
+    };
+
+    const cancelFacultyEdit = () => {
+        setEditingFacultyField(null);
+        setEditFacultyValue('');
+    };
+
+    const discardFacultyChanges = () => {
+        setPendingFacultyChanges({});
+        setHasUnsavedFacultyChanges(false);
+        setEditingFacultyField(null);
+        setEditFacultyValue('');
     };
 
     const goToStudents = () => {
@@ -103,16 +270,17 @@ export default function Dashboard() {
     };
 
     return (
-        <div style={{ display: 'flex', minHeight: '100vh', background: '#f5f7fa' }}>
+        <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-secondary)', transition: 'background-color 0.3s ease' }}>
             {/* Sidebar */}
             <aside style={{
                 width: '210px',
-                background: 'white',
+                background: 'var(--card-bg)',
                 padding: '24px 16px',
                 position: 'fixed',
                 height: '100vh',
                 overflowY: 'auto',
-                borderRight: '1px solid #e5e7eb'
+                borderRight: '1px solid var(--border-primary)',
+                transition: 'background-color 0.3s ease, border-color 0.3s ease'
             }}>
                 <nav>
                     <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
@@ -125,21 +293,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'dashboard' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'dashboard' ? 'white' : '#4a5568',
+                                background: currentView === 'dashboard' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'dashboard' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'dashboard' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'dashboard') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'dashboard') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'dashboard') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <DashboardIcon color={currentView === 'dashboard' ? 'white' : '#4a5568'} />
+                                <DashboardIcon color={currentView === 'dashboard' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Dashboard</span>
                             </div>
                         </li>
@@ -152,21 +320,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'students' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'students' ? 'white' : '#4a5568',
+                                background: currentView === 'students' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'students' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'students' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'students') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'students') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'students') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <StudentsIcon color={currentView === 'students' ? 'white' : '#4a5568'} />
+                                <StudentsIcon color={currentView === 'students' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Students</span>
                             </div>
                         </li>
@@ -179,21 +347,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'faculty' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'faculty' ? 'white' : '#4a5568',
+                                background: currentView === 'faculty' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'faculty' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'faculty' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'faculty') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'faculty') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'faculty') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <FacultyIcon color={currentView === 'faculty' ? 'white' : '#4a5568'} />
+                                <FacultyIcon color={currentView === 'faculty' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Faculty</span>
                             </div>
                         </li>
@@ -206,21 +374,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'courses' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'courses' ? 'white' : '#4a5568',
+                                background: currentView === 'courses' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'courses' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'courses' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'courses') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'courses') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'courses') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <CoursesIcon color={currentView === 'courses' ? 'white' : '#4a5568'} />
+                                <CoursesIcon color={currentView === 'courses' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Courses</span>
                             </div>
                         </li>
@@ -233,21 +401,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'schedule' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'schedule' ? 'white' : '#4a5568',
+                                background: currentView === 'schedule' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'schedule' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'schedule' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'schedule') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'schedule') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'schedule') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <ScheduleIcon color={currentView === 'schedule' ? 'white' : '#4a5568'} />
+                                <ScheduleIcon color={currentView === 'schedule' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Schedule</span>
                             </div>
                         </li>
@@ -260,21 +428,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'settings' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'settings' ? 'white' : '#4a5568',
+                                background: currentView === 'settings' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'settings' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'settings' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'settings') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'settings') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'settings') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <SettingsIcon color={currentView === 'settings' ? 'white' : '#4a5568'} />
+                                <SettingsIcon color={currentView === 'settings' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Settings</span>
                             </div>
                         </li>
@@ -283,21 +451,22 @@ export default function Dashboard() {
             </aside>
 
             {/* Main Content */}
-            <div style={{ marginLeft: '210px', flex: 1, background: '#f5f7fa' }}>
+            <div style={{ marginLeft: '210px', flex: 1, background: 'var(--bg-secondary)', transition: 'background-color 0.3s ease' }}>
                 {/* Top Header */}
                 <div style={{ 
-                    background: 'white', 
+                    background: 'var(--card-bg)', 
                     padding: '16px 32px', 
-                    borderBottom: '1px solid #e5e7eb',
+                    borderBottom: '1px solid var(--border-primary)',
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    transition: 'background-color 0.3s ease, border-color 0.3s ease'
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <img src="/images/fsuu-logo.png" alt="FSUU Logo" style={{ width: 36, height: 36, objectFit: 'contain' }} />
                         <div>
-                            <div style={{ fontWeight: 700, fontSize: 14, color: '#1a1a1a' }}>Father Saturnino Urios University</div>
-                            <div style={{ fontSize: 12, color: '#6b7280' }}>Student and Faculty Profile Management System</div>
+                            <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--text-primary)', transition: 'color 0.3s ease' }}>Father Saturnino Urios University</div>
+                            <div style={{ fontSize: 12, color: 'var(--text-secondary)', transition: 'color 0.3s ease' }}>Student and Faculty Profile Management System</div>
                         </div>
                     </div>
                     <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
@@ -305,11 +474,12 @@ export default function Dashboard() {
                             width: 36, 
                             height: 36, 
                             borderRadius: '50%', 
-                            background: '#f3f4f6', 
+                            background: 'var(--bg-tertiary)', 
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s ease'
                         }}>
                             <BellIcon />
                         </div>
@@ -317,11 +487,12 @@ export default function Dashboard() {
                             width: 36, 
                             height: 36, 
                             borderRadius: '50%', 
-                            background: '#5a67d8', 
+                            background: 'var(--accent-primary)', 
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s ease'
                         }}>
                             <UserIcon />
                         </div>
@@ -330,9 +501,9 @@ export default function Dashboard() {
 
                 {/* Dashboard Content */}
                 {currentView === 'students' ? (
-                    <Students />
+                    <Students onDataUpdate={refreshAllData} />
                 ) : currentView === 'faculty' ? (
-                    <FacultyList />
+                    <FacultyList onDataUpdate={refreshAllData} />
                 ) : currentView === 'courses' ? (
                     <Courses />
                 ) : currentView === 'schedule' ? (
@@ -341,12 +512,12 @@ export default function Dashboard() {
                     <Settings />
                 ) : (
                 <div style={{ padding: '32px' }}>
-            <h1 style={{ margin: '0 0 8px 0', fontSize: 28, fontWeight: 700, color: '#1a1a1a' }}>Profile Management Dashboard</h1>
-            <p style={{ color: '#6b7280', marginTop: 0, marginBottom: 24, fontSize: 14 }}>Manage student and faculty profiles efficiently</p>
+            <h1 style={{ margin: '0 0 8px 0', fontSize: 28, fontWeight: 700, color: 'var(--text-primary)', transition: 'color 0.3s ease' }}>Profile Management Dashboard</h1>
+            <p style={{ color: 'var(--text-secondary)', marginTop: 0, marginBottom: 24, fontSize: 14, transition: 'color 0.3s ease' }}>Manage student and faculty profiles efficiently</p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 16, marginTop: 16 }}>
                 <StatCard title="Total Students" value={students.length} delta="+12% from last semester" iconBg="#e0f2fe" iconDot="#38bdf8" />
-                <StatCard title="Faculty Members" value={184} delta="+5% from last month" iconBg="#ecfccb" iconDot="#84cc16" />
+                <StatCard title="Faculty Members" value={faculty.length} delta="+5% from last month" iconBg="#ecfccb" iconDot="#84cc16" />
                 <StatCard title="Active Courses" value={46} delta="+8% from last month" iconBg="#ede9fe" iconDot="#8b5cf6" />
                 <StatCard title="Departments" value={8} delta="No change from last month" iconBg="#ffedd5" iconDot="#f97316" />
             </div>
@@ -374,7 +545,7 @@ export default function Dashboard() {
                                     />
                                 ))}
                                 <div style={{ textAlign: 'center', marginTop: 8 }}>
-                                    <a onClick={goToStudents} style={{ color: '#16a34a', cursor: 'pointer', textDecoration: 'none' }}>View All Students</a>
+                                    <a onClick={() => setCurrentView('students')} style={{ color: '#16a34a', cursor: 'pointer', textDecoration: 'none' }}>View All Students</a>
                                 </div>
                             </div>
                         )}
@@ -384,10 +555,7 @@ export default function Dashboard() {
                 <div style={{ background: '#fff', borderRadius: 12, border: '1px solid #e5e7eb' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e5e7eb' }}>
                         <div style={{ fontWeight: 600 }}>Faculty Profiles</div>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                            <button style={buttonStyleSecondary} onClick={goToFaculty}>View All</button>
                             <button style={buttonStylePrimary} onClick={openAddFaculty}>+ Add Faculty</button>
-                        </div>
                     </div>
                     <div style={{ padding: 16 }}>
                         {loading ? (
@@ -406,7 +574,7 @@ export default function Dashboard() {
                                     />
                                 ))}
                                 <div style={{ textAlign: 'center', marginTop: 8 }}>
-                                    <a onClick={goToFaculty} style={{ color: '#16a34a', cursor: 'pointer', textDecoration: 'none' }}>View All Faculty</a>
+                                    <a onClick={() => setCurrentView('faculty')} style={{ color: '#16a34a', cursor: 'pointer', textDecoration: 'none' }}>View All Faculty</a>
                                 </div>
                             </div>
                         ) : (
@@ -540,23 +708,662 @@ export default function Dashboard() {
             )}
 
             {showEditStudent && studentToEdit && (
-                <div style={modalOverlay}>
-                    <div style={modalContent}>
+                <div style={{
+                    position: 'fixed',
+                    inset: 0,
+                    background: 'rgba(0,0,0,0.45)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 16,
+                    zIndex: 1000
+                }}>
+                    <div style={{
+                        width: 'min(1100px, 100%)',
+                        background: '#f3f4f6',
+                        borderRadius: 12,
+                        padding: 16,
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                    }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                            <div style={{ fontWeight: 700, fontSize: 18 }}>Edit Student</div>
-                            <button onClick={closeEditStudent} style={buttonStyleGhost}>✕</button>
+                            <div style={{ fontWeight: 700, fontSize: 18 }}>Student Details</div>
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                {hasUnsavedChanges && (
+                                    <>
+                                        <button
+                                            onClick={saveAllChanges}
+                                            style={{
+                                                background: '#16a34a',
+                                                color: 'white',
+                                                border: 'none',
+                                                borderRadius: 8,
+                                                padding: '8px 16px',
+                                                cursor: 'pointer',
+                                                fontWeight: '600',
+                                                fontSize: '14px'
+                                            }}
+                                        >
+                                            Save Changes
+                                        </button>
+                                        <button
+                                            onClick={discardChanges}
+                                            style={{
+                                                background: '#dc2626',
+                                                color: 'white',
+                                                border: 'none',
+                                                borderRadius: 8,
+                                                padding: '8px 16px',
+                                                cursor: 'pointer',
+                                                fontWeight: '600',
+                                                fontSize: '14px'
+                                            }}
+                                        >
+                                            Discard
+                                        </button>
+                                    </>
+                                )}
+                                <button onClick={closeEditStudent} style={{
+                                    background: 'transparent',
+                                    border: '1px solid #e5e7eb',
+                                    borderRadius: 8,
+                                    padding: '6px 10px',
+                                    cursor: 'pointer'
+                                }}>✕</button>
+                            </div>
                         </div>
                         <div style={{ maxHeight: '75vh', overflow: 'auto' }}>
-                            <Home 
-                                onSuccess={() => { 
-                                    closeEditStudent(); 
-                                    /* refresh preview */ 
-                                    fetch('/api/students').then(r=>r.json()).then(d=>setStudents(Array.isArray(d)?d:[])); 
-                                }} 
-                                showForm={true} 
-                                showList={false}
-                                editStudent={studentToEdit}
-                            />
+                            <div style={{ background: '#fff', padding: '24px', borderRadius: '12px' }}>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                                    <div>
+                                        <h3 style={{ margin: '0 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Personal Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Student ID:</label>
+                                                {editingField === 'student_id' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                        </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('student_id', studentToEdit.student_id)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.student_id || studentToEdit.student_id || '—'}
+                                                        {pendingChanges.student_id && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>First Name:</label>
+                                                {editingField === 'first_name' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.first_name ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('first_name', studentToEdit.first_name)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.first_name ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.first_name || studentToEdit.first_name || '—'}
+                                                        {pendingChanges.first_name && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Last Name:</label>
+                                                {editingField === 'last_name' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('last_name', studentToEdit.last_name)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.last_name ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.last_name || studentToEdit.last_name || '—'}
+                                                        {pendingChanges.last_name && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Date of Birth:</label>
+                                                {editingField === 'date_of_birth' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="date"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('date_of_birth', studentToEdit.date_of_birth)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.date_of_birth ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.date_of_birth || studentToEdit.date_of_birth || '—'}
+                                                        {pendingChanges.date_of_birth && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Gender:</label>
+                                                {editingField === 'gender' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Gender</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.gender ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('gender', studentToEdit.gender)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.gender ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.gender || studentToEdit.gender || '—'}
+                                                        {pendingChanges.gender && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Personal Information:</label>
+                                                <div style={{ color: '#374151', marginTop: '4px' }}>{studentToEdit.personal_information || '—'}</div>
+                                            </div>
+                                        </div>
+
+                                        <h3 style={{ margin: '24px 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Contact Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Email:</label>
+                                                {editingField === 'email' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="email"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.email ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('email', studentToEdit.email)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.email ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.email || studentToEdit.email || '—'}
+                                                        {pendingChanges.email && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Phone:</label>
+                                                {editingField === 'phone' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="tel"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.phone ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('phone', studentToEdit.phone)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.phone ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.phone || studentToEdit.phone || '—'}
+                                                        {pendingChanges.phone && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Address:</label>
+                                                {editingField === 'address' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.address ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('address', studentToEdit.address)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.address ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.address || studentToEdit.address || '—'}
+                                                        {pendingChanges.address && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 style={{ margin: '0 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Academic Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Program/Course:</label>
+                                                {editingField === 'program' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Program/Course</option>
+                                                            <option value="Nursing Program">Nursing Program</option>
+                                                            <option value="Teachers Education Program">Teachers Education Program</option>
+                                                            <option value="Engineering Program">Engineering Program</option>
+                                                            <option value="Criminal Justice Program">Criminal Justice Program</option>
+                                                            <option value="Computer Science Program">Computer Science Program</option>
+                                                            <option value="Arts and Sciences Program">Arts and Sciences Program</option>
+                                                            <option value="Business Administration Program">Business Administration Program</option>
+                                                            <option value="Accountancy Program">Accountancy Program</option>
+                                                        </select>
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.program ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.program ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('program', studentToEdit.program)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.program ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.program || studentToEdit.program || '—'}
+                                                        {pendingChanges.program && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Year Level:</label>
+                                                {editingField === 'year_level' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Year Level</option>
+                                                            <option value="1st Year">1st Year</option>
+                                                            <option value="2nd Year">2nd Year</option>
+                                                            <option value="3rd Year">3rd Year</option>
+                                                            <option value="4th Year">4th Year</option>
+                                                            <option value="5th Year">5th Year</option>
+                                                        </select>
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.year_level ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('year_level', studentToEdit.year_level)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.year_level ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.year_level || studentToEdit.year_level || '—'}
+                                                        {pendingChanges.year_level && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Section:</label>
+                                                {editingField === 'section' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveEdit();
+                                                                if (e.key === 'Escape') cancelEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.section ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.section ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('section', studentToEdit.section)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.section ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingChanges.section || studentToEdit.section || '—'}
+                                                        {pendingChanges.section && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Status:</label>
+                                                {editingField === 'status' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editValue}
+                                                            onChange={(e) => setEditValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Status</option>
+                                                            <option value="Active">Active</option>
+                                                            <option value="Inactive">Inactive</option>
+                                                            <option value="Graduated">Graduated</option>
+                                                            <option value="Transferred">Transferred</option>
+                                                        </select>
+                                                        <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingChanges.status ? '#fef3c7' : 'transparent',
+                                                            border: pendingChanges.status ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startEditing('status', studentToEdit.status)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingChanges.status ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        <div style={{ 
+                                                            padding: '4px 8px',
+                                                            borderRadius: '6px',
+                                                            backgroundColor: (pendingChanges.status || studentToEdit.status) === 'Active' ? '#dcfce7' : '#fef3c7',
+                                                            color: (pendingChanges.status || studentToEdit.status) === 'Active' ? '#166534' : '#92400e',
+                                                            display: 'inline-block',
+                                                            fontSize: '12px',
+                                                            fontWeight: '600'
+                                                        }}>
+                                                            {pendingChanges.status || studentToEdit.status || '—'}
+                                                        </div>
+                                                        {pendingChanges.status && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -574,7 +1381,10 @@ export default function Dashboard() {
                                 onSuccess={() => { 
                                     closeAddFaculty(); 
                                     /* refresh preview */ 
-                                    fetch('/api/faculty').then(r=>r.json()).then(d=>setFaculty(Array.isArray(d)?d:[])); 
+                                    fetch('/api/faculty').then(r=>r.json()).then(d=>{
+                    const activeFaculty = Array.isArray(d) ? d.filter(faculty => faculty.status !== 'archived') : [];
+                    setFaculty(activeFaculty);
+                }); 
                                 }} 
                                 showForm={true} 
                                 showList={false} 
@@ -692,23 +1502,557 @@ export default function Dashboard() {
             )}
 
             {showEditFaculty && facultyToEdit && (
-                <div style={modalOverlay}>
-                    <div style={modalContent}>
+                <div style={{
+                    position: 'fixed',
+                    inset: 0,
+                    background: 'rgba(0,0,0,0.45)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 16,
+                    zIndex: 1000
+                }}>
+                    <div style={{
+                        width: 'min(1100px, 100%)',
+                        background: '#f3f4f6',
+                        borderRadius: 12,
+                        padding: 16,
+                        boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                    }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-                            <div style={{ fontWeight: 700, fontSize: 18 }}>Edit Faculty</div>
-                            <button onClick={closeEditFaculty} style={buttonStyleGhost}>✕</button>
+                            <div style={{ fontWeight: 700, fontSize: 18 }}>Faculty Details</div>
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                {hasUnsavedFacultyChanges && (
+                                    <>
+                                        <button
+                                            onClick={saveAllFacultyChanges}
+                                            style={{
+                                                background: '#16a34a',
+                                                color: 'white',
+                                                border: 'none',
+                                                borderRadius: 8,
+                                                padding: '8px 16px',
+                                                cursor: 'pointer',
+                                                fontWeight: '600',
+                                                fontSize: '14px'
+                                            }}
+                                        >
+                                            Save Changes
+                                        </button>
+                                        <button
+                                            onClick={discardFacultyChanges}
+                                            style={{
+                                                background: '#dc2626',
+                                                color: 'white',
+                                                border: 'none',
+                                                borderRadius: 8,
+                                                padding: '8px 16px',
+                                                cursor: 'pointer',
+                                                fontWeight: '600',
+                                                fontSize: '14px'
+                                            }}
+                                        >
+                                            Discard
+                                        </button>
+                                    </>
+                                )}
+                                <button onClick={closeEditFaculty} style={{
+                                    background: 'transparent',
+                                    border: '1px solid #e5e7eb',
+                                    borderRadius: 8,
+                                    padding: '6px 10px',
+                                    cursor: 'pointer'
+                                }}>✕</button>
+                            </div>
                         </div>
                         <div style={{ maxHeight: '75vh', overflow: 'auto' }}>
-                            <Faculty 
-                                onSuccess={() => { 
-                                    closeEditFaculty(); 
-                                    /* refresh preview */ 
-                                    fetch('/api/faculty').then(r=>r.json()).then(d=>setFaculty(Array.isArray(d)?d:[])); 
-                                }} 
-                                showForm={true} 
-                                showList={false}
-                                editFaculty={facultyToEdit}
-                            />
+                            <div style={{ background: '#fff', padding: '24px', borderRadius: '12px' }}>
+                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                                    <div>
+                                        <h3 style={{ margin: '0 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Personal Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Faculty ID:</label>
+                                                {editingFacultyField === 'faculty_id' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                        </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.faculty_id ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.faculty_id ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('faculty_id', facultyToEdit.faculty_id)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.faculty_id ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.faculty_id || facultyToEdit.faculty_id || '—'}
+                                                        {pendingFacultyChanges.faculty_id && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>First Name:</label>
+                                                {editingFacultyField === 'first_name' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.first_name ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.first_name ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('first_name', facultyToEdit.first_name)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.first_name ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.first_name || facultyToEdit.first_name || '—'}
+                                                        {pendingFacultyChanges.first_name && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                </div>
+            )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Last Name:</label>
+                                                {editingFacultyField === 'last_name' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.last_name ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('last_name', facultyToEdit.last_name)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.last_name ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.last_name || facultyToEdit.last_name || '—'}
+                                                        {pendingFacultyChanges.last_name && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Date of Birth:</label>
+                                                {editingFacultyField === 'date_of_birth' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="date"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.date_of_birth ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.date_of_birth ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('date_of_birth', facultyToEdit.date_of_birth)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.date_of_birth ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.date_of_birth || facultyToEdit.date_of_birth || '—'}
+                                                        {pendingFacultyChanges.date_of_birth && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Gender:</label>
+                                                {editingFacultyField === 'gender' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Gender</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.gender ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.gender ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('gender', facultyToEdit.gender)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.gender ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.gender || facultyToEdit.gender || '—'}
+                                                        {pendingFacultyChanges.gender && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Personal Information:</label>
+                                                <div style={{ color: '#374151', marginTop: '4px' }}>{facultyToEdit.personal_information || '—'}</div>
+                                            </div>
+                                        </div>
+
+                                        <h3 style={{ margin: '24px 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Contact Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Email:</label>
+                                                {editingFacultyField === 'email' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="email"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.email ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.email ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('email', facultyToEdit.email)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.email ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.email || facultyToEdit.email || '—'}
+                                                        {pendingFacultyChanges.email && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Phone:</label>
+                                                {editingFacultyField === 'phone' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="tel"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.phone ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.phone ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('phone', facultyToEdit.phone)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.phone ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.phone || facultyToEdit.phone || '—'}
+                                                        {pendingFacultyChanges.phone && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Address:</label>
+                                                {editingFacultyField === 'address' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.address ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.address ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('address', facultyToEdit.address)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.address ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.address || facultyToEdit.address || '—'}
+                                                        {pendingFacultyChanges.address && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 style={{ margin: '0 0 16px 0', color: '#374151', borderBottom: '2px solid #e5e7eb', paddingBottom: '8px' }}>Professional Information</h3>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Department:</label>
+                                                {editingFacultyField === 'department' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <select
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        >
+                                                            <option value="">Select Department</option>
+                                                            <option value="Nursing Program">Nursing Program</option>
+                                                            <option value="Teachers Education Program">Teachers Education Program</option>
+                                                            <option value="Engineering Program">Engineering Program</option>
+                                                            <option value="Criminal Justice Program">Criminal Justice Program</option>
+                                                            <option value="Computer Science Program">Computer Science Program</option>
+                                                            <option value="Arts and Sciences Program">Arts and Sciences Program</option>
+                                                            <option value="Business Administration Program">Business Administration Program</option>
+                                                            <option value="Accountancy Program">Accountancy Program</option>
+                                                        </select>
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.department ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.department ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('department', facultyToEdit.department)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.department ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.department || facultyToEdit.department || '—'}
+                                                        {pendingFacultyChanges.department && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div>
+                                                <label style={{ fontWeight: '600', color: '#6b7280', fontSize: '14px' }}>Position:</label>
+                                                {editingFacultyField === 'position' ? (
+                                                    <div style={{ marginTop: '4px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                                        <input
+                                                            type="text"
+                                                            value={editFacultyValue}
+                                                            onChange={(e) => setEditFacultyValue(e.target.value)}
+                                                            onKeyDown={(e) => {
+                                                                if (e.key === 'Enter') saveFacultyEdit();
+                                                                if (e.key === 'Escape') cancelFacultyEdit();
+                                                            }}
+                                                            style={{
+                                                                padding: '4px 8px',
+                                                                border: '1px solid #d1d5db',
+                                                                borderRadius: '4px',
+                                                                fontSize: '14px',
+                                                                outline: 'none',
+                                                                width: '200px'
+                                                            }}
+                                                            autoFocus
+                                                        />
+                                                        <button onClick={saveFacultyEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                                        <button onClick={cancelFacultyEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        style={{
+                                                            color: '#374151',
+                                                            marginTop: '4px',
+                                                            cursor: 'pointer',
+                                                            padding: '2px 4px',
+                                                            borderRadius: '4px',
+                                                            backgroundColor: pendingFacultyChanges.position ? '#fef3c7' : 'transparent',
+                                                            border: pendingFacultyChanges.position ? '1px solid #f59e0b' : '1px solid transparent'
+                                                        }}
+                                                        onDoubleClick={() => startFacultyEditing('position', facultyToEdit.position)}
+                                                        onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                                        onMouseLeave={(e) => e.target.style.background = pendingFacultyChanges.position ? '#fef3c7' : 'transparent'
+                                                        }
+                                                    >
+                                                        {pendingFacultyChanges.position || facultyToEdit.position || '—'}
+                                                        {pendingFacultyChanges.position && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -778,13 +2122,73 @@ function StatCard({ title, value, delta, iconBg, iconDot }) {
 }
 
 function ListItem({ title, subtitle, meta, student, onViewDetails, onEdit }) {
+    const [editingField, setEditingField] = useState(null);
+    const [editValue, setEditValue] = useState('');
+    const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+    const [pendingChanges, setPendingChanges] = useState({});
+
+    const startEditing = (field, currentValue) => {
+        setEditingField(field);
+        setEditValue(currentValue || '');
+    };
+
+    const saveEdit = async () => {
+        if (!student || !editingField) return;
+        
+        // Store the change in pending changes
+        const newPendingChanges = { ...pendingChanges, [editingField]: editValue };
+        setPendingChanges(newPendingChanges);
+        setHasUnsavedChanges(true);
+        
+        setEditingField(null);
+        setEditValue('');
+    };
+
+    const saveAllChanges = async () => {
+        if (!student || Object.keys(pendingChanges).length === 0) return;
+        
+        try {
+            const updatedStudent = { ...student, ...pendingChanges };
+            const response = await fetch(`/api/students/${student.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(updatedStudent)
+            });
+
+            if (response.ok) {
+                setPendingChanges({});
+                setHasUnsavedChanges(false);
+                // Refresh the dashboard data
+                window.location.reload(); // Simple refresh for now
+            }
+        } catch (error) {
+            console.error('Error updating student:', error);
+        }
+    };
+
+    const cancelEdit = () => {
+        setEditingField(null);
+        setEditValue('');
+    };
+
+    const discardChanges = () => {
+        setPendingChanges({});
+        setHasUnsavedChanges(false);
+        setEditingField(null);
+        setEditValue('');
+    };
+
     return (
         <div style={{ 
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'center', 
             padding: '16px 20px',
-            borderBottom: '1px solid #f3f4f6'
+            borderBottom: '1px solid #f3f4f6',
+            position: 'relative'
         }}>
             <div style={{ display: 'flex', gap: 16, alignItems: 'center', flex: 1 }}>
                 <div style={{ 
@@ -802,13 +2206,170 @@ function ListItem({ title, subtitle, meta, student, onViewDetails, onEdit }) {
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#3b82f6"/>
                     </svg>
                 </div>
-                <div>
-                    <div style={{ fontWeight: 600, fontSize: 15, color: '#1a1a1a', marginBottom: 4 }}>{title}</div>
-                    <div style={{ color: '#6b7280', fontSize: 13, marginBottom: 2 }}>{subtitle}</div>
-                    <div style={{ color: '#9ca3af', fontSize: 12 }}>{meta}</div>
+                <div style={{ flex: 1 }}>
+                    <div style={{ fontWeight: 600, fontSize: 15, color: '#1a1a1a', marginBottom: 4 }}>
+                        {editingField === 'title' ? (
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                <input
+                                    type="text"
+                                    value={editValue}
+                                    onChange={(e) => setEditValue(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') saveEdit();
+                                        if (e.key === 'Escape') cancelEdit();
+                                    }}
+                                    style={{
+                                        padding: '4px 8px',
+                                        border: '1px solid #d1d5db',
+                                        borderRadius: '4px',
+                                        fontSize: '15px',
+                                        outline: 'none',
+                                        width: '200px'
+                                    }}
+                                    autoFocus
+                                />
+                                <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                </div>
+                        ) : (
+                            <div 
+                                style={{ 
+                                    cursor: 'pointer', 
+                                    padding: '2px 4px', 
+                                    borderRadius: '4px',
+                                    backgroundColor: pendingChanges.first_name || pendingChanges.last_name ? '#fef3c7' : 'transparent',
+                                    border: pendingChanges.first_name || pendingChanges.last_name ? '1px solid #f59e0b' : '1px solid transparent'
+                                }}
+                                onDoubleClick={() => startEditing('title', title)}
+                                onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                onMouseLeave={(e) => e.target.style.background = pendingChanges.first_name || pendingChanges.last_name ? '#fef3c7' : 'transparent'}
+                            >
+                                {pendingChanges.first_name && pendingChanges.last_name ? `${pendingChanges.first_name} ${pendingChanges.last_name}` : title}
+                                {(pendingChanges.first_name || pendingChanges.last_name) && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+            </div>
+                        )}
+                    </div>
+                    <div style={{ color: '#6b7280', fontSize: 13, marginBottom: 2 }}>
+                        {editingField === 'subtitle' ? (
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                <input
+                                    type="text"
+                                    value={editValue}
+                                    onChange={(e) => setEditValue(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') saveEdit();
+                                        if (e.key === 'Escape') cancelEdit();
+                                    }}
+                                    style={{
+                                        padding: '4px 8px',
+                                        border: '1px solid #d1d5db',
+                                        borderRadius: '4px',
+                                        fontSize: '13px',
+                                        outline: 'none',
+                                        width: '200px'
+                                    }}
+                                    autoFocus
+                                />
+                                <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                            </div>
+                        ) : (
+                            <div 
+                                style={{ 
+                                    cursor: 'pointer', 
+                                    padding: '2px 4px', 
+                                    borderRadius: '4px',
+                                    backgroundColor: pendingChanges.program || pendingChanges.year_level ? '#fef3c7' : 'transparent',
+                                    border: pendingChanges.program || pendingChanges.year_level ? '1px solid #f59e0b' : '1px solid transparent'
+                                }}
+                                onDoubleClick={() => startEditing('subtitle', subtitle)}
+                                onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                onMouseLeave={(e) => e.target.style.background = pendingChanges.program || pendingChanges.year_level ? '#fef3c7' : 'transparent'}
+                            >
+                                {pendingChanges.program && pendingChanges.year_level ? `${pendingChanges.program} · ${pendingChanges.year_level} Year` : subtitle}
+                                {(pendingChanges.program || pendingChanges.year_level) && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                            </div>
+                        )}
+                    </div>
+                    <div style={{ color: '#9ca3af', fontSize: 12 }}>
+                        {editingField === 'meta' ? (
+                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                <input
+                                    type="text"
+                                    value={editValue}
+                                    onChange={(e) => setEditValue(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') saveEdit();
+                                        if (e.key === 'Escape') cancelEdit();
+                                    }}
+                                    style={{
+                                        padding: '4px 8px',
+                                        border: '1px solid #d1d5db',
+                                        borderRadius: '4px',
+                                        fontSize: '12px',
+                                        outline: 'none',
+                                        width: '200px'
+                                    }}
+                                    autoFocus
+                                />
+                                <button onClick={saveEdit} style={{ padding: '4px 8px', background: '#16a34a', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✓</button>
+                                <button onClick={cancelEdit} style={{ padding: '4px 8px', background: '#dc2626', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}>✕</button>
+                            </div>
+                        ) : (
+                            <div 
+                                style={{ 
+                                    cursor: 'pointer', 
+                                    padding: '2px 4px', 
+                                    borderRadius: '4px',
+                                    backgroundColor: pendingChanges.student_id ? '#fef3c7' : 'transparent',
+                                    border: pendingChanges.student_id ? '1px solid #f59e0b' : '1px solid transparent'
+                                }}
+                                onDoubleClick={() => startEditing('meta', meta)}
+                                onMouseEnter={(e) => e.target.style.background = '#f3f4f6'}
+                                onMouseLeave={(e) => e.target.style.background = pendingChanges.student_id ? '#fef3c7' : 'transparent'}
+                            >
+                                {pendingChanges.student_id ? `ID: ${pendingChanges.student_id}` : meta}
+                                {pendingChanges.student_id && <span style={{ color: '#f59e0b', marginLeft: '8px', fontSize: '12px' }}>●</span>}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
-            <div style={{ display: 'flex', gap: 8 }}>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                {hasUnsavedChanges && (
+                    <>
+                        <button 
+                            onClick={saveAllChanges}
+                            style={{
+                                background: '#16a34a',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: 6,
+                                padding: '6px 12px',
+                                cursor: 'pointer',
+                                fontWeight: '600',
+                                fontSize: '12px'
+                            }}
+                        >
+                            Save
+                        </button>
+                        <button 
+                            onClick={discardChanges}
+                            style={{
+                                background: '#dc2626',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: 6,
+                                padding: '6px 12px',
+                                cursor: 'pointer',
+                                fontWeight: '600',
+                                fontSize: '12px'
+                            }}
+                        >
+                            Discard
+                        </button>
+                    </>
+                )}
                 <button 
                     style={{
                         width: 32,

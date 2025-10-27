@@ -24,6 +24,18 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
     const [editingStudent, setEditingStudent] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
 
+    // Define programs list
+    const programs = [
+        'Nursing Program',
+        'Teachers Education Program', 
+        'Engineering Program',
+        'Criminal Justice Program',
+        'Computer Science Program',
+        'Arts and Sciences Program',
+        'Business Administration Program',
+        'Accountancy Program'
+    ];
+
     // Load students when list is intended to be shown
     useEffect(() => {
         if (showList) {
@@ -62,6 +74,8 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
             const response = await fetch('/api/students');
             if (response.ok) {
                 const data = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
                 setStudents(data);
             }
         } catch (error) {
@@ -90,6 +104,8 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
         setErrors({});
         setStatusMessage('');
 
+        console.log('Form submitted with data:', formData);
+
         try {
             const response = await fetch('/api/students', {
                 method: 'POST',
@@ -101,6 +117,8 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
             });
 
             const data = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
 
             if (response.ok) {
                 setStatusMessage('Student added successfully!');
@@ -182,6 +200,8 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
             });
 
             const data = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
 
             if (response.ok) {
                 setStatusMessage('Student updated successfully!');
@@ -240,6 +260,8 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
                     }, 3000);
                 } else {
                     const data = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
                     setStatusMessage('Error: ' + (data.message || 'Failed to delete student'));
                 }
             } catch (error) {
@@ -412,13 +434,17 @@ export default function Home({ onSuccess, showForm = true, showList = true, edit
                     <div>
                         <h3 style={{ margin: '0 0 8px 0', color: '#a3a3a3' }}>Academic Information</h3>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                            <input
-                                placeholder="Program/Course"
+                            <select
                                 name="program"
                                 value={formData.program}
                                 onChange={handleInputChange}
                                 style={inputStyle}
-                            />
+                            >
+                                <option value="">Select Program/Course</option>
+                                {programs.map((program, index) => (
+                                    <option key={index} value={program}>{program}</option>
+                                ))}
+                            </select>
                             <input
                                 placeholder="Year Level"
                                 name="year_level"
