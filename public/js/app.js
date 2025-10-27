@@ -58037,7 +58037,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.js");
 /* harmony import */ var _components_Dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Dashboard */ "./resources/js/components/Dashboard.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Login */ "./resources/js/components/Login.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -58057,11 +58058,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 if (document.getElementById('home')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Home__WEBPACK_IMPORTED_MODULE_2__["default"], {}), document.getElementById('home'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Home__WEBPACK_IMPORTED_MODULE_2__["default"], {}), document.getElementById('home'));
 }
 if (document.getElementById('dashboard')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {}), document.getElementById('dashboard'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Dashboard__WEBPACK_IMPORTED_MODULE_3__["default"], {}), document.getElementById('dashboard'));
+}
+if (document.getElementById('login')) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_Login__WEBPACK_IMPORTED_MODULE_4__["default"], {}), document.getElementById('login'));
 }
 
 /***/ }),
@@ -58768,6 +58773,20 @@ function Dashboard() {
     _useState8 = _slicedToArray(_useState7, 2),
     currentView = _useState8[0],
     setCurrentView = _useState8[1];
+
+  // Initialize theme on component mount
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  // Check authentication on component mount
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn) {
+      window.location.href = '/login';
+    }
+  }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var fetchData = /*#__PURE__*/function () {
       var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
@@ -59169,17 +59188,19 @@ function Dashboard() {
     style: {
       display: 'flex',
       minHeight: '100vh',
-      background: '#f5f7fa'
+      background: 'var(--bg-secondary)',
+      transition: 'background-color 0.3s ease'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("aside", {
       style: {
         width: '210px',
-        background: 'white',
+        background: 'var(--card-bg)',
         padding: '24px 16px',
         position: 'fixed',
         height: '100vh',
         overflowY: 'auto',
-        borderRight: '1px solid #e5e7eb'
+        borderRight: '1px solid var(--border-primary)',
+        transition: 'background-color 0.3s ease, border-color 0.3s ease'
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("nav", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("ul", {
@@ -59202,21 +59223,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'dashboard' ? '#5a67d8' : 'transparent',
-                color: currentView === 'dashboard' ? 'white' : '#4a5568',
+                background: currentView === 'dashboard' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'dashboard' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'dashboard' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'dashboard') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'dashboard') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'dashboard') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(DashboardIcon, {
-                color: currentView === 'dashboard' ? 'white' : '#4a5568'
+                color: currentView === 'dashboard' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Dashboard"
               })]
@@ -59235,21 +59256,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'students' ? '#5a67d8' : 'transparent',
-                color: currentView === 'students' ? 'white' : '#4a5568',
+                background: currentView === 'students' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'students' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'students' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'students') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'students') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'students') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(StudentsIcon, {
-                color: currentView === 'students' ? 'white' : '#4a5568'
+                color: currentView === 'students' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Students"
               })]
@@ -59268,21 +59289,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'faculty' ? '#5a67d8' : 'transparent',
-                color: currentView === 'faculty' ? 'white' : '#4a5568',
+                background: currentView === 'faculty' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'faculty' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'faculty' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'faculty') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'faculty') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'faculty') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(FacultyIcon, {
-                color: currentView === 'faculty' ? 'white' : '#4a5568'
+                color: currentView === 'faculty' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Faculty"
               })]
@@ -59301,21 +59322,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'courses' ? '#5a67d8' : 'transparent',
-                color: currentView === 'courses' ? 'white' : '#4a5568',
+                background: currentView === 'courses' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'courses' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'courses' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'courses') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'courses') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'courses') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(CoursesIcon, {
-                color: currentView === 'courses' ? 'white' : '#4a5568'
+                color: currentView === 'courses' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Courses"
               })]
@@ -59334,21 +59355,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'schedule' ? '#5a67d8' : 'transparent',
-                color: currentView === 'schedule' ? 'white' : '#4a5568',
+                background: currentView === 'schedule' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'schedule' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'schedule' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'schedule') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'schedule') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'schedule') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(ScheduleIcon, {
-                color: currentView === 'schedule' ? 'white' : '#4a5568'
+                color: currentView === 'schedule' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Schedule"
               })]
@@ -59367,21 +59388,21 @@ function Dashboard() {
                 gap: 12,
                 padding: '12px 16px',
                 borderRadius: 8,
-                background: currentView === 'settings' ? '#5a67d8' : 'transparent',
-                color: currentView === 'settings' ? 'white' : '#4a5568',
+                background: currentView === 'settings' ? 'var(--accent-primary)' : 'transparent',
+                color: currentView === 'settings' ? 'white' : 'var(--text-secondary)',
                 fontSize: 15,
                 fontWeight: currentView === 'settings' ? 600 : 500,
                 cursor: 'pointer',
-                transition: 'all 0.15s'
+                transition: 'all 0.3s ease'
               },
               onMouseEnter: function onMouseEnter(e) {
-                if (currentView !== 'settings') e.currentTarget.style.background = '#f7fafc';
+                if (currentView !== 'settings') e.currentTarget.style.background = 'var(--hover-bg)';
               },
               onMouseLeave: function onMouseLeave(e) {
                 if (currentView !== 'settings') e.currentTarget.style.background = 'transparent';
               },
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(SettingsIcon, {
-                color: currentView === 'settings' ? 'white' : '#4a5568'
+                color: currentView === 'settings' ? 'white' : 'var(--text-secondary)'
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
                 children: "Settings"
               })]
@@ -59393,16 +59414,18 @@ function Dashboard() {
       style: {
         marginLeft: '210px',
         flex: 1,
-        background: '#f5f7fa'
+        background: 'var(--bg-secondary)',
+        transition: 'background-color 0.3s ease'
       },
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         style: {
-          background: 'white',
+          background: 'var(--card-bg)',
           padding: '16px 32px',
-          borderBottom: '1px solid #e5e7eb',
+          borderBottom: '1px solid var(--border-primary)',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          transition: 'background-color 0.3s ease, border-color 0.3s ease'
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
           style: {
@@ -59423,13 +59446,15 @@ function Dashboard() {
               style: {
                 fontWeight: 700,
                 fontSize: 14,
-                color: '#1a1a1a'
+                color: 'var(--text-primary)',
+                transition: 'color 0.3s ease'
               },
               children: "Father Saturnino Urios University"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
               style: {
                 fontSize: 12,
-                color: '#6b7280'
+                color: 'var(--text-secondary)',
+                transition: 'color 0.3s ease'
               },
               children: "Student and Faculty Profile Management System"
             })]
@@ -59445,11 +59470,12 @@ function Dashboard() {
               width: 36,
               height: 36,
               borderRadius: '50%',
-              background: '#f3f4f6',
+              background: 'var(--bg-tertiary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease'
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(BellIcon, {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
@@ -59457,11 +59483,12 @@ function Dashboard() {
               width: 36,
               height: 36,
               borderRadius: '50%',
-              background: '#5a67d8',
+              background: 'var(--accent-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease'
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(UserIcon, {})
           })]
@@ -59479,15 +59506,17 @@ function Dashboard() {
             margin: '0 0 8px 0',
             fontSize: 28,
             fontWeight: 700,
-            color: '#1a1a1a'
+            color: 'var(--text-primary)',
+            transition: 'color 0.3s ease'
           },
           children: "Profile Management Dashboard"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
           style: {
-            color: '#6b7280',
+            color: 'var(--text-secondary)',
             marginTop: 0,
             marginBottom: 24,
-            fontSize: 14
+            fontSize: 14,
+            transition: 'color 0.3s ease'
           },
           children: "Manage student and faculty profiles efficiently"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
@@ -63544,6 +63573,9 @@ function Faculty(_ref) {
     isEditing = _useState10[0],
     setIsEditing = _useState10[1];
 
+  // Define programs list
+  var programs = ['Nursing Program', 'Teachers Education Program', 'Engineering Program', 'Criminal Justice Program', 'Computer Science Program', 'Arts and Sciences Program', 'Business Administration Program', 'Accountancy Program'];
+
   // Load faculty when list is intended to be shown
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (showList) {
@@ -64042,22 +64074,12 @@ function Faculty(_ref) {
               style: inputStyle,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
                 value: "",
-                children: "Select Department"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "Computer Science",
-                children: "Computer Science"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "Information Technology",
-                children: "Information Technology"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "Engineering",
-                children: "Engineering"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "Business",
-                children: "Business"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                value: "Education",
-                children: "Education"
+                children: "Select Department/Program"
+              }), programs.map(function (program, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: program,
+                  children: program
+                }, index);
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               placeholder: "Position",
@@ -67111,16 +67133,14 @@ function FacultyList(_ref) {
             maxHeight: '75vh',
             overflow: 'auto'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Faculty__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(AddFacultyForm, {
             onSuccess: function onSuccess() {
               closeAddFaculty();
               refreshFaculty();
               if (onDataUpdate) {
                 onDataUpdate();
               }
-            },
-            showForm: true,
-            showList: false
+            }
           })
         })]
       })
@@ -67229,6 +67249,367 @@ function FacultyList(_ref) {
     })]
   });
 }
+
+// Add Faculty Form Component
+function AddFacultyForm(_ref7) {
+  var onSuccess = _ref7.onSuccess;
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      faculty_id: '',
+      first_name: '',
+      last_name: '',
+      middle_name: '',
+      date_of_birth: '',
+      gender: '',
+      personal_information: '',
+      department: '',
+      position: '',
+      attainment: '',
+      status: '',
+      email: '',
+      phone: '',
+      address: ''
+    }),
+    _useState30 = _slicedToArray(_useState29, 2),
+    formData = _useState30[0],
+    setFormData = _useState30[1];
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState32 = _slicedToArray(_useState31, 2),
+    errors = _useState32[0],
+    setErrors = _useState32[1];
+  var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState34 = _slicedToArray(_useState33, 2),
+    statusMessage = _useState34[0],
+    setStatusMessage = _useState34[1];
+  var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState36 = _slicedToArray(_useState35, 2),
+    isLoading = _useState36[0],
+    setIsLoading = _useState36[1];
+
+  // Define programs list
+  var programs = ['Nursing Program', 'Teachers Education Program', 'Engineering Program', 'Criminal Justice Program', 'Computer Science Program', 'Arts and Sciences Program', 'Business Administration Program', 'Accountancy Program'];
+  var handleInputChange = function handleInputChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value;
+    setFormData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, value));
+    });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, ''));
+      });
+    }
+  };
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref8 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(e) {
+      var response, data, _t4;
+      return _regenerator().w(function (_context5) {
+        while (1) switch (_context5.p = _context5.n) {
+          case 0:
+            e.preventDefault();
+            setErrors({});
+            setStatusMessage('');
+            setIsLoading(true);
+            console.log('Faculty form submitted with data:', formData);
+            _context5.p = 1;
+            _context5.n = 2;
+            return fetch('/api/faculty', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(formData)
+            });
+          case 2:
+            response = _context5.v;
+            _context5.n = 3;
+            return response.json();
+          case 3:
+            data = _context5.v;
+            console.log('Faculty response status:', response.status);
+            console.log('Faculty response data:', data);
+            if (response.ok) {
+              setStatusMessage('Faculty added successfully!');
+              setFormData({
+                faculty_id: '',
+                first_name: '',
+                last_name: '',
+                middle_name: '',
+                date_of_birth: '',
+                gender: '',
+                personal_information: '',
+                department: '',
+                position: '',
+                attainment: '',
+                status: '',
+                email: '',
+                phone: '',
+                address: ''
+              });
+              if (typeof onSuccess === 'function') {
+                onSuccess();
+              }
+
+              // Clear success message after 3 seconds
+              setTimeout(function () {
+                setStatusMessage('');
+              }, 3000);
+            } else {
+              if (data.errors) {
+                setErrors(data.errors);
+              } else {
+                setStatusMessage('Error: ' + (data.message || 'Failed to add faculty'));
+              }
+            }
+            _context5.n = 5;
+            break;
+          case 4:
+            _context5.p = 4;
+            _t4 = _context5.v;
+            console.error('Error submitting faculty form:', _t4);
+            setStatusMessage('Error: Failed to submit form');
+          case 5:
+            _context5.p = 5;
+            setIsLoading(false);
+            return _context5.f(5);
+          case 6:
+            return _context5.a(2);
+        }
+      }, _callee5, null, [[1, 4, 5, 6]]);
+    }));
+    return function handleSubmit(_x) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+  var containerStyle = {
+    maxWidth: '1200px',
+    margin: '24px auto',
+    padding: '24px',
+    background: '#ffffff',
+    borderRadius: '12px',
+    color: '#e7e7e7',
+    fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'
+  };
+  var inputStyle = {
+    padding: '12px',
+    borderRadius: '8px',
+    border: '0',
+    background: '#e8ebef'
+  };
+  var errorStyle = {
+    color: '#fca5a5',
+    fontSize: '14px',
+    marginTop: '4px'
+  };
+  var successStyle = {
+    color: '#3cb043',
+    margin: '8px 0 16px 0',
+    padding: '12px 16px',
+    backgroundColor: '#ffffff',
+    borderRadius: '8px',
+    border: '1px solid rgb(0, 0, 0)',
+    fontWeight: '500'
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    style: containerStyle,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      style: {
+        margin: '0 0 16px 0',
+        padding: '16px 24px',
+        background: '#fff',
+        color: '#1a1a1a',
+        borderRadius: '10px',
+        display: 'inline-block'
+      },
+      children: "Add Faculty"
+    }), statusMessage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      style: successStyle,
+      children: statusMessage
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '24px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '0 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Personal Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Faculty ID",
+              name: "faculty_id",
+              value: formData.faculty_id,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "First Name",
+              name: "first_name",
+              value: formData.first_name,
+              onChange: handleInputChange,
+              style: inputStyle,
+              required: true
+            }), errors.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.first_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Last Name",
+              name: "last_name",
+              value: formData.last_name,
+              onChange: handleInputChange,
+              style: inputStyle,
+              required: true
+            }), errors.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.last_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Middle Name",
+              name: "middle_name",
+              value: formData.middle_name,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              type: "date",
+              placeholder: "Date of Birth",
+              name: "date_of_birth",
+              value: formData.date_of_birth,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Gender",
+              name: "gender",
+              value: formData.gender,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Personal Information",
+              name: "personal_information",
+              value: formData.personal_information,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '24px 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Contact Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Email Address",
+              name: "email",
+              type: "email",
+              value: formData.email,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.email
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Phone Number",
+              name: "phone",
+              value: formData.phone,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Address",
+              name: "address",
+              value: formData.address,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '0 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Academic Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+              name: "department",
+              value: formData.department,
+              onChange: handleInputChange,
+              style: inputStyle,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                value: "",
+                children: "Select Department/Program"
+              }), programs.map(function (program, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                  value: program,
+                  children: program
+                }, index);
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Position",
+              name: "position",
+              value: formData.position,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Educational Attainment",
+              name: "attainment",
+              value: formData.attainment,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Status",
+              name: "status",
+              value: formData.status,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        style: {
+          display: 'flex',
+          gap: '12px',
+          marginTop: '24px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "submit",
+          disabled: isLoading,
+          style: {
+            padding: '14px',
+            borderRadius: '10px',
+            border: '0',
+            background: isLoading ? '#94a3b8' : '#16a34a',
+            color: 'white',
+            fontWeight: '600',
+            cursor: isLoading ? 'not-allowed' : 'pointer',
+            flex: 1
+          },
+          children: isLoading ? 'Adding Faculty...' : 'Add Faculty'
+        })
+      })]
+    })]
+  });
+}
 var tableHeaderStyle = {
   padding: '14px 20px',
   textAlign: 'left',
@@ -67324,6 +67705,9 @@ function Home(_ref) {
     isEditing = _useState10[0],
     setIsEditing = _useState10[1];
 
+  // Define programs list
+  var programs = ['Nursing Program', 'Teachers Education Program', 'Engineering Program', 'Criminal Justice Program', 'Computer Science Program', 'Arts and Sciences Program', 'Business Administration Program', 'Accountancy Program'];
+
   // Load students when list is intended to be shown
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (showList) {
@@ -67375,6 +67759,8 @@ function Home(_ref) {
             return response.json();
           case 2:
             data = _context.v;
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
             setStudents(data);
           case 3:
             _context.n = 5;
@@ -67416,6 +67802,7 @@ function Home(_ref) {
             e.preventDefault();
             setErrors({});
             setStatusMessage('');
+            console.log('Form submitted with data:', formData);
             _context2.p = 1;
             _context2.n = 2;
             return fetch('/api/students', {
@@ -67432,6 +67819,8 @@ function Home(_ref) {
             return response.json();
           case 3:
             data = _context2.v;
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
             if (response.ok) {
               setStatusMessage('Student added successfully!');
               setFormData({
@@ -67530,6 +67919,8 @@ function Home(_ref) {
             return response.json();
           case 3:
             data = _context3.v;
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
             if (response.ok) {
               setStatusMessage('Student updated successfully!');
               setFormData({
@@ -67613,6 +68004,8 @@ function Home(_ref) {
             return response.json();
           case 4:
             data = _context4.v;
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
             setStatusMessage('Error: ' + (data.message || 'Failed to delete student'));
           case 5:
             _context4.n = 7;
@@ -67813,12 +68206,20 @@ function Home(_ref) {
               flexDirection: 'column',
               gap: '12px'
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              placeholder: "Program/Course",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
               name: "program",
               value: formData.program,
               onChange: handleInputChange,
-              style: inputStyle
+              style: inputStyle,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                value: "",
+                children: "Select Program/Course"
+              }), programs.map(function (program, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+                  value: program,
+                  children: program
+                }, index);
+              })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               placeholder: "Year Level",
               name: "year_level",
@@ -67971,6 +68372,408 @@ function Home(_ref) {
             })]
           }, index);
         })
+      })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/Login.js":
+/*!******************************************!*\
+  !*** ./resources/js/components/Login.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Login)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function Login() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      email: '',
+      password: '',
+      rememberMe: false
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    formData = _useState2[0],
+    setFormData = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState4 = _slicedToArray(_useState3, 2),
+    error = _useState4[0],
+    setError = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isLoading = _useState6[0],
+    setIsLoading = _useState6[1];
+  var handleInputChange = function handleInputChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value,
+      type = _e$target.type,
+      checked = _e$target.checked;
+    setFormData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, type === 'checkbox' ? checked : value));
+    });
+    // Clear error when user starts typing
+    if (error) setError('');
+  };
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.n) {
+          case 0:
+            e.preventDefault();
+            setIsLoading(true);
+            setError('');
+
+            // Simulate API call delay
+            _context.n = 1;
+            return new Promise(function (resolve) {
+              return setTimeout(resolve, 1000);
+            });
+          case 1:
+            // Check credentials
+            if (formData.email === 'admin' && formData.password === 'admin123') {
+              // Store login state in localStorage
+              localStorage.setItem('isLoggedIn', 'true');
+              localStorage.setItem('userEmail', formData.email);
+
+              // Redirect to dashboard
+              window.location.href = '/';
+            } else {
+              setError('Invalid email or password. Please try again.');
+            }
+            setIsLoading(false);
+          case 2:
+            return _context.a(2);
+        }
+      }, _callee);
+    }));
+    return function handleSubmit(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    style: {
+      display: 'flex',
+      minHeight: '100vh',
+      fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        flex: 1,
+        background: '#f5f7fa',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        padding: '20px'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        style: {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          opacity: 0.1,
+          zIndex: 0,
+          pointerEvents: 'none'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "/images/fsuu-logo.png",
+          alt: "FSUU Logo Watermark",
+          style: {
+            width: '400px',
+            height: '400px',
+            objectFit: 'contain'
+          }
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          background: '#ffffff',
+          borderRadius: '16px',
+          padding: '48px',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+          width: '100%',
+          maxWidth: '400px',
+          position: 'relative',
+          zIndex: 1
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '24px'
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+            src: "/images/fsuu-logo.png",
+            alt: "FSUU Logo",
+            style: {
+              width: '80px',
+              height: '80px',
+              objectFit: 'contain'
+            }
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+          style: {
+            fontSize: '32px',
+            fontWeight: '700',
+            color: '#1a1a1a',
+            textAlign: 'center',
+            margin: '0 0 32px 0'
+          },
+          children: "Log In"
+        }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          style: {
+            background: '#fee2e2',
+            border: '1px solid #fecaca',
+            borderRadius: '8px',
+            padding: '12px',
+            marginBottom: '24px',
+            color: '#dc2626',
+            fontSize: '14px',
+            textAlign: 'center'
+          },
+          children: error
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          onSubmit: handleSubmit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              marginBottom: '24px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              style: {
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: '#4a5568',
+                marginBottom: '8px'
+              },
+              children: "Username"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              name: "email",
+              value: formData.email,
+              onChange: handleInputChange,
+              placeholder: "Enter your username",
+              required: true,
+              style: {
+                width: '100%',
+                padding: '12px 16px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '16px',
+                outline: 'none',
+                transition: 'border-color 0.2s ease',
+                boxSizing: 'border-box'
+              },
+              onFocus: function onFocus(e) {
+                return e.target.style.borderColor = '#2196F3';
+              },
+              onBlur: function onBlur(e) {
+                return e.target.style.borderColor = '#d1d5db';
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              marginBottom: '24px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              style: {
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: '#4a5568',
+                marginBottom: '8px'
+              },
+              children: "Password"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "password",
+              name: "password",
+              value: formData.password,
+              onChange: handleInputChange,
+              placeholder: "Create a password",
+              required: true,
+              style: {
+                width: '100%',
+                padding: '12px 16px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '16px',
+                outline: 'none',
+                transition: 'border-color 0.2s ease',
+                boxSizing: 'border-box'
+              },
+              onFocus: function onFocus(e) {
+                return e.target.style.borderColor = '#2196F3';
+              },
+              onBlur: function onBlur(e) {
+                return e.target.style.borderColor = '#d1d5db';
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: '32px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '14px',
+                color: '#4a5568',
+                cursor: 'pointer'
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+                type: "checkbox",
+                name: "rememberMe",
+                checked: formData.rememberMe,
+                onChange: handleInputChange,
+                style: {
+                  marginRight: '8px',
+                  accentColor: '#2196F3'
+                }
+              }), "Remember me"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              style: {
+                fontSize: '14px',
+                color: '#2196F3',
+                textDecoration: 'none',
+                fontWeight: '500'
+              },
+              children: "Forgot password?"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            type: "submit",
+            disabled: isLoading,
+            style: {
+              width: '100%',
+              background: isLoading ? '#94a3b8' : '#2196F3',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              padding: '14px',
+              fontSize: '16px',
+              fontWeight: '600',
+              cursor: isLoading ? 'not-allowed' : 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              transition: 'background-color 0.2s ease',
+              marginBottom: '24px',
+              opacity: isLoading ? 0.7 : 1
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              if (!isLoading) e.target.style.background = '#1976D2';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              if (!isLoading) e.target.style.background = '#2196F3';
+            },
+            children: isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                style: {
+                  animation: 'spin 1s linear infinite'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M21 12a9 9 0 11-6.219-8.56"
+                })
+              }), "Logging in..."]
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                  cx: "12",
+                  cy: "7",
+                  r: "4"
+                })]
+              }), "Log In"]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              textAlign: 'center',
+              fontSize: '14px',
+              color: '#4a5568'
+            },
+            children: ["Don't have an account?", ' ', /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+              href: "#",
+              style: {
+                color: '#2196F3',
+                textDecoration: 'none',
+                fontWeight: '500'
+              },
+              children: "Sign in here"
+            })]
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        flex: 1,
+        background: '#2196F3',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '40px',
+        textAlign: 'center'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+        style: {
+          fontSize: '36px',
+          fontWeight: '700',
+          color: 'white',
+          margin: '0 0 16px 0',
+          lineHeight: '1.2'
+        },
+        children: "Father Saturnino Urios University"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        style: {
+          fontSize: '20px',
+          fontWeight: '400',
+          color: 'white',
+          margin: '0',
+          opacity: '0.9'
+        },
+        children: "Student and Faculty Profile Management System"
       })]
     })]
   });
@@ -68272,6 +69075,21 @@ function Settings() {
     _useState2 = _slicedToArray(_useState, 2),
     theme = _useState2[0],
     setTheme = _useState2[1];
+
+  // Load theme from localStorage on component mount
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  // Function to toggle theme
+  var toggleTheme = function toggleTheme() {
+    var newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
   var settingsOptions = [{
     id: 'edit-profile',
     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
@@ -68279,7 +69097,7 @@ function Settings() {
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
-      stroke: "#5a67d8",
+      stroke: "var(--accent-primary)",
       strokeWidth: "2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
         d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
@@ -68289,7 +69107,7 @@ function Settings() {
         r: "4"
       })]
     }),
-    iconBg: '#EEF2FF',
+    iconBg: theme === 'dark' ? '#374151' : '#EEF2FF',
     title: 'Edit Profile',
     description: 'Update your personal information like name, contact details, and profile picture.',
     action: function action() {
@@ -68302,35 +69120,24 @@ function Settings() {
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
-      stroke: "#10b981",
+      stroke: "var(--success)",
       strokeWidth: "2",
       strokeLinecap: "round",
       strokeLinejoin: "round",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
-        cx: "9",
-        cy: "9",
-        r: "6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
-        cx: "9",
-        cy: "9",
-        r: "2"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+        x: "3",
+        y: "11",
+        width: "18",
+        height: "11",
+        rx: "2",
+        ry: "2"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M14 9h6"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M17 7v4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M20 9v.01"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M16 13l-1.5 1.5"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M14.5 14.5l-1 1"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
-        d: "M13.5 15.5l-1 1"
+        d: "M7 11V7a5 5 0 0 1 10 0v4"
       })]
     }),
-    iconBg: '#D1FAE5',
+    iconBg: theme === 'dark' ? '#374151' : '#D1FAE5',
     title: 'Change Password',
-    description: '',
+    description: 'Update your account password for enhanced security.',
     action: function action() {
       return console.log('Change Password clicked');
     }
@@ -68341,20 +69148,68 @@ function Settings() {
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
-      stroke: "#8b5cf6",
+      stroke: "var(--accent-secondary)",
       strokeWidth: "2",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      children: theme === 'dark' ?
+      /*#__PURE__*/
+      // Sun icon for dark mode
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+          cx: "12",
+          cy: "12",
+          r: "5"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "12",
+          y1: "1",
+          x2: "12",
+          y2: "3"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "12",
+          y1: "21",
+          x2: "12",
+          y2: "23"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "4.22",
+          y1: "4.22",
+          x2: "5.64",
+          y2: "5.64"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "18.36",
+          y1: "18.36",
+          x2: "19.78",
+          y2: "19.78"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "1",
+          y1: "12",
+          x2: "3",
+          y2: "12"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "21",
+          y1: "12",
+          x2: "23",
+          y2: "12"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "4.22",
+          y1: "19.78",
+          x2: "5.64",
+          y2: "18.36"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+          x1: "18.36",
+          y1: "5.64",
+          x2: "19.78",
+          y2: "4.22"
+        })]
+      }) :
+      /*#__PURE__*/
+      // Moon icon for light mode
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
         d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
       })
     }),
-    iconBg: '#EDE9FE',
+    iconBg: theme === 'dark' ? '#374151' : '#EDE9FE',
     title: 'Change Theme',
-    description: 'Switch between light and dark mode.',
-    action: function action() {
-      var newTheme = theme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
-      console.log('Theme changed to:', newTheme);
-    }
+    description: "Switch to ".concat(theme === 'light' ? 'dark' : 'light', " mode for ").concat(theme === 'light' ? 'better' : 'brighter', " viewing experience."),
+    action: toggleTheme
   }, {
     id: 'logout',
     icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
@@ -68362,7 +69217,7 @@ function Settings() {
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
-      stroke: "#f59e0b",
+      stroke: "var(--warning)",
       strokeWidth: "2",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
         d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
@@ -68375,22 +69230,26 @@ function Settings() {
         y2: "12"
       })]
     }),
-    iconBg: '#FEF3C7',
+    iconBg: theme === 'dark' ? '#374151' : '#FEF3C7',
     title: 'Logout',
-    description: '',
+    description: 'Securely sign out of your account.',
     action: function action() {
       if (confirm('Are you sure you want to logout?')) {
-        console.log('Logging out...');
-        // Add logout logic here
+        // Clear authentication data
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('userEmail');
+        // Redirect to login page
+        window.location.href = '/login';
       }
     }
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     style: {
       padding: '48px 64px',
-      background: '#f9fafb',
+      background: 'var(--bg-secondary)',
       minHeight: '100vh',
-      width: '100%'
+      width: '100%',
+      transition: 'background-color 0.3s ease'
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       style: {
@@ -68400,18 +69259,20 @@ function Settings() {
         style: {
           fontSize: 36,
           fontWeight: 700,
-          color: '#1a1a1a',
+          color: 'var(--text-primary)',
           marginBottom: 12,
-          margin: 0
+          margin: 0,
+          transition: 'color 0.3s ease'
         },
         children: "Settings"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
         style: {
           fontSize: 15,
-          color: '#6b7280',
+          color: 'var(--text-secondary)',
           lineHeight: '24px',
           maxWidth: 700,
-          margin: '12px 0 0 0'
+          margin: '12px 0 0 0',
+          transition: 'color 0.3s ease'
         },
         children: "Allows the user to update profile information, change their account password, switch between light and dark themes, and securely log out of the system."
       })]
@@ -68426,23 +69287,25 @@ function Settings() {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           onClick: option.action,
           style: {
-            background: 'white',
-            border: '1px solid #e5e7eb',
+            background: 'var(--card-bg)',
+            border: '1px solid var(--border-primary)',
             borderRadius: 12,
             padding: 28,
             cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
+            transition: 'all 0.3s ease',
+            boxShadow: 'var(--shadow-sm)'
           },
           onMouseEnter: function onMouseEnter(e) {
             e.currentTarget.style.transform = 'translateY(-4px)';
-            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.1)';
-            e.currentTarget.style.borderColor = '#d1d5db';
+            e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+            e.currentTarget.style.borderColor = 'var(--border-secondary)';
+            e.currentTarget.style.background = 'var(--hover-bg)';
           },
           onMouseLeave: function onMouseLeave(e) {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
-            e.currentTarget.style.borderColor = '#e5e7eb';
+            e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+            e.currentTarget.style.borderColor = 'var(--border-primary)';
+            e.currentTarget.style.background = 'var(--card-bg)';
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             style: {
@@ -68453,23 +69316,26 @@ function Settings() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: 20
+              marginBottom: 20,
+              transition: 'background-color 0.3s ease'
             },
             children: option.icon
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
             style: {
               fontSize: 20,
               fontWeight: 700,
-              color: '#1a1a1a',
-              margin: '0 0 8px 0'
+              color: 'var(--text-primary)',
+              margin: '0 0 8px 0',
+              transition: 'color 0.3s ease'
             },
             children: option.title
           }), option.description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             style: {
               fontSize: 13,
-              color: '#6b7280',
+              color: 'var(--text-secondary)',
               lineHeight: '20px',
-              margin: 0
+              margin: 0,
+              transition: 'color 0.3s ease'
             },
             children: option.description
           })]
@@ -71712,16 +72578,14 @@ function Students(_ref) {
             maxHeight: '75vh',
             overflow: 'auto'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(AddStudentForm, {
             onSuccess: function onSuccess() {
               closeAddStudent();
               refreshStudents();
               if (onDataUpdate) {
                 onDataUpdate();
               }
-            },
-            showForm: true,
-            showList: false
+            }
           })
         })]
       })
@@ -71843,6 +72707,367 @@ var tableCellStyle = {
   fontSize: 14,
   color: '#1f2937'
 };
+
+// Add Student Form Component
+function AddStudentForm(_ref8) {
+  var onSuccess = _ref8.onSuccess;
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      student_id: '',
+      first_name: '',
+      last_name: '',
+      middle_name: '',
+      date_of_birth: '',
+      gender: '',
+      personal_information: '',
+      email: '',
+      phone: '',
+      address: '',
+      program: '',
+      year_level: '',
+      section: '',
+      status: ''
+    }),
+    _useState30 = _slicedToArray(_useState29, 2),
+    formData = _useState30[0],
+    setFormData = _useState30[1];
+  var _useState31 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState32 = _slicedToArray(_useState31, 2),
+    errors = _useState32[0],
+    setErrors = _useState32[1];
+  var _useState33 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+    _useState34 = _slicedToArray(_useState33, 2),
+    statusMessage = _useState34[0],
+    setStatusMessage = _useState34[1];
+  var _useState35 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState36 = _slicedToArray(_useState35, 2),
+    isLoading = _useState36[0],
+    setIsLoading = _useState36[1];
+
+  // Define programs list
+  var programs = ['Nursing Program', 'Teachers Education Program', 'Engineering Program', 'Criminal Justice Program', 'Computer Science Program', 'Arts and Sciences Program', 'Business Administration Program', 'Accountancy Program'];
+  var handleInputChange = function handleInputChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value;
+    setFormData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, value));
+    });
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, ''));
+      });
+    }
+  };
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref9 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(e) {
+      var response, data, _t4;
+      return _regenerator().w(function (_context5) {
+        while (1) switch (_context5.p = _context5.n) {
+          case 0:
+            e.preventDefault();
+            setErrors({});
+            setStatusMessage('');
+            setIsLoading(true);
+            console.log('Form submitted with data:', formData);
+            _context5.p = 1;
+            _context5.n = 2;
+            return fetch('/api/students', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+              },
+              body: JSON.stringify(formData)
+            });
+          case 2:
+            response = _context5.v;
+            _context5.n = 3;
+            return response.json();
+          case 3:
+            data = _context5.v;
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
+            if (response.ok) {
+              setStatusMessage('Student added successfully!');
+              setFormData({
+                student_id: '',
+                first_name: '',
+                last_name: '',
+                middle_name: '',
+                date_of_birth: '',
+                gender: '',
+                personal_information: '',
+                email: '',
+                phone: '',
+                address: '',
+                program: '',
+                year_level: '',
+                section: '',
+                status: ''
+              });
+              if (typeof onSuccess === 'function') {
+                onSuccess();
+              }
+
+              // Clear success message after 3 seconds
+              setTimeout(function () {
+                setStatusMessage('');
+              }, 3000);
+            } else {
+              if (data.errors) {
+                setErrors(data.errors);
+              } else {
+                setStatusMessage('Error: ' + (data.message || 'Failed to add student'));
+              }
+            }
+            _context5.n = 5;
+            break;
+          case 4:
+            _context5.p = 4;
+            _t4 = _context5.v;
+            console.error('Error submitting form:', _t4);
+            setStatusMessage('Error: Failed to submit form');
+          case 5:
+            _context5.p = 5;
+            setIsLoading(false);
+            return _context5.f(5);
+          case 6:
+            return _context5.a(2);
+        }
+      }, _callee5, null, [[1, 4, 5, 6]]);
+    }));
+    return function handleSubmit(_x) {
+      return _ref9.apply(this, arguments);
+    };
+  }();
+  var containerStyle = {
+    maxWidth: '1200px',
+    margin: '24px auto',
+    padding: '24px',
+    background: '#ffffff',
+    borderRadius: '12px',
+    color: '#e7e7e7',
+    fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'
+  };
+  var inputStyle = {
+    padding: '12px',
+    borderRadius: '8px',
+    border: '0',
+    background: '#e8ebef'
+  };
+  var errorStyle = {
+    color: '#fca5a5',
+    fontSize: '14px',
+    marginTop: '4px'
+  };
+  var successStyle = {
+    color: '#3cb043',
+    margin: '8px 0 16px 0',
+    padding: '12px 16px',
+    backgroundColor: '#ffffff',
+    borderRadius: '8px',
+    border: '1px solid rgb(0, 0, 0)',
+    fontWeight: '500'
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    style: containerStyle,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      style: {
+        margin: '0 0 16px 0',
+        padding: '16px 24px',
+        background: '#fff',
+        color: '#1a1a1a',
+        borderRadius: '10px',
+        display: 'inline-block'
+      },
+      children: "Add a Student"
+    }), statusMessage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      style: successStyle,
+      children: statusMessage
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        style: {
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '24px'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '0 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Personal Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Student ID",
+              name: "student_id",
+              value: formData.student_id,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "First Name",
+              name: "first_name",
+              value: formData.first_name,
+              onChange: handleInputChange,
+              style: inputStyle,
+              required: true
+            }), errors.first_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.first_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Last Name",
+              name: "last_name",
+              value: formData.last_name,
+              onChange: handleInputChange,
+              style: inputStyle,
+              required: true
+            }), errors.last_name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.last_name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Middle Name",
+              name: "middle_name",
+              value: formData.middle_name,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              type: "date",
+              placeholder: "Date of Birth",
+              name: "date_of_birth",
+              value: formData.date_of_birth,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Gender",
+              name: "gender",
+              value: formData.gender,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Personal Information",
+              name: "personal_information",
+              value: formData.personal_information,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '24px 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Contact Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Email Address",
+              name: "email",
+              type: "email",
+              value: formData.email,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              style: errorStyle,
+              children: errors.email
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Phone Number",
+              name: "phone",
+              value: formData.phone,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Address",
+              name: "address",
+              value: formData.address,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            style: {
+              margin: '0 0 8px 0',
+              color: '#a3a3a3'
+            },
+            children: "Academic Information"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+              name: "program",
+              value: formData.program,
+              onChange: handleInputChange,
+              style: inputStyle,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                value: "",
+                children: "Select Program/Course"
+              }), programs.map(function (program, index) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+                  value: program,
+                  children: program
+                }, index);
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Year Level",
+              name: "year_level",
+              value: formData.year_level,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Section",
+              name: "section",
+              value: formData.section,
+              onChange: handleInputChange,
+              style: inputStyle
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              placeholder: "Status",
+              name: "status",
+              value: formData.status,
+              onChange: handleInputChange,
+              style: inputStyle
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        style: {
+          display: 'flex',
+          gap: '12px',
+          marginTop: '24px'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "submit",
+          disabled: isLoading,
+          style: {
+            padding: '14px',
+            borderRadius: '10px',
+            border: '0',
+            background: isLoading ? '#94a3b8' : '#16a34a',
+            color: 'white',
+            fontWeight: '600',
+            cursor: isLoading ? 'not-allowed' : 'pointer',
+            flex: 1
+          },
+          children: isLoading ? 'Adding Student...' : 'Add Student'
+        })
+      })]
+    })]
+  });
+}
 
 /***/ }),
 

@@ -16,6 +16,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 if (document.getElementById('home')) {
     ReactDOM.render(<Home />, document.getElementById('home'));
@@ -23,4 +24,8 @@ if (document.getElementById('home')) {
 
 if (document.getElementById('dashboard')) {
     ReactDOM.render(<Dashboard />, document.getElementById('dashboard'));
+}
+
+if (document.getElementById('login')) {
+    ReactDOM.render(<Login />, document.getElementById('login'));
 }

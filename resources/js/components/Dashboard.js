@@ -13,6 +13,20 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [currentView, setCurrentView] = useState('dashboard');
 
+    // Initialize theme on component mount
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
+    // Check authentication on component mount
+    useEffect(() => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            window.location.href = '/login';
+        }
+    }, []);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -256,16 +270,17 @@ export default function Dashboard() {
     };
 
     return (
-        <div style={{ display: 'flex', minHeight: '100vh', background: '#f5f7fa' }}>
+        <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-secondary)', transition: 'background-color 0.3s ease' }}>
             {/* Sidebar */}
             <aside style={{
                 width: '210px',
-                background: 'white',
+                background: 'var(--card-bg)',
                 padding: '24px 16px',
                 position: 'fixed',
                 height: '100vh',
                 overflowY: 'auto',
-                borderRight: '1px solid #e5e7eb'
+                borderRight: '1px solid var(--border-primary)',
+                transition: 'background-color 0.3s ease, border-color 0.3s ease'
             }}>
                 <nav>
                     <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
@@ -278,21 +293,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'dashboard' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'dashboard' ? 'white' : '#4a5568',
+                                background: currentView === 'dashboard' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'dashboard' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'dashboard' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'dashboard') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'dashboard') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'dashboard') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <DashboardIcon color={currentView === 'dashboard' ? 'white' : '#4a5568'} />
+                                <DashboardIcon color={currentView === 'dashboard' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Dashboard</span>
                             </div>
                         </li>
@@ -305,21 +320,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'students' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'students' ? 'white' : '#4a5568',
+                                background: currentView === 'students' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'students' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'students' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'students') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'students') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'students') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <StudentsIcon color={currentView === 'students' ? 'white' : '#4a5568'} />
+                                <StudentsIcon color={currentView === 'students' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Students</span>
                             </div>
                         </li>
@@ -332,21 +347,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'faculty' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'faculty' ? 'white' : '#4a5568',
+                                background: currentView === 'faculty' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'faculty' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'faculty' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'faculty') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'faculty') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'faculty') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <FacultyIcon color={currentView === 'faculty' ? 'white' : '#4a5568'} />
+                                <FacultyIcon color={currentView === 'faculty' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Faculty</span>
                             </div>
                         </li>
@@ -359,21 +374,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'courses' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'courses' ? 'white' : '#4a5568',
+                                background: currentView === 'courses' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'courses' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'courses' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'courses') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'courses') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'courses') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <CoursesIcon color={currentView === 'courses' ? 'white' : '#4a5568'} />
+                                <CoursesIcon color={currentView === 'courses' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Courses</span>
                             </div>
                         </li>
@@ -386,21 +401,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'schedule' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'schedule' ? 'white' : '#4a5568',
+                                background: currentView === 'schedule' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'schedule' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'schedule' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'schedule') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'schedule') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'schedule') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <ScheduleIcon color={currentView === 'schedule' ? 'white' : '#4a5568'} />
+                                <ScheduleIcon color={currentView === 'schedule' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Schedule</span>
                             </div>
                         </li>
@@ -413,21 +428,21 @@ export default function Dashboard() {
                                 gap: 12,
                                 padding: '12px 16px',
                                 borderRadius: 8,
-                                background: currentView === 'settings' ? '#5a67d8' : 'transparent',
-                                color: currentView === 'settings' ? 'white' : '#4a5568',
+                                background: currentView === 'settings' ? 'var(--accent-primary)' : 'transparent',
+                                color: currentView === 'settings' ? 'white' : 'var(--text-secondary)',
                                 fontSize: 15,
                                 fontWeight: currentView === 'settings' ? 600 : 500,
                                 cursor: 'pointer',
-                                transition: 'all 0.15s'
+                                transition: 'all 0.3s ease'
                             }}
                             onMouseEnter={(e) => {
-                                if (currentView !== 'settings') e.currentTarget.style.background = '#f7fafc';
+                                if (currentView !== 'settings') e.currentTarget.style.background = 'var(--hover-bg)';
                             }}
                             onMouseLeave={(e) => {
                                 if (currentView !== 'settings') e.currentTarget.style.background = 'transparent';
                             }}
                             >
-                                <SettingsIcon color={currentView === 'settings' ? 'white' : '#4a5568'} />
+                                <SettingsIcon color={currentView === 'settings' ? 'white' : 'var(--text-secondary)'} />
                                 <span>Settings</span>
                             </div>
                         </li>
@@ -436,21 +451,22 @@ export default function Dashboard() {
             </aside>
 
             {/* Main Content */}
-            <div style={{ marginLeft: '210px', flex: 1, background: '#f5f7fa' }}>
+            <div style={{ marginLeft: '210px', flex: 1, background: 'var(--bg-secondary)', transition: 'background-color 0.3s ease' }}>
                 {/* Top Header */}
                 <div style={{ 
-                    background: 'white', 
+                    background: 'var(--card-bg)', 
                     padding: '16px 32px', 
-                    borderBottom: '1px solid #e5e7eb',
+                    borderBottom: '1px solid var(--border-primary)',
                     display: 'flex',
                     justifyContent: 'space-between',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    transition: 'background-color 0.3s ease, border-color 0.3s ease'
                 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <img src="/images/fsuu-logo.png" alt="FSUU Logo" style={{ width: 36, height: 36, objectFit: 'contain' }} />
                         <div>
-                            <div style={{ fontWeight: 700, fontSize: 14, color: '#1a1a1a' }}>Father Saturnino Urios University</div>
-                            <div style={{ fontSize: 12, color: '#6b7280' }}>Student and Faculty Profile Management System</div>
+                            <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--text-primary)', transition: 'color 0.3s ease' }}>Father Saturnino Urios University</div>
+                            <div style={{ fontSize: 12, color: 'var(--text-secondary)', transition: 'color 0.3s ease' }}>Student and Faculty Profile Management System</div>
                         </div>
                     </div>
                     <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
@@ -458,11 +474,12 @@ export default function Dashboard() {
                             width: 36, 
                             height: 36, 
                             borderRadius: '50%', 
-                            background: '#f3f4f6', 
+                            background: 'var(--bg-tertiary)', 
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s ease'
                         }}>
                             <BellIcon />
                         </div>
@@ -470,11 +487,12 @@ export default function Dashboard() {
                             width: 36, 
                             height: 36, 
                             borderRadius: '50%', 
-                            background: '#5a67d8', 
+                            background: 'var(--accent-primary)', 
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: 'background-color 0.3s ease'
                         }}>
                             <UserIcon />
                         </div>
@@ -494,8 +512,8 @@ export default function Dashboard() {
                     <Settings />
                 ) : (
                 <div style={{ padding: '32px' }}>
-            <h1 style={{ margin: '0 0 8px 0', fontSize: 28, fontWeight: 700, color: '#1a1a1a' }}>Profile Management Dashboard</h1>
-            <p style={{ color: '#6b7280', marginTop: 0, marginBottom: 24, fontSize: 14 }}>Manage student and faculty profiles efficiently</p>
+            <h1 style={{ margin: '0 0 8px 0', fontSize: 28, fontWeight: 700, color: 'var(--text-primary)', transition: 'color 0.3s ease' }}>Profile Management Dashboard</h1>
+            <p style={{ color: 'var(--text-secondary)', marginTop: 0, marginBottom: 24, fontSize: 14, transition: 'color 0.3s ease' }}>Manage student and faculty profiles efficiently</p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 16, marginTop: 16 }}>
                 <StatCard title="Total Students" value={students.length} delta="+12% from last semester" iconBg="#e0f2fe" iconDot="#38bdf8" />

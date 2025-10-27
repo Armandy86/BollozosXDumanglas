@@ -1796,7 +1796,7 @@ export default function Students({ onDataUpdate }) {
                             }}>✕</button>
                         </div>
                         <div style={{ maxHeight: '75vh', overflow: 'auto' }}>
-                            <Home 
+                            <AddStudentForm 
                                 onSuccess={() => { 
                                     closeAddStudent(); 
                                     refreshStudents();
@@ -1804,8 +1804,6 @@ export default function Students({ onDataUpdate }) {
                                         onDataUpdate();
                                     }
                                 }} 
-                                showForm={true} 
-                                showList={false}
                             />
                         </div>
                     </div>
@@ -1908,4 +1906,326 @@ const tableCellStyle = {
     fontSize: 14,
     color: '#1f2937'
 };
+
+// Add Student Form Component
+function AddStudentForm({ onSuccess }) {
+    const [formData, setFormData] = useState({
+        student_id: '',
+        first_name: '',
+        last_name: '',
+        middle_name: '',
+        date_of_birth: '',
+        gender: '',
+        personal_information: '',
+        email: '',
+        phone: '',
+        address: '',
+        program: '',
+        year_level: '',
+        section: '',
+        status: ''
+    });
+    const [errors, setErrors] = useState({});
+    const [statusMessage, setStatusMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+
+    // Define programs list
+    const programs = [
+        'Nursing Program',
+        'Teachers Education Program', 
+        'Engineering Program',
+        'Criminal Justice Program',
+        'Computer Science Program',
+        'Arts and Sciences Program',
+        'Business Administration Program',
+        'Accountancy Program'
+    ];
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        
+        // Clear error when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setErrors({});
+        setStatusMessage('');
+        setIsLoading(true);
+
+        console.log('Form submitted with data:', formData);
+
+        try {
+            const response = await fetch('/api/students', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+            console.log('Response status:', response.status);
+            console.log('Response data:', data);
+
+            if (response.ok) {
+                setStatusMessage('Student added successfully!');
+                setFormData({
+                    student_id: '',
+                    first_name: '',
+                    last_name: '',
+                    middle_name: '',
+                    date_of_birth: '',
+                    gender: '',
+                    personal_information: '',
+                    email: '',
+                    phone: '',
+                    address: '',
+                    program: '',
+                    year_level: '',
+                    section: '',
+                    status: ''
+                });
+                
+                if (typeof onSuccess === 'function') {
+                    onSuccess();
+                }
+                
+                // Clear success message after 3 seconds
+                setTimeout(() => {
+                    setStatusMessage('');
+                }, 3000);
+            } else {
+                if (data.errors) {
+                    setErrors(data.errors);
+                } else {
+                    setStatusMessage('Error: ' + (data.message || 'Failed to add student'));
+                }
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatusMessage('Error: Failed to submit form');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const containerStyle = {
+        maxWidth: '1200px',
+        margin: '24px auto',
+        padding: '24px',
+        background: '#ffffff',
+        borderRadius: '12px',
+        color: '#e7e7e7',
+        fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'
+    };
+
+    const inputStyle = {
+        padding: '12px',
+        borderRadius: '8px',
+        border: '0',
+        background: '#e8ebef'
+    };
+
+    const errorStyle = {
+        color: '#fca5a5',
+        fontSize: '14px',
+        marginTop: '4px'
+    };
+
+    const successStyle = {
+        color: '#3cb043',
+        margin: '8px 0 16px 0',
+        padding: '12px 16px',
+        backgroundColor: '#ffffff',
+        borderRadius: '8px',
+        border: '1px solid rgb(0, 0, 0)',
+        fontWeight: '500'
+    };
+
+    return (
+        <div style={containerStyle}>
+            <h2 style={{
+                margin: '0 0 16px 0',
+                padding: '16px 24px',
+                background: '#fff',
+                color: '#1a1a1a',
+                borderRadius: '10px',
+                display: 'inline-block'
+            }}>
+                Add a Student
+            </h2>
+            
+            {statusMessage && (
+                <p style={successStyle}>{statusMessage}</p>
+            )}
+
+            <form onSubmit={handleSubmit}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                    <div>
+                        <h3 style={{ margin: '0 0 8px 0', color: '#a3a3a3' }}>Personal Information</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            <input
+                                placeholder="Student ID"
+                                name="student_id"
+                                value={formData.student_id}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            <input
+                                placeholder="First Name"
+                                name="first_name"
+                                value={formData.first_name}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                                required
+                            />
+                            {errors.first_name && <div style={errorStyle}>{errors.first_name}</div>}
+                            
+                            <input
+                                placeholder="Last Name"
+                                name="last_name"
+                                value={formData.last_name}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                                required
+                            />
+                            {errors.last_name && <div style={errorStyle}>{errors.last_name}</div>}
+                            
+                            <input
+                                placeholder="Middle Name"
+                                name="middle_name"
+                                value={formData.middle_name}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            <input
+                                type="date"
+                                placeholder="Date of Birth"
+                                name="date_of_birth"
+                                value={formData.date_of_birth}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            <input
+                                placeholder="Gender"
+                                name="gender"
+                                value={formData.gender}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            <input
+                                placeholder="Personal Information"
+                                name="personal_information"
+                                value={formData.personal_information}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                        </div>
+
+                        <h3 style={{ margin: '24px 0 8px 0', color: '#a3a3a3' }}>Contact Information</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            <input
+                                placeholder="Email Address"
+                                name="email"
+                                type="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            {errors.email && <div style={errorStyle}>{errors.email}</div>}
+                            
+                            <input
+                                placeholder="Phone Number"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            
+                            <input
+                                placeholder="Address"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style={{ margin: '0 0 8px 0', color: '#a3a3a3' }}>Academic Information</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                            <select
+                                name="program"
+                                value={formData.program}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            >
+                                <option value="">Select Program/Course</option>
+                                {programs.map((program, index) => (
+                                    <option key={index} value={program}>{program}</option>
+                                ))}
+                            </select>
+                            
+                            <input
+                                placeholder="Year Level"
+                                name="year_level"
+                                value={formData.year_level}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            
+                            <input
+                                placeholder="Section"
+                                name="section"
+                                value={formData.section}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                            
+                            <input
+                                placeholder="Status"
+                                name="status"
+                                value={formData.status}
+                                onChange={handleInputChange}
+                                style={inputStyle}
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+                    <button
+                        type="submit"
+                        disabled={isLoading}
+                        style={{
+                            padding: '14px',
+                            borderRadius: '10px',
+                            border: '0',
+                            background: isLoading ? '#94a3b8' : '#16a34a',
+                            color: 'white',
+                            fontWeight: '600',
+                            cursor: isLoading ? 'not-allowed' : 'pointer',
+                            flex: 1
+                        }}
+                    >
+                        {isLoading ? 'Adding Student...' : 'Add Student'}
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
+}
 
