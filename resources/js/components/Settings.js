@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import ChangePasswordModal from './ChangePasswordModal';
 
 export default function Settings() {
     const [theme, setTheme] = useState('light');
+    const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
 
     // Load theme from localStorage on component mount
     useEffect(() => {
@@ -43,7 +45,7 @@ export default function Settings() {
             iconBg: theme === 'dark' ? '#374151' : '#D1FAE5',
             title: 'Change Password',
             description: 'Update your account password for enhanced security.',
-            action: () => console.log('Change Password clicked')
+            action: () => setIsPasswordModalOpen(true)
         },
         {
             id: 'change-theme',
@@ -85,13 +87,26 @@ export default function Settings() {
             iconBg: theme === 'dark' ? '#374151' : '#FEF3C7',
             title: 'Logout',
             description: 'Securely sign out of your account.',
-            action: () => {
+            action: async () => {
                 if (confirm('Are you sure you want to logout?')) {
-                    // Clear authentication data
-                    localStorage.removeItem('isLoggedIn');
-                    localStorage.removeItem('userEmail');
-                    // Redirect to login page
-                    window.location.href = '/login';
+                    try {
+                        // Call Laravel logout endpoint
+                        await fetch('/logout', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Logout error:', error);
+                    } finally {
+                        // Clear authentication data
+                        localStorage.removeItem('isLoggedIn');
+                        localStorage.removeItem('userEmail');
+                        // Redirect to login page
+                        window.location.href = '/login';
+                    }
                 }
             }
         }
@@ -204,6 +219,12 @@ export default function Settings() {
                     </div>
                 ))}
             </div>
+
+            {/* Change Password Modal */}
+            <ChangePasswordModal 
+                isOpen={isPasswordModalOpen} 
+                onClose={() => setIsPasswordModalOpen(false)} 
+            />
         </div>
     );
 }

@@ -58110,6 +58110,586 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/ChangePasswordModal.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/ChangePasswordModal.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ChangePasswordModal)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+function ChangePasswordModal(_ref) {
+  var isOpen = _ref.isOpen,
+    onClose = _ref.onClose;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      current_password: '',
+      new_password: '',
+      new_password_confirmation: ''
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    formData = _useState2[0],
+    setFormData = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+    _useState4 = _slicedToArray(_useState3, 2),
+    errors = _useState4[0],
+    setErrors = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isLoading = _useState6[0],
+    setIsLoading = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      current: false,
+      "new": false,
+      confirm: false
+    }),
+    _useState8 = _slicedToArray(_useState7, 2),
+    showPasswords = _useState8[0],
+    setShowPasswords = _useState8[1];
+  var handleInputChange = function handleInputChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value;
+    setFormData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, value));
+    });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, null));
+      });
+    }
+  };
+  var togglePasswordVisibility = function togglePasswordVisibility(field) {
+    setShowPasswords(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, field, !prev[field]));
+    });
+  };
+  var validateForm = function validateForm() {
+    var newErrors = {};
+    if (!formData.current_password.trim()) {
+      newErrors.current_password = 'Current password is required.';
+    }
+    if (!formData.new_password.trim()) {
+      newErrors.new_password = 'New password is required.';
+    } else if (formData.new_password.length < 8) {
+      newErrors.new_password = 'Password must be at least 8 characters long.';
+    }
+    if (!formData.new_password_confirmation.trim()) {
+      newErrors.new_password_confirmation = 'Password confirmation is required.';
+    } else if (formData.new_password !== formData.new_password_confirmation) {
+      newErrors.new_password_confirmation = 'Passwords do not match.';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+  var handleSubmit = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
+      var _document$querySelect, response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            e.preventDefault();
+            if (validateForm()) {
+              _context.n = 1;
+              break;
+            }
+            return _context.a(2);
+          case 1:
+            setIsLoading(true);
+            setErrors({});
+            _context.p = 2;
+            _context.n = 3;
+            return fetch('/change-password', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': ((_document$querySelect = document.querySelector('meta[name="csrf-token"]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.getAttribute('content')) || ''
+              },
+              body: JSON.stringify(formData)
+            });
+          case 3:
+            response = _context.v;
+            _context.n = 4;
+            return response.json();
+          case 4:
+            data = _context.v;
+            if (data.success) {
+              alert('Password changed successfully!');
+              setFormData({
+                current_password: '',
+                new_password: '',
+                new_password_confirmation: ''
+              });
+              onClose();
+            } else {
+              if (data.errors) {
+                setErrors(data.errors);
+              } else {
+                alert(data.message || 'An error occurred while changing the password.');
+              }
+            }
+            _context.n = 6;
+            break;
+          case 5:
+            _context.p = 5;
+            _t = _context.v;
+            console.error('Error changing password:', _t);
+            alert('An error occurred while changing the password. Please try again.');
+          case 6:
+            _context.p = 6;
+            setIsLoading(false);
+            return _context.f(6);
+          case 7:
+            return _context.a(2);
+        }
+      }, _callee, null, [[2, 5, 6, 7]]);
+    }));
+    return function handleSubmit(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var handleClose = function handleClose() {
+    setFormData({
+      current_password: '',
+      new_password: '',
+      new_password_confirmation: ''
+    });
+    setErrors({});
+    onClose();
+  };
+  if (!isOpen) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    style: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        backgroundColor: 'var(--card-bg)',
+        borderRadius: 16,
+        padding: 32,
+        width: '100%',
+        maxWidth: 480,
+        margin: 16,
+        boxShadow: 'var(--shadow-lg)',
+        border: '1px solid var(--border-primary)'
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: 24
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          style: {
+            fontSize: 24,
+            fontWeight: 700,
+            color: 'var(--text-primary)',
+            margin: 0
+          },
+          children: "Change Password"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          onClick: handleClose,
+          style: {
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 8,
+            borderRadius: 8,
+            color: 'var(--text-secondary)',
+            transition: 'all 0.2s ease'
+          },
+          onMouseEnter: function onMouseEnter(e) {
+            e.target.style.backgroundColor = 'var(--hover-bg)';
+            e.target.style.color = 'var(--text-primary)';
+          },
+          onMouseLeave: function onMouseLeave(e) {
+            e.target.style.backgroundColor = 'transparent';
+            e.target.style.color = 'var(--text-secondary)';
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+            width: "20",
+            height: "20",
+            viewBox: "0 0 24 24",
+            fill: "none",
+            stroke: "currentColor",
+            strokeWidth: "2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+              x1: "18",
+              y1: "6",
+              x2: "6",
+              y2: "18"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+              x1: "6",
+              y1: "6",
+              x2: "18",
+              y2: "18"
+            })]
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+        onSubmit: handleSubmit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            marginBottom: 20
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            style: {
+              display: 'block',
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: 8
+            },
+            children: "Current Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              position: 'relative'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: showPasswords.current ? 'text' : 'password',
+              name: "current_password",
+              value: formData.current_password,
+              onChange: handleInputChange,
+              style: {
+                width: '100%',
+                padding: '12px 48px 12px 16px',
+                border: "1px solid ".concat(errors.current_password ? 'var(--error)' : 'var(--border-primary)'),
+                borderRadius: 8,
+                fontSize: 14,
+                backgroundColor: 'var(--input-bg)',
+                color: 'var(--text-primary)',
+                outline: 'none',
+                transition: 'all 0.2s ease',
+                boxSizing: 'border-box'
+              },
+              placeholder: "Enter your current password"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              type: "button",
+              onClick: function onClick() {
+                return togglePasswordVisibility('current');
+              },
+              style: {
+                position: 'absolute',
+                right: 12,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--text-secondary)',
+                padding: 4
+              },
+              children: showPasswords.current ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "1",
+                  y1: "1",
+                  x2: "23",
+                  y2: "23"
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                  cx: "12",
+                  cy: "12",
+                  r: "3"
+                })]
+              })
+            })]
+          }), errors.current_password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            style: {
+              color: 'var(--error)',
+              fontSize: 12,
+              margin: '4px 0 0 0'
+            },
+            children: errors.current_password
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            marginBottom: 20
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            style: {
+              display: 'block',
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: 8
+            },
+            children: "New Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              position: 'relative'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: showPasswords["new"] ? 'text' : 'password',
+              name: "new_password",
+              value: formData.new_password,
+              onChange: handleInputChange,
+              style: {
+                width: '100%',
+                padding: '12px 48px 12px 16px',
+                border: "1px solid ".concat(errors.new_password ? 'var(--error)' : 'var(--border-primary)'),
+                borderRadius: 8,
+                fontSize: 14,
+                backgroundColor: 'var(--input-bg)',
+                color: 'var(--text-primary)',
+                outline: 'none',
+                transition: 'all 0.2s ease',
+                boxSizing: 'border-box'
+              },
+              placeholder: "Enter your new password"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              type: "button",
+              onClick: function onClick() {
+                return togglePasswordVisibility('new');
+              },
+              style: {
+                position: 'absolute',
+                right: 12,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--text-secondary)',
+                padding: 4
+              },
+              children: showPasswords["new"] ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "1",
+                  y1: "1",
+                  x2: "23",
+                  y2: "23"
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                  cx: "12",
+                  cy: "12",
+                  r: "3"
+                })]
+              })
+            })]
+          }), errors.new_password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            style: {
+              color: 'var(--error)',
+              fontSize: 12,
+              margin: '4px 0 0 0'
+            },
+            children: errors.new_password
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            style: {
+              color: 'var(--text-secondary)',
+              fontSize: 12,
+              margin: '4px 0 0 0'
+            },
+            children: "Password must be at least 8 characters long."
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            marginBottom: 24
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            style: {
+              display: 'block',
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: 8
+            },
+            children: "Confirm New Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            style: {
+              position: 'relative'
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: showPasswords.confirm ? 'text' : 'password',
+              name: "new_password_confirmation",
+              value: formData.new_password_confirmation,
+              onChange: handleInputChange,
+              style: {
+                width: '100%',
+                padding: '12px 48px 12px 16px',
+                border: "1px solid ".concat(errors.new_password_confirmation ? 'var(--error)' : 'var(--border-primary)'),
+                borderRadius: 8,
+                fontSize: 14,
+                backgroundColor: 'var(--input-bg)',
+                color: 'var(--text-primary)',
+                outline: 'none',
+                transition: 'all 0.2s ease',
+                boxSizing: 'border-box'
+              },
+              placeholder: "Confirm your new password"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+              type: "button",
+              onClick: function onClick() {
+                return togglePasswordVisibility('confirm');
+              },
+              style: {
+                position: 'absolute',
+                right: 12,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--text-secondary)',
+                padding: 4
+              },
+              children: showPasswords.confirm ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+                  x1: "1",
+                  y1: "1",
+                  x2: "23",
+                  y2: "23"
+                })]
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+                width: "20",
+                height: "20",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                strokeWidth: "2",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+                  d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+                  cx: "12",
+                  cy: "12",
+                  r: "3"
+                })]
+              })
+            })]
+          }), errors.new_password_confirmation && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            style: {
+              color: 'var(--error)',
+              fontSize: 12,
+              margin: '4px 0 0 0'
+            },
+            children: errors.new_password_confirmation
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          style: {
+            display: 'flex',
+            gap: 12,
+            justifyContent: 'flex-end'
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            type: "button",
+            onClick: handleClose,
+            style: {
+              padding: '12px 24px',
+              border: '1px solid var(--border-primary)',
+              borderRadius: 8,
+              backgroundColor: 'transparent',
+              color: 'var(--text-primary)',
+              fontSize: 14,
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            },
+            onMouseEnter: function onMouseEnter(e) {
+              e.target.style.backgroundColor = 'var(--hover-bg)';
+            },
+            onMouseLeave: function onMouseLeave(e) {
+              e.target.style.backgroundColor = 'transparent';
+            },
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            type: "submit",
+            disabled: isLoading,
+            style: {
+              padding: '12px 24px',
+              border: 'none',
+              borderRadius: 8,
+              backgroundColor: isLoading ? 'var(--text-secondary)' : 'var(--accent-primary)',
+              color: 'white',
+              fontSize: 14,
+              fontWeight: 600,
+              cursor: isLoading ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s ease',
+              opacity: isLoading ? 0.7 : 1
+            },
+            children: isLoading ? 'Changing...' : 'Change Password'
+          })]
+        })]
+      })]
+    })
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/Courses.js":
 /*!********************************************!*\
   !*** ./resources/js/components/Courses.js ***!
@@ -68441,35 +69021,52 @@ function Login() {
   };
   var handleSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
+      var _document$querySelect, response, data, _t;
       return _regenerator().w(function (_context) {
-        while (1) switch (_context.n) {
+        while (1) switch (_context.p = _context.n) {
           case 0:
             e.preventDefault();
             setIsLoading(true);
             setError('');
-
-            // Simulate API call delay
-            _context.n = 1;
-            return new Promise(function (resolve) {
-              return setTimeout(resolve, 1000);
+            _context.p = 1;
+            _context.n = 2;
+            return fetch('/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': ((_document$querySelect = document.querySelector('meta[name="csrf-token"]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.getAttribute('content')) || ''
+              },
+              body: JSON.stringify(formData)
             });
-          case 1:
-            // Check credentials
-            if (formData.email === 'admin' && formData.password === 'admin123') {
-              // Store login state in localStorage
+          case 2:
+            response = _context.v;
+            _context.n = 3;
+            return response.json();
+          case 3:
+            data = _context.v;
+            if (data.success) {
+              // Store login state in localStorage for compatibility
               localStorage.setItem('isLoggedIn', 'true');
               localStorage.setItem('userEmail', formData.email);
 
               // Redirect to dashboard
               window.location.href = '/';
             } else {
-              setError('Invalid email or password. Please try again.');
+              setError(data.message || 'Invalid email or password. Please try again.');
             }
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error('Login error:', _t);
+            setError('An error occurred during login. Please try again.');
+          case 5:
             setIsLoading(false);
-          case 2:
+          case 6:
             return _context.a(2);
         }
-      }, _callee);
+      }, _callee, null, [[1, 4]]);
     }));
     return function handleSubmit(_x) {
       return _ref.apply(this, arguments);
@@ -69061,7 +69658,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Settings)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _ChangePasswordModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChangePasswordModal */ "./resources/js/components/ChangePasswordModal.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -69070,11 +69672,16 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
+
 function Settings() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('light'),
     _useState2 = _slicedToArray(_useState, 2),
     theme = _useState2[0],
     setTheme = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    isPasswordModalOpen = _useState4[0],
+    setIsPasswordModalOpen = _useState4[1];
 
   // Load theme from localStorage on component mount
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -69092,16 +69699,16 @@ function Settings() {
   };
   var settingsOptions = [{
     id: 'edit-profile',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
       width: "24",
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
       stroke: "var(--accent-primary)",
       strokeWidth: "2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
         d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
         cx: "12",
         cy: "7",
         r: "4"
@@ -69115,7 +69722,7 @@ function Settings() {
     }
   }, {
     id: 'change-password',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
       width: "24",
       height: "24",
       viewBox: "0 0 24 24",
@@ -69124,14 +69731,14 @@ function Settings() {
       strokeWidth: "2",
       strokeLinecap: "round",
       strokeLinejoin: "round",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("rect", {
         x: "3",
         y: "11",
         width: "18",
         height: "11",
         rx: "2",
         ry: "2"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
         d: "M7 11V7a5 5 0 0 1 10 0v4"
       })]
     }),
@@ -69139,11 +69746,11 @@ function Settings() {
     title: 'Change Password',
     description: 'Update your account password for enhanced security.',
     action: function action() {
-      return console.log('Change Password clicked');
+      return setIsPasswordModalOpen(true);
     }
   }, {
     id: 'change-theme',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg", {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("svg", {
       width: "24",
       height: "24",
       viewBox: "0 0 24 24",
@@ -69153,47 +69760,47 @@ function Settings() {
       children: theme === 'dark' ?
       /*#__PURE__*/
       // Sun icon for dark mode
-      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("circle", {
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("circle", {
           cx: "12",
           cy: "12",
           r: "5"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "12",
           y1: "1",
           x2: "12",
           y2: "3"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "12",
           y1: "21",
           x2: "12",
           y2: "23"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "4.22",
           y1: "4.22",
           x2: "5.64",
           y2: "5.64"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "18.36",
           y1: "18.36",
           x2: "19.78",
           y2: "19.78"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "1",
           y1: "12",
           x2: "3",
           y2: "12"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "21",
           y1: "12",
           x2: "23",
           y2: "12"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "4.22",
           y1: "19.78",
           x2: "5.64",
           y2: "18.36"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
           x1: "18.36",
           y1: "5.64",
           x2: "19.78",
@@ -69202,7 +69809,7 @@ function Settings() {
       }) :
       /*#__PURE__*/
       // Moon icon for light mode
-      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
         d: "M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
       })
     }),
@@ -69212,18 +69819,18 @@ function Settings() {
     action: toggleTheme
   }, {
     id: 'logout',
-    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("svg", {
+    icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("svg", {
       width: "24",
       height: "24",
       viewBox: "0 0 24 24",
       fill: "none",
       stroke: "var(--warning)",
       strokeWidth: "2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("path", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("path", {
         d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("polyline", {
         points: "16 17 21 12 16 7"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("line", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("line", {
         x1: "21",
         y1: "12",
         x2: "9",
@@ -69233,17 +69840,52 @@ function Settings() {
     iconBg: theme === 'dark' ? '#374151' : '#FEF3C7',
     title: 'Logout',
     description: 'Securely sign out of your account.',
-    action: function action() {
-      if (confirm('Are you sure you want to logout?')) {
-        // Clear authentication data
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userEmail');
-        // Redirect to login page
-        window.location.href = '/login';
+    action: function () {
+      var _action = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var _document$querySelect, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              if (!confirm('Are you sure you want to logout?')) {
+                _context.n = 5;
+                break;
+              }
+              _context.p = 1;
+              _context.n = 2;
+              return fetch('/logout', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRF-TOKEN': ((_document$querySelect = document.querySelector('meta[name="csrf-token"]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.getAttribute('content')) || ''
+                }
+              });
+            case 2:
+              _context.n = 4;
+              break;
+            case 3:
+              _context.p = 3;
+              _t = _context.v;
+              console.error('Logout error:', _t);
+            case 4:
+              _context.p = 4;
+              // Clear authentication data
+              localStorage.removeItem('isLoggedIn');
+              localStorage.removeItem('userEmail');
+              // Redirect to login page
+              window.location.href = '/login';
+              return _context.f(4);
+            case 5:
+              return _context.a(2);
+          }
+        }, _callee, null, [[1, 3, 4, 5]]);
+      }));
+      function action() {
+        return _action.apply(this, arguments);
       }
-    }
+      return action;
+    }()
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     style: {
       padding: '48px 64px',
       background: 'var(--bg-secondary)',
@@ -69251,11 +69893,11 @@ function Settings() {
       width: '100%',
       transition: 'background-color 0.3s ease'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       style: {
         marginBottom: 48
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
         style: {
           fontSize: 36,
           fontWeight: 700,
@@ -69265,7 +69907,7 @@ function Settings() {
           transition: 'color 0.3s ease'
         },
         children: "Settings"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
         style: {
           fontSize: 15,
           color: 'var(--text-secondary)',
@@ -69276,7 +69918,7 @@ function Settings() {
         },
         children: "Allows the user to update profile information, change their account password, switch between light and dark themes, and securely log out of the system."
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       style: {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
@@ -69284,7 +69926,7 @@ function Settings() {
         maxWidth: 1000
       },
       children: settingsOptions.map(function (option) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           onClick: option.action,
           style: {
             background: 'var(--card-bg)',
@@ -69307,7 +69949,7 @@ function Settings() {
             e.currentTarget.style.borderColor = 'var(--border-primary)';
             e.currentTarget.style.background = 'var(--card-bg)';
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             style: {
               width: 56,
               height: 56,
@@ -69320,7 +69962,7 @@ function Settings() {
               transition: 'background-color 0.3s ease'
             },
             children: option.icon
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
             style: {
               fontSize: 20,
               fontWeight: 700,
@@ -69329,7 +69971,7 @@ function Settings() {
               transition: 'color 0.3s ease'
             },
             children: option.title
-          }), option.description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          }), option.description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             style: {
               fontSize: 13,
               color: 'var(--text-secondary)',
@@ -69341,6 +69983,11 @@ function Settings() {
           })]
         }, option.id);
       })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ChangePasswordModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      isOpen: isPasswordModalOpen,
+      onClose: function onClose() {
+        return setIsPasswordModalOpen(false);
+      }
     })]
   });
 }
